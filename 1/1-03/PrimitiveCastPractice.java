@@ -1,28 +1,23 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
+    基本データ型変数とキャストの問題
 
-    ��{�f�[�^�^�ϐ��ƃL���X�g�̖��
-
-    �R�����g�ɏ]���ăv���O�������L�q���Ă��������B
-    (�R���p�C�����ʂ��OK�ł�)
-
-*/
+    コメントに従ってプログラムを記述してください。
+    (コンパイルが通ればOKです)
+ */
 public class PrimitiveCastPractice{
 
-    public static void main(String[] args){
+	public static void main(String[] args){
 
-        // short�^�̕ϐ� s1 ��錾���A10 �������Ă�������
+		// short型の変数 s1 を宣言し、10 を代入してください
+		short s1 = 10;
 
+		// byte型の変数 b を宣言し、変数 s1 の値を代入してください
+		byte b = (byte)s1;
 
-        // byte�^�̕ϐ� b ��錾���A�ϐ� s1 �̒l�������Ă�������
+		// char型の変数 c を宣言し、変数 b の値を代入してください
+		char c = (char)b;
 
-
-        // char�^�̕ϐ� c ��錾���A�ϐ� b �̒l�������Ă�������
-
-
-        // short�^�̕ϐ� s2 ��錾���A�ϐ� s1 �� b �𑫂����l�������Ă�������
-
-
-    }
-
+		// short型の変数 s2 を宣言し、変数 s1 と b を足した値を代入してください
+		short s2 = (short)(s1 + b);
+	}
 }

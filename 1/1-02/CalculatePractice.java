@@ -1,5 +1,4 @@
 /*
-
     数値の演算に関する問題
 
     コメントで指示された値を出力するようにSystem.out.println()
@@ -17,26 +16,25 @@
     0.6
     a
 
-*/
+ */
 public class CalculatePractice{
 
-    public static void main(String[] args){
+	public static void main(String[] args){
 
-        // 5 と 6 と 7 を足した合計に8を掛けた値は？
-        System.out.println(  );
+		// 5 と 6 と 7 を足した合計に8を掛けた値は？
+		System.out.println((5+6+7)*8);
 
-        // 7 と 8 を足した値を 5 で割った値に、
-        // 6 から 4 を引いた値に 2 を掛けた値を足した値は？
-        System.out.println(  );
+		// 7 と 8 を足した値を 5 で割った値に、
+		// 6 から 4 を引いた値に 2 を掛けた値を足した値は？
+		System.out.println(((7+8)/5)+((6-4)*2));
 
-        // 1000 を 7 で割った余りは？
-        System.out.println(  );
+		// 1000 を 7 で割った余りは？
+		System.out.println(1000%7);
 
-        // 6 を 5 で割った値を、さらに 2 で割った正確な値は？
-        System.out.println(  );
+		// 6 を 5 で割った値を、さらに 2 で割った正確な値は？
+		System.out.println((double)(6.0/5)/2);
 
-        // アルファベットの大文字'A'に32を足した文字は？
-        System.out.println(  );
-
-    }
+		// アルファベットの大文字'A'に32を足した文字は？
+		System.out.println((char)('A'+32));
+	}
 }
