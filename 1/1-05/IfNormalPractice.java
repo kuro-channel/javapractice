@@ -47,7 +47,7 @@ public class IfNormalPractice{
 		System.out.println("年齢を入力してください");
 
 		// 年齢変数の宣言と初期化
-		int age = 18;
+		int age = 25;
 		System.out.println(age);
 		//        int age = 18;
 		//        int age = 12;
@@ -55,13 +55,17 @@ public class IfNormalPractice{
 
 		// if文の開始
 		// 変数age:20未満かつ0以上の場合
-		if(age < 0) {
-			System.out.println("エラー");
+		if(age >= 20) {
+			System.out.println("成年です");
 		}else if(0<=age && age<20) {
-			System.out.println("未成年です。");
-			System.out.println("今は義務教育を受けています");
-		}else if(age >= 20) {
-			System.out.println("成年です。");
+			System.out.println("未成年です");
+			if(age <6 || age>16) {
+				System.out.println("今は義務教育を受けていません");
+			}else {
+				System.out.println("今は義務教育を受けています");
+			}
+		}else if(age < 0) {
+			System.out.println("エラー");
 		}
 	}
 }
