@@ -1,56 +1,56 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    switch���̊�{���
+    switch文の基本問題
 
-    int�^�̕ϐ�month���錾���Ă���܂��B�ϐ�month�͌���\���Ă��܂��B
+    int型の変数monthが宣言してあります。変数monthは月を表しています。
 
-    ������
-    Integer.parseInt(System.console().readLine())�̋L�q�́A�L�[�{�[�h����
-    ������̓��͂��󂯕t���A�����int�^�ɕϊ�����v���O�����ł��B
-    ����͂��̂܂ܗ��p���Ă��������B�������A�L�[�{�[�h����uABC�v�̂悤��
-    ���͂��s���ƁAint�^�ɕϊ��ł����ɗ�O���X���[���܂��B
+    ※注意
+    Integer.parseInt(System.console().readLine())の記述は、キーボードから
+    文字列の入力を受け付け、それをint型に変換するプログラムです。
+    これはそのまま利用してください。ただし、キーボードから「ABC」のような
+    入力を行うと、int型に変換できずに例外をスローします。
 
-    �ϐ�month�̒l��1,3,5,7,8,10,12�̏ꍇ�́u������31���܂ł���܂��v
-    �ƕ\�����A4,6,9,11�̏ꍇ�́u������30���܂ł���܂��v�ƕ\�����܂��B
-    2�̏ꍇ�́u2����28�A�܂���29���܂ł���܂��v�ƕ\�����܂��B
+    変数monthの値が1,3,5,7,8,10,12の場合は「○月は31日まであります」
+    と表示し、4,6,9,11の場合は「○月は30日まであります」と表示します。
+    2の場合は「2月は28、または29日まであります」と表示します。
 
-    �܂��A�ϐ�month�̒l��1 �` 12 �ȊO�̒l�̏ꍇ�́u�G���[�v��
-    �\�����Ă��������B
+    また、変数monthの値が1 ～ 12 以外の値の場合は「エラー」と
+    表示してください。
 
-    ��������ɂ͕K��switch�����g�p���Ă��������B
+    条件分岐には必ずswitch文を使用してください。
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    �y���s���ʁz
-    ������͂��Ă�������
+    【実行結果】
+    月を入力してください
     1
-    1����31���܂ł���܂�
+    1月は31日まであります
 
-    �y���s���ʁz
-    ������͂��Ă�������
+    【実行結果】
+    月を入力してください
     2
-    2����28�A�܂���29���܂ł���܂�
+    2月は28、または29日まであります
 
-    �y���s���ʁz
-    ������͂��Ă�������
+    【実行結果】
+    月を入力してください
     4
-    4����30���܂ł���܂�
+    4月は30日まであります
 
-    �y���s���ʁz
-    ������͂��Ă�������
+    【実行結果】
+    月を入力してください
     13
-    �G���[
+    エラー
 
 */
 public class SwitchBasicPractice{
 
     public static void main(String[] args){
 
-        System.out.println("������͂��Ă�������");
+        System.out.println("月を入力してください");
 
         int month = Integer.parseInt(System.console().readLine());
 
-        // switch���̊J�n
+        // switch文の開始
 
 
     }
