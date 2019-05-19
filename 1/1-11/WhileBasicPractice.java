@@ -1,14 +1,14 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    while•¶‚ÌŠî–{–â‘è
+    whileæ–‡ã®åŸºæœ¬å•é¡Œ
 
-    intŒ^•Ï”x‚ª1‚Å‰Šú‰»‚³‚ê‚Ä‚¢‚Ü‚·B
-    x‚Ì’l‚ðwhile•¶‚ð—p‚¢‚Ä2”{‚µ‚Ä‚¢‚«A‚»‚Ì“s“x
-    ’l‚ðo—Í‚µ‚Ü‚·Bx‚Ì’l‚ª1000‚ð’´‚¦‚½’iŠK‚Åƒ‹[ƒv
-    ‚ðI—¹‚µ‚Ä‚­‚¾‚³‚¢B
+    intåž‹å¤‰æ•°xãŒ1ã§åˆæœŸåŒ–ã•ã‚Œã¦ã„ã¾ã™ã€‚
+    xã®å€¤ã‚’whileæ–‡ã‚’ç”¨ã„ã¦2å€ã—ã¦ã„ãã€ãã®éƒ½åº¦
+    å€¤ã‚’å‡ºåŠ›ã—ã¾ã™ã€‚xã®å€¤ãŒ1000ã‚’è¶…ãˆãŸæ®µéšŽã§ãƒ«ãƒ¼ãƒ—
+    ã‚’çµ‚äº†ã—ã¦ãã ã•ã„ã€‚
 
-    yŽÀsŒ‹‰Êz
+    ã€å®Ÿè¡Œçµæžœã€‘
     1
     2
     4
@@ -27,7 +27,7 @@ public class WhileBasicPractice{
 
         int x = 1;
 
-        // while•¶‚ÌŠJŽn
+        // whileæ–‡ã®é–‹å§‹
 
     }
 

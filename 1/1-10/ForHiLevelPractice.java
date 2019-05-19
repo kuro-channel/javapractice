@@ -1,29 +1,28 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    for•¶‚Ìã‹‰–â‘è
+    foræ–‡ã®ä¸Šç´šå•é¡Œ
 
-    •Ï”level‚ÍŽR‚Ì’i”‚ð•\‚µ‚Ä‚¢‚Ü‚·B
-    for•¶‚ðƒlƒXƒg‚µ‚ÄAŽŸ‚Ì}Œ`‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
-    ®AŽR‚Ì¶‘¤‚É‚Í‘SŠp‹ó”’‚ðŽg—p‚µ‚Ä‚­‚¾‚³‚¢B
-    (–{ƒeƒLƒXƒg‚Ì‰ð“š—á‚Å‚ÍAŒ©‚â‚·‚³‚Ì‚½‚ßŽlŠp‚ðŽg—p‚µ‚Ü‚·)
+    å¤‰æ•°levelã¯å±±ã®æ®µæ•°ã‚’è¡¨ã—ã¦ã„ã¾ã™ã€‚
+    foræ–‡ã‚’ãƒã‚¹ãƒˆã—ã¦ã€æ¬¡ã®å›³å½¢ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
+    å°šã€å±±ã®å·¦å´ã«ã¯å…¨è§’ç©ºç™½ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚
+    (æœ¬ãƒ†ã‚­ã‚¹ãƒˆã®è§£ç­”ä¾‹ã§ã¯ã€è¦‹ã‚„ã™ã•ã®ãŸã‚å››è§’ã‚’ä½¿ç”¨ã—ã¾ã™)
 
-    yŽÀsŒ‹‰Êz
-        ¡
-       ¡¡¡
-      ¡¡¡¡¡
-     ¡¡¡¡¡¡¡
-    ¡¡¡¡¡¡¡¡¡    
+    ã€å®Ÿè¡Œçµæžœã€‘
+    â–¡â–¡â–¡â–¡â– 
+    â–¡â–¡â–¡â– â– â– 
+    â–¡â–¡â– â– â– â– â– 
+    â–¡â– â– â– â– â– â– â– 
+    â– â– â– â– â– â– â– â– â– 
 
 */
 public class ForHiLevelPractice{
 
     public static void main(String[] args){
 
-        // ŽR‚Ì’i”‚ð•\‚·•Ï”
+        // å±±ã®æ®µæ•°ã‚’è¡¨ã™å¤‰æ•°
         int level = 5;
 
-        // for•¶‚ÌŠJŽn
+        // foræ–‡ã®é–‹å§‹
 
     }
 

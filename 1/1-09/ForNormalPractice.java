@@ -1,22 +1,27 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    for���̕W�����
+    for文の標準問題
 
-    for���𗘗p���āA10����100�܂ł̎��R���̒�����
-    �f���ł�����̂�\�����Ă��������B
+    for文を利用して、10から100までの自然数の中から
+    素数であるものを表示してください。
 
-    �f���Ƃ́A1�Ƃ��̐��ȊO�̂ǂ�Ȏ��R���ɂ���Ă�����؂�Ȃ�
-    1���傫�Ȏ��R���̂��Ƃł��B
-
+    素数とは、1とその数以外のどんな自然数によっても割り切れない
+    1より大きな自然数のことです。
+    例えば、11
+    8だったら…1,2,8で割り切れる
 */
-public class ForNormalPractice{
+public class ForNormalPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // for���̊J�n
-
-
-    }
-
+		// for文の開始：label 特定のループに名前をつけること
+		outer:for (int i = 11; i <= 100; i++) {
+			for (int j = 2; j < i; j++) {
+				if (i % j == 0) {
+					continue outer;
+				}
+			}
+			System.out.println(i);
+		}
+	}
 }

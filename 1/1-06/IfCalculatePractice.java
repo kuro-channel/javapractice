@@ -81,5 +81,4 @@ public class IfCalculatePractice{
 			System.out.println("エラーです");
 		}
 	}
-
 }
