@@ -14,16 +14,16 @@
     □■■■■■■■
     ■■■■■■■■■
 
-*/
-public class ForHiLevelPractice{
+ */
+public class ForHiLevelPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // 山の段数を表す変数
-        int level = 5;
+		// 山の段数を表す変数
+		int level = 5;
 
-        // for文の開始
-
-    }
-
+		// for文の開始
+		for (int i = 0; i < level; i++) {
+		}
+	}
 }

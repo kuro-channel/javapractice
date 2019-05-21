@@ -1,4 +1,3 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
     while文の基本問題
@@ -20,15 +19,24 @@
     256
     512
 
-*/
-public class WhileBasicPractice{
+ */
+public class WhileBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        int x = 1;
+		int x = 1;
+		int y = 1;
 
-        // while文の開始
+		// while文の開始
+		while (x < 1000) {
+			System.out.println("x:" + x);
+			x = x * 2;
+		}
 
-    }
-
+		// do ~ while
+		do {
+			System.out.println("y:" + y);
+			y = y * 2;
+		} while (y < 1000);
+	}
 }
