@@ -1,4 +1,3 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
     for•¶‚Æ”z—ñ‚Ì•W€–â‘è

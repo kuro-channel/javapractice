@@ -1,30 +1,33 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ƒƒ\ƒbƒh’è‹`‚ÌŠî–{–â‘è
+    ãƒ¡ã‚½ãƒƒãƒ‰å®šç¾©ã®åŸºæœ¬å•é¡Œ
 
-    mainƒƒ\ƒbƒh‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
-    mainƒƒ\ƒbƒh“à‚ÅŒÄ‚Ño‚µ‚Ä‚¢‚éA‘æˆêˆø”‚Ì•¶š—ñ‚ğ‘æ“ñˆø”‚Ì‰ñ”•ª
-    •\¦‚·‚édisplayƒƒ\ƒbƒh‚ğ’è‹`‚µ‚Ä‚­‚¾‚³‚¢B
+    mainãƒ¡ã‚½ãƒƒãƒ‰ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
+    mainãƒ¡ã‚½ãƒƒãƒ‰å†…ã§å‘¼ã³å‡ºã—ã¦ã„ã‚‹ã€ç¬¬ä¸€å¼•æ•°ã®æ–‡å­—åˆ—ã‚’ç¬¬äºŒå¼•æ•°ã®å›æ•°åˆ†
+    è¡¨ç¤ºã™ã‚‹displayãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®šç¾©ã—ã¦ãã ã•ã„ã€‚
 
-    yÀsŒ‹‰Êz
-    ƒeƒXƒg
-    ƒeƒXƒg
-    ƒeƒXƒg
-    ƒeƒXƒg
-    ƒeƒXƒg
+    ã€å®Ÿè¡Œçµæœã€‘
+    ãƒ†ã‚¹ãƒˆ
+    ãƒ†ã‚¹ãƒˆ
+    ãƒ†ã‚¹ãƒˆ
+    ãƒ†ã‚¹ãƒˆ
+    ãƒ†ã‚¹ãƒˆ
 
 */
-public class MethodBasicPractice{
+public class MethodBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // displayƒƒ\ƒbƒh‚ÌŒÄ‚Ño‚µ
-        display("ƒeƒXƒg", 5);
+		// displayãƒ¡ã‚½ãƒƒãƒ‰ã®å‘¼ã³å‡ºã—
+		display("ãƒ†ã‚¹ãƒˆ", 5);
+	}
 
-    }
+	// ã“ã“ã«displayãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®šç¾©ã—ã¦ãã ã•ã„
+	private static void display(String txt, int count) {
 
-    // ‚±‚±‚Édisplayƒƒ\ƒbƒh‚ğ’è‹`‚µ‚Ä‚­‚¾‚³‚¢
-
+		for (int i = 0; i < count; i++) {
+			System.out.println(txt);
+		}
+	}
 
 }

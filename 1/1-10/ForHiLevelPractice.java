@@ -14,6 +14,8 @@
     □■■■■■■■
     ■■■■■■■■■
 
+	□：4,3,2,1,0 -1ずつ
+	■：1,3,5,7,9 +2ずつ
  */
 public class ForHiLevelPractice {
 
@@ -24,6 +26,15 @@ public class ForHiLevelPractice {
 
 		// for文の開始
 		for (int i = 0; i < level; i++) {
+			for (int j = 0; j < level + i; j++) {
+
+				if (j < level - i - 1) {
+					System.out.print("□");
+				} else {
+					System.out.print("■");
+				}
+			}
+			System.out.println();
 		}
 	}
 }

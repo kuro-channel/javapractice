@@ -1,41 +1,30 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
-
-    “ñŽŸŒ³”z—ñ‚Æƒƒ\ƒbƒh’è‹`‚Ì–â‘è
-
-    mainƒƒ\ƒbƒh‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
-    mainƒƒ\ƒbƒh“à‚ÅŒÄ‚Ño‚µ‚Ä‚¢‚éA‘æˆêˆø”‚Ìint“ñŽŸŒ³”z—ñŒ^‚Ì’l‚Ì’†‚©‚çA
-    ‘æ“ñˆø”‚ÌintŒ^‚Ì’l‚ª‚¢‚­‚Â‘¶Ý‚·‚é‚©‚ðƒJƒEƒ“ƒg‚·‚écountƒƒ\ƒbƒh‚ð’è‹`
-    ‚µ‚Ä‚­‚¾‚³‚¢B
-
-    yŽÀsŒ‹‰Êz
-    1‚ÌŒÂ”F4
-    7‚ÌŒÂ”F3
-
+	äºŒæ¬¡å…ƒé…åˆ—ã¨ãƒ¡ã‚½ãƒƒãƒ‰å®šç¾©
 */
-public class DoubleArrayMethodPractice{
+public class DoubleArrayMethodPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // int“ñŽŸŒ³”z—ñ•Ï”‚ÌéŒ¾‚Æ‰Šú‰»
-        int[][] arr = {{1, 5, 8}, {2, 4, 7}, {1, 9, 3, 5}, {4, 2},
-                        {6, 1, 9, 4}, {7, 3, 8, 1}, {8, 4, 3, 9, 7}};
+		int[][] arr = { { 1, 5, 8 }, { 2, 4, 7 }, { 1, 9, 3, 5 }, { 4, 2 },
+				{ 6, 1, 9, 4 }, { 7, 3, 8, 1 }, { 8, 4, 3, 9, 7 } };
+		int target = 1;
+		System.out.println(target + "ã®å€‹æ•°:" + count(arr, target));
 
-        // ŒŸõ‚·‚é”’l•Ï”‚ÌéŒ¾‚Æ‰Šú‰»
-        int target = 1;
+		target = 7;
+		System.out.println(target + "ã®å€‹æ•°:" + count(arr, target));
 
-        // countƒƒ\ƒbƒh‚ÌŒÄ‚Ño‚µ
-        System.out.println(target + "‚ÌŒÂ”F" + count(arr, target));
+	}
 
-        // ŒŸõ‚·‚é”’l‚Ì•ÏX
-        target = 7;
-
-        // countƒƒ\ƒbƒh‚ÌŒÄ‚Ño‚µ
-        System.out.println(target + "‚ÌŒÂ”F" + count(arr, target));
-
-    }
-
-    // ‚±‚±‚Écountƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ä‚­‚¾‚³‚¢
-
+	private static int count(int[][] arr, int target) {
+		int count = 0;
+		for (int[] item : arr) {
+			for (int value : item) {
+				if (target == value) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 
 }

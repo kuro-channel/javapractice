@@ -1,4 +1,3 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
     配列とメソッド定義の問題３
@@ -12,20 +11,30 @@
     【実行結果】
     共通する数値の個数：4
 
-*/
-public class ArrayMethodPractice3{
+ */
+public class ArrayMethodPractice3 {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        int[] arr =  {13,90,10,79,101,25,123,38,5,16,64,55,17};
-        int[] arr2 = {38,118,26,17,41,53,10,88,92,102,67,22,55};
+		int[] arr = { 13, 90, 10, 79, 101, 25, 123, 38, 5, 16, 64, 55, 17 };
+		int[] arr2 = { 38, 118, 26, 17, 41, 53, 10, 88, 92, 102, 67, 22, 55 };
 
-        // commonメソッドの呼び出し
-        System.out.println("共通する数値の個数：" + common(arr, arr2));
+		// commonメソッドの呼び出し
+		System.out.println("共通する数値の個数：" + common(arr, arr2));
 
-    }
+	}
 
-    // ここにcommonメソッドを定義してください
-
-
+	// ここにcommonメソッドを定義してください
+	private static int common(int[] arr, int[] arr2) {
+		// 共通する数値の個数
+		int count = 0;
+		for (int item1: arr) {
+			for(int item2: arr2) {
+				if(item1 == item2) {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 }

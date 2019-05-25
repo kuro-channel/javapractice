@@ -1,30 +1,49 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
+    ãƒ¡ã‚½ãƒƒãƒ‰å®šç¾©ã®åŸºæœ¬å•é¡Œï¼“
 
-    ƒƒ\ƒbƒh’è‹`‚ÌŠî–{–â‘è‚R
+    mainãƒ¡ã‚½ãƒƒãƒ‰ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
+    mainãƒ¡ã‚½ãƒƒãƒ‰å†…ã§å‘¼ã³å‡ºã—ã¦ã„ã‚‹ã€intåž‹ã®ï¼“ã¤ã®å¼•æ•°ã®ä¸­ã§ã€ä¸€ç•ª
+    å°ã•ã„ã‚‚ã®ã®å€¤ã‚’æˆ»ã‚Šå€¤ã¨ã—ã¦è¿”ã™minãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
 
-    mainƒƒ\ƒbƒh‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
-    mainƒƒ\ƒbƒh“à‚ÅŒÄ‚Ño‚µ‚Ä‚¢‚éAintŒ^‚Ì‚R‚Â‚Ìˆø”‚Ì’†‚ÅAˆê”Ô
-    ¬‚³‚¢‚à‚Ì‚Ì’l‚ð–ß‚è’l‚Æ‚µ‚Ä•Ô‚·minƒƒ\ƒbƒh‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ã€å®Ÿè¡Œçµæžœã€‘
+    æ•´æ•°88,79,96ã®ä¸­ã§æœ€å°ã®å€¤ã¯79ã§ã™
 
-    yŽÀsŒ‹‰Êz
-    ®”88,79,96‚Ì’†‚ÅÅ¬‚Ì’l‚Í79‚Å‚·
-
-*/
+ */
 public class MethodBasicPractice3{
 
-    public static void main(String[] args){
+	public static void main(String[] args){
 
-        int x = 88;
-        int y = 79;
-        int z = 96;
+		int x = 8;
+		int y = 79;
+		int z = 1;
 
-        // minƒƒ\ƒbƒh‚ÌŒÄ‚Ño‚µ
-        System.out.print("®”" + x + "," + y + "," + z + "‚Ì’†‚ÅÅ¬‚Ì’l‚Í");
-        System.out.println(min(x, y, z) + "‚Å‚·");
+		// minãƒ¡ã‚½ãƒƒãƒ‰ã®å‘¼ã³å‡ºã—
+		System.out.print("æ•´æ•°" + x + "," + y + "," + z + "ã®ä¸­ã§æœ€å°ã®å€¤ã¯");
+		System.out.println(min(x, y, z) + "ã§ã™");
 
-    }
+	}
 
-     // ‚±‚±‚Éminƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ä‚­‚¾‚³‚¢
+	// ã“ã“ã«minãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®šç¾©ã—ã¦ãã ã•ã„
+	private static int min(int x, int y, int z) {
 
+		// æœ€å°å€¤ã«xã‚’ä»£å…¥
+		int minValue = x;
+		// minValueã¨yã‚’æ¯”è¼ƒ
+		if(minValue > y) {
+			minValue = y;
+		}
+		// minValueã¨yã‚’æ¯”è¼ƒ
+		if(minValue > z) {
+			minValue = z;
+		}
+		return minValue;
+//		if(x < y && x < z) {
+//			return x;
+//		}else if(y < z) {
+//			return y;
+//		}else {
+//			return z;
+//		}
+
+	}
 }

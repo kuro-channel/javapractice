@@ -1,39 +1,41 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    �z��̊�{���
+    配列の基本問題
 
-    ���̎w���ɏ]����ArrayBasicPractice�N���X��
-    main���\�b�h�����������Ă��������B
+    次の指示に従ってArrayBasicPracticeクラスの
+    mainメソッドを完成させてください。
 
-    �P�Dint�z��^�ϐ�arr��錾���Ă�������
-    �Q�D�v�f�����R��int�z��^�I�u�W�F�N�g�𐶐����Ă�������
-    �R�D�e�v�f�ɂ��ꂼ��25�A39�A43�������Ă�������
-    �S�Dfor���[�v���g�p���āA�e�v�f���o�͂��Ă�������
-       �i�o�͌`���͎��s���ʂ��Q�l�j
+    １．int配列型変数arrを宣言してください
+    ２．要素数が３つのint配列型オブジェクトを生成してください
+    ３．各要素にそれぞれ25、39、43を代入してください
+    ４．forループを使用して、各要素を出力してください
+       （出力形式は実行結果を参考）
 
-    �y���s���ʁz
-    1�Ԗڂ̒l��25�ł�
-    2�Ԗڂ̒l��39�ł�
-    3�Ԗڂ̒l��43�ł�
+    【実行結果】
+    1番目の値は25です
+    2番目の値は39です
+    3番目の値は43です
 
 */
-public class ArrayBasicPractice{
+public class ArrayBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // �P�Dint�z��^�ϐ��̐錾
+		// １．int配列型変数の宣言
+		int[] arr;
 
+		// ２．配列オブジェクトの生成
+		arr = new int[3];
 
-        // �Q�D�z��I�u�W�F�N�g�̐���
+		// ３．各要素の値を代入
+		arr[0] = 25;
+		arr[1] = 39;
+		arr[2] = 43;
 
-
-        // �R�D�e�v�f�̒l����
-
-
-        // �S�D�e�v�f�̒l��\��
-
-
-    }
+		// ４．各要素の値を表示
+		for (int i = 1; i <= arr.length; i++) {
+			System.out.println(i + "番目の値は" + arr[i - 1] + "です");
+		}
+	}
 
 }

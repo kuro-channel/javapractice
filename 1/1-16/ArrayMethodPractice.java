@@ -1,28 +1,34 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ”z—ñ‚Æƒƒ\ƒbƒh’è‹`‚Ì–â‘è
+    é…åˆ—ã¨ãƒ¡ã‚½ãƒƒãƒ‰å®šç¾©ã®å•é¡Œ
 
-    mainƒƒ\ƒbƒh‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
-    mainƒƒ\ƒbƒh“à‚ÅŒÄ‚Ño‚µ‚Ä‚¢‚éAˆø”‚Å“n‚Á‚Ä‚­‚éint”z—ñƒIƒuƒWƒFƒNƒg‚Ì
-    Še—v‘f‚Ì’l‚ğ‡Œv‚µ‚ÄA–ß‚è’l‚Æ‚µ‚Ä•Ô‚·sumƒƒ\ƒbƒh‚ğ’è‹`‚µ‚Ä‚­‚¾‚³‚¢B
+    mainãƒ¡ã‚½ãƒƒãƒ‰ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
+    mainãƒ¡ã‚½ãƒƒãƒ‰å†…ã§å‘¼ã³å‡ºã—ã¦ã„ã‚‹ã€å¼•æ•°ã§æ¸¡ã£ã¦ãã‚‹inté…åˆ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®
+    å„è¦ç´ ã®å€¤ã‚’åˆè¨ˆã—ã¦ã€æˆ»ã‚Šå€¤ã¨ã—ã¦è¿”ã™sumãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®šç¾©ã—ã¦ãã ã•ã„ã€‚
 
-    yÀsŒ‹‰Êz
-    ”z—ñ‚Ì‡Œv’lF28
+    ã€å®Ÿè¡Œçµæœã€‘
+    é…åˆ—ã®åˆè¨ˆå€¤ï¼š28
 
-*/
-public class ArrayMethodPractice{
+ */
+public class ArrayMethodPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+		int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
 
-        // sumƒƒ\ƒbƒh‚ÌŒÄ‚Ño‚µ
-        System.out.println("”z—ñ‚Ì‡Œv’lF" + sum(arr));
+		// sumãƒ¡ã‚½ãƒƒãƒ‰ã®å‘¼ã³å‡ºã—
+		System.out.println("é…åˆ—ã®åˆè¨ˆå€¤ï¼š" + sum(arr));
 
-    }
+	}
 
-    // ‚±‚±‚Ésumƒƒ\ƒbƒh‚ğ’è‹`‚µ‚Ä‚­‚¾‚³‚¢
-
+	// ã“ã“ã«sumãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®šç¾©ã—ã¦ãã ã•ã„
+	private static int sum(int[] arr) {
+		// åˆè¨ˆå€¤
+		int sum = 0;
+		for(int i= 0 ; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		return sum;
+	}
 
 }
