@@ -1,4 +1,6 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 /*
 
     文字列に関する重要な問題
@@ -30,15 +32,20 @@ public class StringImportantPractice{
     // 正しいパスワード定数
     private static final String PASSWORD = "XYZ";
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
 
         System.out.println("パスワードを入力してください");
 
         // 入力パスワード変数の宣言と初期化
-        String inputPassword = System.console().readLine();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String inputPassword = br.readLine();
 
         // ここからパスワードの一致を調べてください
-
+        if(PASSWORD.equals(inputPassword)) {
+        	System.out.println("パスワードが一致しました");
+        } else {
+        	System.out.println("パスワードが一致しません");
+        }
 
     }
 

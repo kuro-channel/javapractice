@@ -1,56 +1,73 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /*
 
-    ������Ɣz��̖��
+    文字列と配列の問題
 
-    ����A�p�[�g�ɏZ�ޏZ�l��\��apartment�Ƃ���String[][]�^�̕ϐ�������܂��B
-    �z��̂P�����ڂ̓A�p�[�g�̊K���A�Q�����ڂ͍�����\�����Ă��܂��B
-    �i�܂�apartment[0][1]�͂P�K�Q�����̏Z�l�̖��O�ɂȂ�܂��j
+    あるアパートに住む住人を表すapartmentというString[][]型の変数があります。
+    配列の１次元目はアパートの階数、２次元目は号室を表現しています。
+    （つまりapartment[0][1]は１階２号室の住人の名前になります）
 
-    �L�[�{�[�h���猟���������l�̖��O����͂��A�A�p�[�g�ɂ��̐l���Z��ł��邩��
-    �������Ă��������B
+    キーボードから検索したい人の名前を入力し、アパートにその人が住んでいるかを
+    調査してください。
 
-    System.console().readLine()�̋L�q�́A�L�[�{�[�h���當����̓��͂�
-    �󂯕t������̂ŁA���̒l��String�^�ϐ�name�����������Ă��܂��B
+    System.console().readLine()の記述は、キーボードから文字列の入力を
+    受け付けるもので、その値でString型変数nameを初期化しています。
 
-    ���������ꍇ�́A�u���l�ڂ́�������́A���K�́������ɏZ��ł��܂��v�ƕ\��
-    ���Ă��������B�|�C���g�͓����̕����Z��ł���ꍇ���l�����邱�Ƃł��B
-    �܂��A������Ȃ������ꍇ�́u��������͂��̃A�p�[�g�ɂ͏Z��ł��܂���v��
-    �\�����Ă��������B
+    見つかった場合は、「○人目の○○さんは、○階の○号室に住んでいます」と表示
+    してください。ポイントは同名の方が住んでいる場合を考慮することです。
+    また、見つからなかった場合は「○○さんはこのアパートには住んでいません」と
+    表示してください。
 
-    �y���s���ʁz
-    �������閼�O����͂��Ă�������
-    �㓡
-    1�l�ڂ̌㓡����́A1�K��1�����ɏZ��ł��܂�
-    2�l�ڂ̌㓡����́A3�K��4�����ɏZ��ł��܂�
-    3�l�ڂ̌㓡����́A4�K��3�����ɏZ��ł��܂�
+    【実行結果】
+    検索する名前を入力してください
+    後藤
+    1人目の後藤さんは、1階の1号室に住んでいます
+    2人目の後藤さんは、3階の4号室に住んでいます
+    3人目の後藤さんは、4階の3号室に住んでいます
 
-    �y���s���ʁz
-    ��������l����͂��Ă�������
-    ���
-    ��˂���͂��̃A�p�[�g�ɂ͏Z��ł��܂���
+    【実行結果】
+    検索する人を入力してください
+    上戸
+    上戸さんはこのアパートには住んでいません
 
-*/
-public class StringArrayPractice{
+ */
+public class StringArrayPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) throws IOException {
 
-        // �A�p�[�g�ɏZ�ޏZ�l�Q�����z��ϐ�
-        String[][] apartment = {
-            {"�㓡", "���", "�ΐ�", "�g�V", "���{"},
-            {"�T��", "����", "����"},
-            {"�ΐ�", "���{", "�ۓc", "�㓡"},
-            {"�΍�", "���c", "�㓡"}
-        };
+		// アパートに住む住人２次元配列変数
+		String[][] apartment = {
+				{ "後藤", "矢口", "石川", "吉澤", "藤本" },
+				{ "亀井", "小川", "紺野" },
+				{ "石川", "安倍", "保田", "後藤" },
+				{ "石黒", "福田", "後藤" }
+		};
 
-        System.out.println("�������閼�O����͂��Ă�������");
+		System.out.println("検索する名前を入力してください");
 
-        // �������閼�O�ϐ��̐錾�ƃL�[�{�[�h���͒l�ɂ�鏉����
-        String name = System.console().readLine();
+		// 検索する名前変数の宣言とキーボード入力値による初期化
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String name = br.readLine();
 
-        // ��������R�[�f�B���O���Ă�������
+		// ここからコーディングしてください
+		// 階のループ
+		int count = 0;
+		for (int i = 0; i < apartment.length; i++) {
+			// 号室のループ
+			for (int j = 0; j < apartment[i].length; j++) {
+				if (apartment[i][j].equals(name)) {
+					System.out.println(++count + "人目の" + name + "さんは、" + (i + 1) + "階の" + (j + 1) + "号室に住んでいます");
+					count++;
+				}
+			}
+		}
+		if (count == 0) {
+			System.out.println(name + "さんはこのアパートには住んでいません");
+		}
 
-
-    }
+	}
 
 }
