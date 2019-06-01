@@ -1,57 +1,56 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    �N���X�쐬�̕W�����
+    クラス作成の標準問題
 
-    �l��\��Person�N���X���쐬���Ă��������B
-    Person�N���X���g�p����ClassNormalPractice�N���X��
-    main���\�b�h�͂��łɊ������Ă��܂��B�i�ύX���Ȃ��ł��������j
+    人を表すPersonクラスを作成してください。
+    Personクラスを使用するClassNormalPracticeクラスの
+    mainメソッドはすでに完成しています。（変更しないでください）
 
-    [Person�N���X]
-    Person�N���X�ɂ͎��̂Q�̃C���X�^���X�t�B�[���h������܂��B
+    [Personクラス]
+    Personクラスには次の２つのインスタンスフィールドがあります。
 
-    �P�D������\��name (String�^)
-    �Q�D�N���\��age (int�^)
+    １．氏名を表すname (String型)
+    ２．年齢を表すage (int型)
 
-    Person�N���X�ɂ͂T�̃C���X�^���X���\�b�h���K�v�ł��B
+    Personクラスには５つのインスタンスメソッドが必要です。
 
-    �P�D�����ƔN����I�u�W�F�N�g�ɃZ�b�g���邽�߂�setData���\�b�h
-    �Q�D�N��̏����擾���邽�߂�getAge���\�b�h
-    �R�D���O�̏����擾���邽�߂�getName���\�b�h
-    �S�D���ȏЉ������introduce���\�b�h
-    �T�D�����œn���Ă������̐l�ƔN����r����compare���\�b�h
+    １．氏名と年齢をオブジェクトにセットするためのsetDataメソッド
+    ２．年齢の情報を取得するためのgetAgeメソッド
+    ３．名前の情報を取得するためのgetNameメソッド
+    ４．自己紹介をするintroduceメソッド
+    ５．引数で渡ってきた他の人と年齢を比較するcompareメソッド
 
 
-    �y���s���ʁz
-    �킽���̖��O�͑哇�A�N���30�΂ł��B
-    �킽���̖��O�͑���A�N���30�΂ł��B
-    �킽���̖��O�͍���A�N���32�΂ł��B
+    【実行結果】
+    わたしの名前は大島、年齢は30歳です。
+    わたしの名前は村上、年齢は30歳です。
+    わたしの名前は黒沢、年齢は32歳です。
 
-    �킽�����哇�́A���コ��Ɠ����N��ł��B
-    �킽�����哇�́A���򂳂���2�ΔN���ł��B
-    �킽��������́A���コ����2�ΔN��ł��B
+    わたくし大島は、村上さんと同じ年齢です。
+    わたくし大島は、黒沢さんより2歳年下です。
+    わたくし黒沢は、村上さんより2歳年上です。
 
 */
 public class ClassNormalPractice{
 
     public static void main(String[] args){
 
-        // Person�N���X�̃I�u�W�F�N�g���쐬
+        // Personクラスのオブジェクトを作成
         Person[] persons = { new Person(), new Person(), new Person()};
 
-        // Person�I�u�W�F�N�g�Ɏ����ƔN����Z�b�g
-        persons[0].setData("�哇", 30);
-        persons[1].setData("����", 30);
-        persons[2].setData("����", 32);
+        // Personオブジェクトに氏名と年齢をセット
+        persons[0].setData("大島", 30);
+        persons[1].setData("村上", 30);
+        persons[2].setData("黒沢", 32);
 
-        // ���ȏЉ�
+        // 自己紹介
         for(int i = 0; i < persons.length; i++){
             persons[i].introduce();
         }
 
         System.out.println();
 
-        // �N����`�F�b�N
+        // 年齢差をチェック
         persons[0].compare(persons[1]);
         persons[0].compare(persons[2]);
         persons[2].compare(persons[1]);
@@ -59,6 +58,3 @@ public class ClassNormalPractice{
     }
 
 }
-
-// ������Person�N���X���쐬���Ă�������
-

@@ -1,45 +1,41 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    �N���X�쐬�̏����̖��
+    クラス作成の初歩の問題
 
-    �]�ƈ���\��Employee�N���X���쐬���Ă��������B
-    Employee�N���X�𗘗p����ClassFirstPractice�N���X��main���\�b�h��
-    ���łɊ������Ă��܂��B(�ύX���Ȃ��ł�������)
+    従業員を表すEmployeeクラスを作成してください。
+    Employeeクラスを利用するClassFirstPracticeクラスのmainメソッドは
+    すでに完成しています。(変更しないでください)
 
-    [Employee�N���X]
-    Employee�N���X�̓t�B�[���h�Ƃ��ĎЈ��ԍ�(int�^)�ƎЈ���(String�^)��
-    �Q�̏���ێ����܂��B
+    [Employeeクラス]
+    Employeeクラスはフィールドとして社員番号(int型)と社員名(String型)の
+    ２つの情報を保持します。
 
-    Employee�N���X�ɂ͎��̂R�̃��\�b�h���K�v�ł��B
-    �P�D�Ј��ԍ��ƎЈ������I�u�W�F�N�g�ɃZ�b�g���邽�߂�setData���\�b�h
-    �Q�D�Ј��ԍ��̏����I�u�W�F�N�g����擾���邽�߂�getId���\�b�h
-    �R�D�Ј����̏����I�u�W�F�N�g����擾���邽�߂�getName���\�b�h
+    Employeeクラスには次の３つのメソッドが必要です。
+    １．社員番号と社員名をオブジェクトにセットするためのsetDataメソッド
+    ２．社員番号の情報をオブジェクトから取得するためのgetIdメソッド
+    ３．社員名の情報をオブジェクトから取得するためのgetNameメソッド
 
-    �y���s���ʁz
-    �Ј��ԍ��F1234
-    �Ј����F�R�c
+    【実行結果】
+    社員番号：1234
+    社員名：山田
 
 */
-public class ClassFirstPractice{
+public class ClassFirstPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // Employee�N���X�̃I�u�W�F�N�g���쐬
-        Employee employee = new Employee();
+		// Employeeクラスのオブジェクトを作成
+		Employee employee = new Employee();
 
-        // Employee�I�u�W�F�N�g�ɎЈ��ԍ��ƎЈ������Z�b�g
-        employee.setData(1234, "�R�c");
+		// Employeeオブジェクトに社員番号と社員名をセット
+		employee.setData(1234, "山田");
 
-        // Employee�I�u�W�F�N�g�̎Ј��ԍ����o��
-        System.out.println("�Ј��ԍ��F" + employee.getId());
+		// Employeeオブジェクトの社員番号を出力
+		System.out.println("社員番号：" + employee.getId());
 
-        // Employee�I�u�W�F�N�g�̎Ј������o��
-        System.out.println("�Ј����F" + employee.getName());
+		// Employeeオブジェクトの社員名を出力
+		System.out.println("社員名：" + employee.getName());
 
-    }
+	}
 
 }
-
-// ������Employee�N���X���쐬���Ă�������
-

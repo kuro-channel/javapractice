@@ -1,63 +1,60 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ƒNƒ‰ƒXì¬‚ÌŠî–{–â‘è
+    ã‚¯ãƒ©ã‚¹ä½œæˆã®åŸºæœ¬å•é¡Œ
 
-    ƒyƒbƒg‚ğ•\‚·PetƒNƒ‰ƒX‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢B
-    PetƒNƒ‰ƒX‚ğg—p‚·‚éClassBasicPracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh‚Í
-    ‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ãƒšãƒƒãƒˆã‚’è¡¨ã™Petã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
+    Petã‚¯ãƒ©ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹ClassBasicPracticeã‚¯ãƒ©ã‚¹ã®mainãƒ¡ã‚½ãƒƒãƒ‰ã¯
+    ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    [PetƒNƒ‰ƒX]
-    PetƒNƒ‰ƒX‚ÍŸ‚Ì‚S‚Â‚ÌprivateƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh‚ğ‚¿‚Ü‚·B
+    [Petã‚¯ãƒ©ã‚¹]
+    Petã‚¯ãƒ©ã‚¹ã¯æ¬¡ã®ï¼”ã¤ã®privateã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’æŒã¡ã¾ã™ã€‚
 
-    ‚PD“®•¨‚Ìí—Ş‚ğ•Û‚·‚é‚½‚ß‚ÌtypeƒtƒB[ƒ‹ƒhiStringŒ^j
-    ‚QD–¼‘O‚ğ•Û‚·‚é‚½‚ß‚ÌnameƒtƒB[ƒ‹ƒhiStringŒ^j
-    ‚RD”N—î‚ğ•Û‚·‚é‚½‚ß‚ÌageƒtƒB[ƒ‹ƒhibyteŒ^j
-    ‚SD«•Ê‚ğ•Û‚·‚é‚½‚ß‚ÌgenderƒtƒB[ƒ‹ƒhibooleanŒ^ true:ƒƒX false:ƒIƒXj
+    ï¼‘ï¼å‹•ç‰©ã®ç¨®é¡ã‚’ä¿æŒã™ã‚‹ãŸã‚ã®typeãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ï¼ˆStringå‹ï¼‰
+    ï¼’ï¼åå‰ã‚’ä¿æŒã™ã‚‹ãŸã‚ã®nameãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ï¼ˆStringå‹ï¼‰
+    ï¼“ï¼å¹´é½¢ã‚’ä¿æŒã™ã‚‹ãŸã‚ã®ageãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ï¼ˆbyteå‹ï¼‰
+    ï¼”ï¼æ€§åˆ¥ã‚’ä¿æŒã™ã‚‹ãŸã‚ã®genderãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ï¼ˆbooleanå‹ true:ãƒ¡ã‚¹ false:ã‚ªã‚¹ï¼‰
 
-    ‚Ü‚½APetƒNƒ‰ƒX‚ÍŸ‚Ì‚T‚Â‚Ìpublicƒƒ\ƒbƒh‚ğ‚¿‚Ü‚·B
+    ã¾ãŸã€Petã‚¯ãƒ©ã‚¹ã¯æ¬¡ã®ï¼•ã¤ã®publicãƒ¡ã‚½ãƒƒãƒ‰ã‚’æŒã¡ã¾ã™ã€‚
 
-    ‚PD“®•¨‚Ìí—Ş‚ğİ’è‚·‚é‚½‚ß‚ÌsetTypeƒƒ\ƒbƒh
-    ‚QD–¼‘O‚ğİ’è‚·‚é‚½‚ß‚ÌsetNameƒƒ\ƒbƒh
-    ‚RD”N—î‚ğİ’è‚·‚é‚½‚ß‚ÌsetAgeƒƒ\ƒbƒh
-    ‚SD«•Ê‚ğİ’è‚·‚é‚½‚ß‚ÌsetGenderƒƒ\ƒbƒh
-    ‚TDĞ‰î•¶‚ğæ“¾‚·‚é‚½‚ß‚ÌgetIntroductionƒƒ\ƒbƒh
-      (Ğ‰î•¶‚Ì“à—e‚Í‰º‹L‚ÌÀsŒ‹‰Ê‚ğQl‚É‚µ‚Ä‚­‚¾‚³‚¢)
+    ï¼‘ï¼å‹•ç‰©ã®ç¨®é¡ã‚’è¨­å®šã™ã‚‹ãŸã‚ã®setTypeãƒ¡ã‚½ãƒƒãƒ‰
+    ï¼’ï¼åå‰ã‚’è¨­å®šã™ã‚‹ãŸã‚ã®setNameãƒ¡ã‚½ãƒƒãƒ‰
+    ï¼“ï¼å¹´é½¢ã‚’è¨­å®šã™ã‚‹ãŸã‚ã®setAgeãƒ¡ã‚½ãƒƒãƒ‰
+    ï¼”ï¼æ€§åˆ¥ã‚’è¨­å®šã™ã‚‹ãŸã‚ã®setGenderãƒ¡ã‚½ãƒƒãƒ‰
+    ï¼•ï¼ç´¹ä»‹æ–‡ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®getIntroductionãƒ¡ã‚½ãƒƒãƒ‰
+      (ç´¹ä»‹æ–‡ã®å†…å®¹ã¯ä¸‹è¨˜ã®å®Ÿè¡Œçµæœã‚’å‚è€ƒã«ã—ã¦ãã ã•ã„)
 
-    yÀsŒ‹‰Êz
-    Œ¢‚ÌƒRƒ^ƒ[‚ÍƒIƒX‚Å4Î‚Å‚·B
-    ”L‚Ìƒ~[‚ÍƒƒX‚Å2Î‚Å‚·B
+    ã€å®Ÿè¡Œçµæœã€‘
+    çŠ¬ã®ã‚³ã‚¿ãƒ­ãƒ¼ã¯ã‚ªã‚¹ã§4æ­³ã§ã™ã€‚
+    çŒ«ã®ãƒŸãƒ¼ã¯ãƒ¡ã‚¹ã§2æ­³ã§ã™ã€‚
 
-*/
+ */
 public class ClassBasicPractice{
 
-    public static void main(String[] args){
+	public static void main(String[] args){
 
-        // 1•C–Ú‚ÌƒyƒbƒgƒIƒuƒWƒFƒNƒg‚Ì¶¬
-        Pet pet1 = new Pet();
+		// 1åŒ¹ç›®ã®ãƒšãƒƒãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆ
+		Pet pet1 = new Pet();
 
-        // 1•C–Ú‚Ìƒyƒbƒg‚Ìƒf[ƒ^‚ğİ’è
-        pet1.setType("Œ¢");
-        pet1.setName("ƒRƒ^ƒ[");
-        pet1.setAge((byte)4);
-        pet1.setGender(false);
+		// 1åŒ¹ç›®ã®ãƒšãƒƒãƒˆã®ãƒ‡ãƒ¼ã‚¿ã‚’è¨­å®š
+		pet1.setType("çŠ¬");
+		pet1.setName("ã‚³ã‚¿ãƒ­ãƒ¼");
+		pet1.setAge((byte)4);
+		pet1.setGender(false);
 
-        // 2•C–Ú‚ÌƒyƒbƒgƒIƒuƒWƒFƒNƒg‚Ì¶¬
-        Pet pet2 = new Pet();
+		// 2åŒ¹ç›®ã®ãƒšãƒƒãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆ
+		Pet pet2 = new Pet();
 
-        // 2•C–Ú‚Ìƒyƒbƒg‚Ìƒf[ƒ^‚ğİ’è
-        pet2.setType("”L");
-        pet2.setName("ƒ~[");
-        pet2.setAge((byte)2);
-        pet2.setGender(true);
+		// 2åŒ¹ç›®ã®ãƒšãƒƒãƒˆã®ãƒ‡ãƒ¼ã‚¿ã‚’è¨­å®š
+		pet2.setType("çŒ«");
+		pet2.setName("ãƒŸãƒ¼");
+		pet2.setAge((byte)2);
+		pet2.setGender(true);
 
-        // 2•C‚Ìƒyƒbƒg‚ÌĞ‰î•¶‚ğæ“¾‚µA•\¦‚·‚é
-        System.out.println(pet1.getIntroduction());
-        System.out.println(pet2.getIntroduction());
+		// 2åŒ¹ã®ãƒšãƒƒãƒˆã®ç´¹ä»‹æ–‡ã‚’å–å¾—ã—ã€è¡¨ç¤ºã™ã‚‹
+		System.out.println(pet1.getIntroduction());
+		System.out.println(pet2.getIntroduction());
 
-    }
+	}
 
 }
-
-// ‚±‚±‚ÉPetƒNƒ‰ƒX‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢
 
