@@ -1,68 +1,67 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ƒI[ƒo[ƒ‰ƒCƒh‚ÉŠÖ‚·‚éŠî–{–â‘è
+    ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã«é–¢ã™ã‚‹åŸºæœ¬å•é¡Œ
 
-    –ÚŠo‚Ü‚µŽžŒv‚ð•\‚·AlarmClockƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ç›®è¦šã¾ã—æ™‚è¨ˆã‚’è¡¨ã™AlarmClockã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
 
-    •’Ê‚ÌŽžŒv‚ð•\‚·ClockƒNƒ‰ƒX‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·B
-    i•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    æ™®é€šã®æ™‚è¨ˆã‚’è¡¨ã™Clockã‚¯ãƒ©ã‚¹ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚
+    ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    ‚Ü‚½AAlarmClockƒNƒ‰ƒX‚ðŽg—p‚·‚éOverrideBasicPracticeƒNƒ‰ƒX
-    ‚Ìmainƒƒ\ƒbƒh‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ã¾ãŸã€AlarmClockã‚¯ãƒ©ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹OverrideBasicPracticeã‚¯ãƒ©ã‚¹
+    ã®mainãƒ¡ã‚½ãƒƒãƒ‰ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    [AlarmClockƒNƒ‰ƒX]
-    ‚PDClockƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [AlarmClockã‚¯ãƒ©ã‚¹]
+    ï¼‘ï¼ŽClockã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¾ã™ã€‚
 
-    ‚QDƒX[ƒp[ƒNƒ‰ƒX‚©‚çŽó‚¯Œp‚¢‚¾‚R‚Â‚ÌƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh
-        (ŽžE•ªE•b)‚Ì‚Ù‚©‚ÉAƒAƒ‰[ƒ€Žž(ŽžE•ª)‚ð•\‚·alarmHour‚Æ
-        alarmMinuteƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒhiintŒ^j‚ð’è‹`‚µ‚Ü‚·B
+    ï¼’ï¼Žã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‹ã‚‰å—ã‘ç¶™ã„ã ï¼“ã¤ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
+        (æ™‚ãƒ»åˆ†ãƒ»ç§’)ã®ã»ã‹ã«ã€ã‚¢ãƒ©ãƒ¼ãƒ æ™‚åˆ»(æ™‚ãƒ»åˆ†)ã‚’è¡¨ã™alarmHourã¨
+        alarmMinuteã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ï¼ˆintåž‹ï¼‰ã‚’å®šç¾©ã—ã¾ã™ã€‚
 
-    ‚RD‚T‚Â‚Ìˆø”‚Ì’l‚ðŽó‚¯Žæ‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B
-        ‚»‚Ì‚¤‚¿ŽžE•ªE•b‚Ì‚R‚Â‚Ì’l‚ÍAƒX[ƒp[ƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-        ‚ð—˜—p‚µ‚ÄƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh‚ÉŽó‚¯“n‚µ‚Ü‚·B
+    ï¼“ï¼Žï¼•ã¤ã®å¼•æ•°ã®å€¤ã‚’å—ã‘å–ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’å®šç¾©ã—ã¾ã™ã€‚
+        ãã®ã†ã¡æ™‚ãƒ»åˆ†ãƒ»ç§’ã®ï¼“ã¤ã®å€¤ã¯ã€ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+        ã‚’åˆ©ç”¨ã—ã¦ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã«å—ã‘æ¸¡ã—ã¾ã™ã€‚
 
-    ‚SDƒX[ƒp[ƒNƒ‰ƒX‚É‚ ‚éshowDataƒCƒ“ƒXƒ^ƒ“ƒXƒƒ\ƒbƒh‚ð“KØ‚ÉƒI[ƒo[ƒ‰ƒCƒh
-        ‚µ‚Ü‚·Bo—Í“à—e‚ÍA‰º‹LŽÀsŒ‹‰Ê‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼”ï¼Žã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã«ã‚ã‚‹showDataã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ¡ã‚½ãƒƒãƒ‰ã‚’é©åˆ‡ã«ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰
+        ã—ã¾ã™ã€‚å‡ºåŠ›å†…å®¹ã¯ã€ä¸‹è¨˜å®Ÿè¡Œçµæžœã‚’å‚è€ƒã«ã—ã¦ãã ã•ã„ã€‚
 
-    yŽÀsŒ‹‰Êz
-    ‚½‚¾‚¢‚Ü‚ÌŽžF10Žž15•ª30•b
+    ã€å®Ÿè¡Œçµæžœã€‘
+    ãŸã ã„ã¾ã®æ™‚åˆ»ï¼š10æ™‚15åˆ†30ç§’
 
-    ‚½‚¾‚¢‚Ü‚ÌŽžF15Žž45•ª20•b
-    ƒAƒ‰[ƒ€Ý’èŽžF6Žž30•ª
+    ãŸã ã„ã¾ã®æ™‚åˆ»ï¼š15æ™‚45åˆ†20ç§’
+    ã‚¢ãƒ©ãƒ¼ãƒ è¨­å®šæ™‚åˆ»ï¼š6æ™‚30åˆ†
 
 */
 public class OverrideBasicPractice{
 
     public static void main(String[] args){
 
-        // •’Ê‚ÌŽžŒvƒIƒuƒWƒFƒNƒg‚Ì¶¬
+        // æ™®é€šã®æ™‚è¨ˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆ
         Clock c1 = new Clock(10, 15, 30);
 
-        // •’Ê‚ÌŽžŒv‚Ìî•ñ‚Ì•\Ž¦
+        // æ™®é€šã®æ™‚è¨ˆã®æƒ…å ±ã®è¡¨ç¤º
         c1.showData();
 
         System.out.println();
 
-        // –ÚŠo‚Ü‚µŽžŒvƒIƒuƒWƒFƒNƒg‚Ì¶¬
+        // ç›®è¦šã¾ã—æ™‚è¨ˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆ
         AlarmClock c2 = new AlarmClock(15, 45, 20, 6, 30);
 
-        // –ÚŠo‚Ü‚µŽžŒv‚Ìî•ñ‚Ì•\Ž¦
+        // ç›®è¦šã¾ã—æ™‚è¨ˆã®æƒ…å ±ã®è¡¨ç¤º
         c2.showData();
 
     }
 
 }
 
-// ŽžŒvƒNƒ‰ƒX
+// æ™‚è¨ˆã‚¯ãƒ©ã‚¹
 class Clock{
 
-    // Žž•ª•b
+    // æ™‚åˆ†ç§’
     private int hour;
     private int minute;
     private int second;
 
-    // ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    // ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     public Clock(int hour, int minute, int second){
 
         this.hour = hour;
@@ -71,12 +70,12 @@ class Clock{
 
     }
 
-    // î•ñ•\Ž¦ƒƒ\ƒbƒh
+    // æƒ…å ±è¡¨ç¤ºãƒ¡ã‚½ãƒƒãƒ‰
     public void showData(){
-        System.out.println("‚½‚¾‚¢‚Ü‚ÌŽžF" + hour + "Žž" + minute + "•ª" + second + "•b");
+        System.out.println("ãŸã ã„ã¾ã®æ™‚åˆ»ï¼š" + hour + "æ™‚" + minute + "åˆ†" + second + "ç§’");
     }
 
 }
 
-// ‚±‚±‚ÉAlarmClockƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ã“ã“ã«AlarmClockã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
 

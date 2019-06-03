@@ -1,133 +1,133 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    —áŠO‚ÆŒp³‚ÉŠÖ‚·‚é–â‘è
+    ï¿½ï¿½Oï¿½ÆŒpï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    ŽdŽ–‚Ìƒgƒ‰ƒuƒ‹‚ð•\Œ»‚·‚éƒgƒ‰ƒuƒ‹—áŠOƒNƒ‰ƒXTroubleException
-    ‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·B‚Ü‚½AŽÐˆõ‚ð•\Œ»‚·‚éŽÐˆõ’ŠÛƒNƒ‰ƒX
-    Employee‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ï¿½dï¿½ï¿½ï¿½Ìƒgï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½Oï¿½Nï¿½ï¿½ï¿½XTroubleException
+    ï¿½Í‚ï¿½ï¿½Å‚ÉŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½Ü‚ï¿½ï¿½Aï¿½Ðˆï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðˆï¿½ï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½X
+    Employeeï¿½Í‚ï¿½ï¿½Å‚ÉŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½iï¿½ÏXï¿½ï¿½ï¿½È‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½j
 
-    ‚³‚ç‚ÉAExceptionInheritancePracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh‚Í
-    ‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ï¿½ï¿½ï¿½ï¿½ÉAExceptionInheritancePracticeï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½mainï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½
+    ï¿½ï¿½ï¿½Å‚ÉŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½iï¿½ÏXï¿½ï¿½ï¿½È‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½j
 
-    ŽŸ‚ÌŽwŽ¦‚É]‚Á‚ÄAãŽi‚ð•\Œ»‚·‚éBossƒNƒ‰ƒX‚ÆA•”‰º‚ð•\Œ»‚·‚é
-    SubordinateƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½ï¿½ï¿½ÌŽwï¿½ï¿½ï¿½É]ï¿½ï¿½ï¿½ÄAï¿½ï¿½iï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bossï¿½Nï¿½ï¿½ï¿½Xï¿½ÆAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    Subordinateï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    [BossƒNƒ‰ƒX]
-    ‚PDEmployeeƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [Bossï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½DEmployeeï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QD’¼‘®‚Ì•”‰º‚ð•\‚·SubordinateŒ^‚ÌƒtƒB[ƒ‹ƒhsub‚ð’è‹`‚µ‚Ü‚·B 
+    ï¿½Qï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½Subordinateï¿½^ï¿½Ìƒtï¿½Bï¿½[ï¿½ï¿½ï¿½hsubï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚RDŽÐˆõ–¼iStringŒ^j‚Æ•”‰ºƒIƒuƒWƒFƒNƒgiSubordinateŒ^j‚ðˆø”
-      ‚Æ‚µ‚ÄŽó‚¯Žæ‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B
-      ƒX[ƒp[ƒNƒ‰ƒXEmployee‚ÌnameƒtƒB[ƒ‹ƒh‚ÉŽÐˆõ–¼‚ðÝ’è‚µ‚Ä‚­‚¾‚³‚¢B
-      ‚Ü‚½ABossƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒhsub‚Éˆø”‚Ì•”‰ºƒIƒuƒWƒFƒNƒg
-      ‚ðÝ’è‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Rï¿½Dï¿½Ðˆï¿½ï¿½ï¿½ï¿½iStringï¿½^ï¿½jï¿½Æ•ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½iSubordinateï¿½^ï¿½jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      ï¿½Æ‚ï¿½ï¿½ÄŽó‚¯Žï¿½ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+      ï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½XEmployeeï¿½ï¿½nameï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½ÉŽÐˆï¿½ï¿½ï¿½ï¿½ï¿½Ý’è‚µï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+      ï¿½Ü‚ï¿½ï¿½ABossï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hsubï¿½Éˆï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
+      ï¿½ï¿½Ý’è‚µï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚SD“­‚­workƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ä‚­‚¾‚³‚¢B
-        ‚½‚¾‚µAuthrows TroubleExceptionv‚Ì‹Lq‚Í—v‚è‚Ü‚¹‚ñB
-        (ãŽi‚Íƒgƒ‰ƒuƒ‹‚ÌÓ”C‚ðŽ©•ª‚ÅŽæ‚é‚±‚Æ‚ª‚Å‚«‚é‚©‚ç‚Å‚·)
+    ï¿½Sï¿½Dï¿½ï¿½ï¿½ï¿½workï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½uthrows TroubleExceptionï¿½vï¿½Ì‹Lï¿½qï¿½Í—vï¿½ï¿½Ü‚ï¿½ï¿½ï¿½B
+        (ï¿½ï¿½iï¿½Íƒgï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ÌÓ”Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅŽï¿½é‚±ï¿½Æ‚ï¿½ï¿½Å‚ï¿½ï¿½é‚©ï¿½ï¿½Å‚ï¿½)
 
-        ŽÀs“à—e‚Í
-       u‚³‚ÄA¡‰ñ‚Ì››‚Í•”‰º‚Ì¢¢‚É”C‚¹‚æ‚¤Iv‚Æo—Í‚µA•”‰ºƒIƒuƒWƒFƒNƒg
-        ‚Ìworkƒƒ\ƒbƒh‚ðŽÀs‚µ‚Ü‚·B‚½‚¾‚µA—áŠOˆ—‚ª•K{‚È‚Ì‚Å’ˆÓ‚µ‚Ü‚µ‚å‚¤B
+        ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½eï¿½ï¿½
+       ï¿½uï¿½ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½É”Cï¿½ï¿½ï¿½æ‚¤ï¿½Iï¿½vï¿½Æoï¿½Í‚ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
+        ï¿½ï¿½workï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½{ï¿½È‚Ì‚Å’ï¿½ï¿½Ó‚ï¿½ï¿½Ü‚ï¿½ï¿½å‚¤ï¿½B
 
-        •”‰º‚ªƒgƒ‰ƒuƒ‹‚ð‹N‚±‚µ‚½ê‡‚ÍcatchƒuƒƒbƒN‚ÅŽÓß‚µ‚Ü‚·B“à—e‚Í
-       u\‚µ–ó‚²‚´‚¢‚Ü‚¹‚ñcv
-       u¢¢‚ª‘å•ÏŽ¸—ç’v‚µ‚Ü‚µ‚½cv
-       uãŽi‚Ì‚í‚½‚­‚µ  ‚ÌŠÄ“Â•ss‚«“Í‚«‚Å‚²‚´‚¢‚Ü‚·cv
-       ‚Æo—Í‚µ‚Ü‚·B
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½catchï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ÅŽÓß‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½eï¿½ï¿½
+       ï¿½uï¿½\ï¿½ï¿½ï¿½ó‚²‚ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½cï¿½v
+       ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏŽï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½cï¿½v
+       ï¿½uï¿½ï¿½iï¿½Ì‚í‚½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌŠÄ“Â•sï¿½sï¿½ï¿½ï¿½Í‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½cï¿½v
+       ï¿½Æoï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-       •”‰º‚ªƒgƒ‰ƒuƒ‹‚ð‹N‚±‚³‚È‚©‚Á‚½ê‡‚ÍA
-      u¢¢ŒNA‚æ‚­‚â‚Á‚½Iv
-      u‚³‚·‚ªŽ„‚Ì‰E˜r‚¾Iv
-       ‚Æo—Í‚µ‚Ü‚·B
+       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ÍA
+      ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Aï¿½æ‚­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½v
+      ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‰Eï¿½rï¿½ï¿½ï¿½Iï¿½v
+       ï¿½Æoï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    [SubordinateƒNƒ‰ƒX]
-    ‚PDEmployeeƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [Subordinateï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½DEmployeeï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QDŽÐˆõ–¼iStringŒ^j‚ðˆø”‚Æ‚µ‚ÄŽó‚¯Žæ‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B
-      ƒX[ƒp[ƒNƒ‰ƒXEmployee‚ÌnameƒtƒB[ƒ‹ƒh‚É’l‚ðÝ’è‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Qï¿½Dï¿½Ðˆï¿½ï¿½ï¿½ï¿½iStringï¿½^ï¿½jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄŽó‚¯Žï¿½ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+      ï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½XEmployeeï¿½ï¿½nameï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½É’lï¿½ï¿½Ý’è‚µï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚RD–¼‘O‚ðŽæ“¾‚·‚égetNameƒƒ\ƒbƒhiˆø”‚È‚µA–ß‚è’lStringŒ^j‚ð
-        ’è‹`‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Rï¿½Dï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½getNameï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½iï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Aï¿½ß‚ï¿½lStringï¿½^ï¿½jï¿½ï¿½
+        ï¿½ï¿½`ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚SD“­‚­workƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ü‚·B
-      uthrows TroubleExceptionv‚Ì‹Lq‚à–Y‚ê‚È‚¢‚æ‚¤‚É‚µ‚Ä‚­‚¾‚³‚¢B
-       i•”‰º‚Íƒgƒ‰ƒuƒ‹‚ÌÓ”C‚ðŽ©•ª‚ÅŽæ‚ê‚È‚¢‚©‚ç‚Å‚·j
+    ï¿½Sï¿½Dï¿½ï¿½ï¿½ï¿½workï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+      ï¿½uthrows TroubleExceptionï¿½vï¿½Ì‹Lï¿½qï¿½ï¿½ï¿½Yï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+       ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Íƒgï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ÌÓ”Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅŽï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½j
 
-        ŽÀs“à—e‚Í
-       u¡‰ñ‚Ì››‚Í‚í‚½‚­‚µ¢¢‚ª’S“–’v‚µ‚Ü‚·v
-       u››’†cv‚Æ•\Ž¦‚µ‚Ü‚·B
+        ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½eï¿½ï¿½
+       ï¿½uï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Í‚í‚½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ü‚ï¿½ï¿½v
+       ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½cï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-       ‚±‚±‚©‚ç‚Í‚Q‰ñ‚É‚P‰ñAƒLƒŒ‚Ä‚µ‚Ü‚¢‚Ü‚·B
-       java.utilƒpƒbƒP[ƒW‚ÌRandomƒNƒ‰ƒX‚ðƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µA
-       nextBooleanƒCƒ“ƒXƒ^ƒ“ƒXƒƒ\ƒbƒhiˆø”‚È‚µA–ß‚è’lbooleanŒ^j‚ð
-       ŒÄ‚Ño‚µ‚Ü‚·B‚±‚Ìƒƒ\ƒbƒh‚Ítrue‚Æfalse‚ð”¼X‚Å•Ô‚µ‚Ü‚·B
-       true‚Ìê‡‚ÍAƒLƒŒ‚Ü‚·B
+       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í‚Qï¿½ï¿½É‚Pï¿½ï¿½Aï¿½Lï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+       java.utilï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½ï¿½Randomï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½A
+       nextBooleanï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½iï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Aï¿½ß‚ï¿½lbooleanï¿½^ï¿½jï¿½ï¿½
+       ï¿½Ä‚Ñoï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½trueï¿½ï¿½falseï¿½ð”¼Xï¿½Å•Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+       trueï¿½Ìê‡ï¿½ÍAï¿½Lï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-       ƒLƒŒ‚½ê‡‚Íu‚Ó‚´‚¯‚é‚ÈA‚Î‚©–ì˜YIv‚Æ‚¨‹q—l‚É–\Œ¾‚ð“f‚¢‚Ä
-       ƒgƒ‰ƒuƒ‹—áŠOƒIƒuƒWƒFƒNƒg‚ðƒXƒ[‚µ‚Ü‚·B
+       ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½Íuï¿½Ó‚ï¿½ï¿½ï¿½ï¿½ï¿½ÈAï¿½Î‚ï¿½ï¿½ï¿½Yï¿½Iï¿½vï¿½Æ‚ï¿½ï¿½qï¿½lï¿½É–\ï¿½ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½
+       ï¿½gï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½Oï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-       ƒLƒŒ‚È‚©‚Á‚½ê‡‚Íu¡‰ñ‚Ì››‚Í‚í‚½‚­‚µ¢¢‚ª–³Ž–”C–±‚ð‰Ê‚½‚µ‚Ü‚µ‚½v
-       ‚Æ•\Ž¦‚µ‚Ä‚»‚Ì‚Ü‚ÜI—¹‚µ‚Ü‚·B
-
-
-    yŽÀsŒ‹‰Ê(ƒLƒŒ‚½ê‡)z
-    ‚³‚ÄA¡‰ñ‚Ì“¾ˆÓæ‚Æ‚ÌŽæˆø‚Í•”‰º‚Ì—L‹g‚É”C‚¹‚æ‚¤I
-
-    ¡‰ñ‚Ì“¾ˆÓæ‚Æ‚ÌŽæˆø‚Í‚í‚½‚­‚µ—L‹g‚ª’S“–’v‚µ‚Ü‚·
-    “¾ˆÓæ‚Æ‚ÌŽæˆø’†c
-    ‚Ó‚´‚¯‚é‚ÈA‚Î‚©–ì˜YI
-
-    \‚µ–ó‚²‚´‚¢‚Ü‚¹‚ñc
-    —L‹g‚ª‘å•ÏŽ¸—ç’v‚µ‚Ü‚µ‚½c
-    ãŽi‚Ì‚í‚½‚­‚µã“‡‚ÌŠÄ“Â•ss‚«“Í‚«‚Å‚²‚´‚¢‚Ü‚·c
+       ï¿½Lï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½Íuï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Í‚í‚½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½v
+       ï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ì‚Ü‚ÜIï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
 
-    yŽÀsŒ‹‰Ê(ƒLƒŒ‚È‚©‚Á‚½ê‡)z
-    ‚³‚ÄA¡‰ñ‚Ì“¾ˆÓæ‚Æ‚ÌŽæˆø‚Í•”‰º‚Ì—L‹g‚É”C‚¹‚æ‚¤I
+    ï¿½yï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½(ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ê‡)ï¿½z
+    ï¿½ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½Ì“ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½Ì—Lï¿½gï¿½É”Cï¿½ï¿½ï¿½æ‚¤ï¿½I
 
-    ¡‰ñ‚Ì“¾ˆÓæ‚Æ‚ÌŽæˆø‚Í‚í‚½‚­‚µ—L‹g‚ª’S“–’v‚µ‚Ü‚·
-    “¾ˆÓæ‚Æ‚ÌŽæˆø’†c
-    ¡‰ñ‚Ì“¾ˆÓæ‚Æ‚ÌŽæˆø‚Í‚í‚½‚­‚µ—L‹g‚ª–³Ž–”C–±‚ð‰Ê‚½‚µ‚Ü‚µ‚½
+    ï¿½ï¿½ï¿½ï¿½Ì“ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½ï¿½Í‚í‚½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½gï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ü‚ï¿½
+    ï¿½ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½ï¿½ï¿½ï¿½c
+    ï¿½Ó‚ï¿½ï¿½ï¿½ï¿½ï¿½ÈAï¿½Î‚ï¿½ï¿½ï¿½Yï¿½I
 
-    —L‹gŒNA‚æ‚­‚â‚Á‚½I
-    ‚³‚·‚ªŽ„‚Ì‰E˜r‚¾I
+    ï¿½\ï¿½ï¿½ï¿½ó‚²‚ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½c
+    ï¿½Lï¿½gï¿½ï¿½ï¿½ï¿½ÏŽï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½c
+    ï¿½ï¿½iï¿½Ì‚í‚½ï¿½ï¿½ï¿½ï¿½ï¿½ã“‡ï¿½ÌŠÄ“Â•sï¿½sï¿½ï¿½ï¿½Í‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½c
+
+
+    ï¿½yï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½(ï¿½Lï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡)ï¿½z
+    ï¿½ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½Ì“ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½Ì—Lï¿½gï¿½É”Cï¿½ï¿½ï¿½æ‚¤ï¿½I
+
+    ï¿½ï¿½ï¿½ï¿½Ì“ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½ï¿½Í‚í‚½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½gï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ü‚ï¿½
+    ï¿½ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½ï¿½ï¿½ï¿½c
+    ï¿½ï¿½ï¿½ï¿½Ì“ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½ï¿½Í‚í‚½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+
+    ï¿½Lï¿½gï¿½Nï¿½Aï¿½æ‚­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½I
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‰Eï¿½rï¿½ï¿½ï¿½I
 
 */
 public class ExceptionInheritancePractice{
 
     public static void main(String[] args){
 
-        // •”‰ºƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ð¶¬
-        Subordinate sub = new Subordinate("—L‹g");
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ð¶ï¿½
+        Subordinate sub = new Subordinate("ï¿½Lï¿½g");
 
-        // ãŽiƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ð¶¬
-        Boss boss = new Boss("ã“‡", sub);
+        // ï¿½ï¿½iï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ð¶ï¿½
+        Boss boss = new Boss("ï¿½ã“‡", sub);
 
-        // ãŽi‚Ì“­‚­ƒƒ\ƒbƒh‚ðŽÀs
-        boss.work("“¾ˆÓæ‚Æ‚ÌŽæˆø");
+        // ï¿½ï¿½iï¿½Ì“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½s
+        boss.work("ï¿½ï¿½ï¿½Óï¿½Æ‚ÌŽï¿½ï¿½");
 
     }
 
 }
 
-// ƒgƒ‰ƒuƒ‹—áŠOƒNƒ‰ƒX
+// ï¿½gï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½Oï¿½Nï¿½ï¿½ï¿½X
 class TroubleException extends Exception{}
 
-// ŽÐˆõ’ŠÛƒNƒ‰ƒX
-abstract class Employee{
+//// ï¿½Ðˆï¿½ï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½X
+//abstract class Employee{
+//
+//    // ï¿½Ðˆï¿½ï¿½ï¿½
+//    protected String name;
+//
+//    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h
+//    public abstract void work(String workName) throws TroubleException;
+//
+//}
 
-    // ŽÐˆõ–¼
-    protected String name;
+// ï¿½ï¿½ï¿½ï¿½ï¿½Éï¿½iï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    // “­‚­’ŠÛƒƒ\ƒbƒh
-    public abstract void work(String workName) throws TroubleException;
-
-}
-
-// ‚±‚±‚ÉãŽiƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
-
-// ‚±‚±‚É•”‰ºƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ï¿½ï¿½ï¿½ï¿½ï¿½É•ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 

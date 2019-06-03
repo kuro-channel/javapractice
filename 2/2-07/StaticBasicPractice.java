@@ -1,83 +1,100 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
+    staticã«é–¢ã™ã‚‹åŸºæœ¬å•é¡Œ
 
-    static‚ÉŠÖ‚·‚éŠî–{–â‘è
+    ãƒ­ãƒœãƒƒãƒˆã‚’è¡¨ã™Robotã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
+    Robotã‚¯ãƒ©ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹StaticBasicPracticeã‚¯ãƒ©ã‚¹ã®
+    mainãƒ¡ã‚½ãƒƒãƒ‰ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    ƒƒ{ƒbƒg‚ð•\‚·RobotƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
-    RobotƒNƒ‰ƒX‚ðŽg—p‚·‚éStaticBasicPracticeƒNƒ‰ƒX‚Ì
-    mainƒƒ\ƒbƒh‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    [Robotã‚¯ãƒ©ã‚¹]
+    ï¼‘ï¼Žæ¬¡ã®ã‚ˆã†ãªï¼’ã¤ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã¨ã€ï¼‘ã¤ã®ã‚¯ãƒ©ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
+        ã‚’æŒã¡ã¾ã™ã€‚
 
-    [RobotƒNƒ‰ƒX]
-    ‚PDŽŸ‚Ì‚æ‚¤‚È‚Q‚Â‚ÌƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh‚ÆA‚P‚Â‚ÌƒNƒ‰ƒXƒtƒB[ƒ‹ƒh
-        ‚ðŽ‚¿‚Ü‚·B
+      ãƒ»ãƒ­ãƒœãƒƒãƒˆIDã‚’è¡¨ã™ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ id (intåž‹)
 
-      Eƒƒ{ƒbƒgID‚ð•\‚·ƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh id (intŒ^)
+      ãƒ»ãƒ­ãƒœãƒƒãƒˆåã‚’è¡¨ã™ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ name (Stringåž‹)
 
-      Eƒƒ{ƒbƒg–¼‚ð•\‚·ƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh name (StringŒ^)
+      ãƒ»ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ã‚’è¡¨ã™ã‚¯ãƒ©ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ total (intåž‹)
 
-      Eƒƒ{ƒbƒg‘¶ŽY”‚ð•\‚·ƒNƒ‰ƒXƒtƒB[ƒ‹ƒh total (intŒ^)
+    ï¼’ï¼ŽStringåž‹ã®å¼•æ•°ã‚’ã²ã¨ã¤ã ã‘æŒã¤ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’å®šç¾©ã—ã¾ã™ã€‚
+        å¼•æ•°ã§æ¸¡ã£ã¦ããŸæ–‡å­—åˆ—ã‚’ãƒ­ãƒœãƒƒãƒˆåã«è¨­å®šã—ã€ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ã‚’
+        ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆã—ã¾ã™ã€‚ãƒ­ãƒœãƒƒãƒˆIDã¯1ã‹ã‚‰ã®é€£ç•ªã‚’å‰²ã‚ŠæŒ¯ã‚Šã¾ã™ãŒã€
+        ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ã®å€¤ã‚’ã†ã¾ãåˆ©ç”¨ã—ã¦ãã ã•ã„ã€‚
 
-    ‚QDStringŒ^‚Ìˆø”‚ð‚Ð‚Æ‚Â‚¾‚¯Ž‚ÂƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B
-        ˆø”‚Å“n‚Á‚Ä‚«‚½•¶Žš—ñ‚ðƒƒ{ƒbƒg–¼‚ÉÝ’è‚µAƒƒ{ƒbƒg‘¶ŽY”‚ð
-        ƒCƒ“ƒNƒŠƒƒ“ƒg‚µ‚Ü‚·Bƒƒ{ƒbƒgID‚Í1‚©‚ç‚Ì˜A”Ô‚ðŠ„‚èU‚è‚Ü‚·‚ªA
-        ƒƒ{ƒbƒg‘¶ŽY”‚Ì’l‚ð‚¤‚Ü‚­—˜—p‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼“ï¼Žãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ã®å€¤ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®getTotalã‚¯ãƒ©ã‚¹ãƒ¡ã‚½ãƒƒãƒ‰
+       ï¼ˆå¼•æ•°ãªã—ãƒ»æˆ»ã‚Šå€¤intåž‹ï¼‰ã‚’å®šç¾©ã—ã¾ã™ã€‚
 
-    ‚RDƒƒ{ƒbƒg‘¶ŽY”‚Ì’l‚ðŽæ“¾‚·‚é‚½‚ß‚ÌgetTotalƒNƒ‰ƒXƒƒ\ƒbƒh
-       iˆø”‚È‚µE–ß‚è’lintŒ^j‚ð’è‹`‚µ‚Ü‚·B
+    ï¼”ï¼Žãƒ­ãƒœãƒƒãƒˆã®æƒ…å ±ã‚’ç´¹ä»‹ã™ã‚‹ãŸã‚ã®introduceãƒ¡ã‚½ãƒƒãƒ‰(å¼•æ•°ãªã—ãƒ»æˆ»ã‚Šå€¤ãªã—)
+        ã‚’å®šç¾©ã—ã¾ã™ã€‚å®Ÿè£…ã¯ä¸‹è¨˜å®Ÿè¡Œçµæžœã‚’å‚è€ƒã«ã—ã¦ãã ã•ã„ã€‚
 
-    ‚SDƒƒ{ƒbƒg‚Ìî•ñ‚ðÐ‰î‚·‚é‚½‚ß‚Ìintroduceƒƒ\ƒbƒh(ˆø”‚È‚µE–ß‚è’l‚È‚µ)
-        ‚ð’è‹`‚µ‚Ü‚·BŽÀ‘•‚Í‰º‹LŽÀsŒ‹‰Ê‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+    ã€å®Ÿè¡Œçµæžœã€‘
+    ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ï¼š0
+    ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ï¼š5
+    ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ï¼š6
 
-    yŽÀsŒ‹‰Êz
-    ƒƒ{ƒbƒg‘¶ŽY”F0
-    ƒƒ{ƒbƒg‘¶ŽY”F5
-    ƒƒ{ƒbƒg‘¶ŽY”F6
+    IDï¼š1 NAMEï¼šRX
+    IDï¼š2 NAMEï¼šPZ
+    IDï¼š3 NAMEï¼šSS
+    IDï¼š4 NAMEï¼šFG
+    IDï¼š5 NAMEï¼šVC
+    IDï¼š6 NAMEï¼šSUPER-Z
 
-    IDF1 NAMEFRX
-    IDF2 NAMEFPZ
-    IDF3 NAMEFSS
-    IDF4 NAMEFFG
-    IDF5 NAMEFVC
-    IDF6 NAMEFSUPER-Z
+ */
+public class StaticBasicPractice {
 
-*/
-public class StaticBasicPractice{
+	public static void main(String[] args) {
 
-    public static void main(String[] args){
+		// ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ã®è¡¨ç¤º
+		System.out.println("ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ï¼š" + Robot.getTotal());
 
-        // ƒƒ{ƒbƒg‘¶ŽY”‚Ì•\Ž¦
-        System.out.println("ƒƒ{ƒbƒg‘¶ŽY”F" + Robot.getTotal());
+		// ï¼•ä½“ã®ãƒ­ãƒœãƒƒãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆ
+		// ï¼ˆï¼–ä½“ç›®ã¯ä¿ç•™ï¼‰
+		Robot[] robots = {
+				new Robot("RX"),
+				new Robot("PZ"),
+				new Robot("SS"),
+				new Robot("FG"),
+				new Robot("VC"),
+				null
+		};
 
-        // ‚T‘Ì‚Ìƒƒ{ƒbƒgƒIƒuƒWƒFƒNƒg‚ðì¬
-        // i‚U‘Ì–Ú‚Í•Û—¯j
-        Robot[] robots = { 
-                            new Robot("RX"),
-                            new Robot("PZ"),
-                            new Robot("SS"),
-                            new Robot("FG"),
-                            new Robot("VC"),
-                            null
-                          };
+		// ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ã®è¡¨ç¤º
+		System.out.println("ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ï¼š" + Robot.getTotal());
 
-        // ƒƒ{ƒbƒg‘¶ŽY”‚Ì•\Ž¦
-        System.out.println("ƒƒ{ƒbƒg‘¶ŽY”F" + Robot.getTotal());
+		// ï¼–ä½“ç›®ã®ãƒ­ãƒœãƒƒãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆ
+		robots[5] = new Robot("SUPER-Z");
 
-        // ‚U‘Ì–Ú‚Ìƒƒ{ƒbƒgƒIƒuƒWƒFƒNƒg‚ðì¬
-        robots[5] = new Robot("SUPER-Z");
+		// ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ã®å–å¾—
+		System.out.println("ãƒ­ãƒœãƒƒãƒˆç·ç”Ÿç”£æ•°ï¼š" + Robot.getTotal());
 
-        // ƒƒ{ƒbƒg‘¶ŽY”‚ÌŽæ“¾
-        System.out.println("ƒƒ{ƒbƒg‘¶ŽY”F" + Robot.getTotal());
+		System.out.println();
 
-        System.out.println();
+		// ï¼–ä½“ã®ãƒ­ãƒœãƒƒãƒˆã®æƒ…å ±ã‚’è¡¨ç¤º
+		for (int i = 0; i < robots.length; i++) {
+			robots[i].introduce();
+		}
 
-        // ‚U‘Ì‚Ìƒƒ{ƒbƒg‚Ìî•ñ‚ð•\Ž¦
-        for(int i = 0 ; i < robots.length ; i++){
-            robots[i].introduce();
-        }
-
-    }
+	}
 
 }
 
-// ‚±‚±‚ÉRobotƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ã“ã“ã«Robotã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
+class Robot {
+	private int id;
+	private String name;
+	private static int total;
 
+	public Robot(String name) {
+		this.name = name;
+		total++;
+		this.id = total;
+	}
+
+	// staticãƒ¡ã‚½ãƒƒãƒ‰ï¼šã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã”ã¨ã«æŒã¤å¿…è¦ã®ãªã„ã‚¯ãƒ©ã‚¹å…±é€šã®ãƒ‡ãƒ¼ã‚¿
+	public static int getTotal() {
+		return total;
+	}
+
+	public void introduce() {
+		System.out.println("IDï¼š" + this.id + "ã€€NAMEï¼š" + this.name);
+	}
+}

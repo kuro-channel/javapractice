@@ -1,196 +1,184 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ‘‡ã‹‰–â‘è
+    ï¿½ï¿½ï¿½ï¿½ï¿½ã‹‰ï¿½ï¿½ï¿½
 
-    ƒzƒeƒ‹‚ð•\Œ»‚·‚éHotelƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
-    ‚»‚Ìƒzƒeƒ‹‚É‹Î–±‚·‚éStaffƒNƒ‰ƒX‚ÆA‚»‚Ìƒzƒeƒ‹‚ð
-    —˜—p‚·‚éCustomerƒNƒ‰ƒX‚àì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½zï¿½eï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Hotelï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+    ï¿½ï¿½ï¿½Ìƒzï¿½eï¿½ï¿½ï¿½É‹Î–ï¿½ï¿½ï¿½ï¿½ï¿½Staffï¿½Nï¿½ï¿½ï¿½Xï¿½ÆAï¿½ï¿½ï¿½Ìƒzï¿½eï¿½ï¿½ï¿½ï¿½
+    ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½Customerï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚Ü‚½Al‚ð•\Œ»‚·‚éPerson’ŠÛƒNƒ‰ƒX‚ÆA˜J“­‰Â”\‚ð
-    •\Œ»‚·‚éWorkableƒCƒ“ƒ^ƒtƒF[ƒXAŠŽ‹à•s‘«‚ð•\Œ»‚·‚é
-    ShortFallException—áŠOƒNƒ‰ƒX‚ÍŠ®¬‚µ‚Ä‚¢‚Ü‚·B
-    i•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ï¿½Ü‚ï¿½ï¿½Aï¿½lï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Personï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½Xï¿½ÆAï¿½Jï¿½ï¿½ï¿½Â”\ï¿½ï¿½
+    ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Workableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    ShortFallExceptionï¿½ï¿½Oï¿½Nï¿½ï¿½ï¿½Xï¿½ÍŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+    ï¿½iï¿½ÏXï¿½ï¿½ï¿½È‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½j
 
-    ‚±‚ê‚ç‚ÌƒNƒ‰ƒX‚ðŽg—p‚·‚éTotalHiLevelPracticeƒNƒ‰ƒX‚Ì
-    mainƒƒ\ƒbƒh‚àŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½TotalHiLevelPracticeï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+    mainï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½iï¿½ÏXï¿½ï¿½ï¿½È‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½j
 
-    [HotelƒNƒ‰ƒX]
-    ‚PDŽŸ‚Ì‚S‚Â‚ÌƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh‚ðŽ‚¿‚Ü‚·B
+    [Hotelï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½Dï¿½ï¿½ï¿½Ì‚Sï¿½Â‚ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-        ƒzƒeƒ‹–¼    name(StringŒ^)
-        —˜‰v        profits(longŒ^)
-        ]‹Æˆõ‚½‚¿  staffs(ArrayList<Staff>Œ^)
-        ‚¨‹q—l‚½‚¿  customers(ArrayList<Customer>Œ^)
+        ï¿½zï¿½eï¿½ï¿½ï¿½ï¿½    name(Stringï¿½^)
+        ï¿½ï¿½ï¿½v        profits(longï¿½^)
+        ï¿½]ï¿½Æˆï¿½ï¿½ï¿½ï¿½ï¿½  staffs(ArrayList<Staff>ï¿½^)
+        ï¿½ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½ï¿½  customers(ArrayList<Customer>ï¿½^)
 
-    ‚QD•”‰®‚Ìƒ‰ƒ“ƒN‚ð•\Œ»‚·‚éƒlƒXƒgRoomRank—ñ‹“Œ^‚ð’è‹`‚µ‚Ü‚·B
-        iÚ×‚ÍŒã‚Éà–¾‚µ‚Ü‚·j
+    ï¿½Qï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½Xï¿½gRoomRankï¿½ñ‹“Œ^ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½iï¿½Ú×‚ÍŒï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½j
 
-    ‚RDƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ðŽ‚¿‚Ü‚·Bˆø”‚Íƒzƒeƒ‹–¼‚È‚Ì‚ÅAƒtƒB[ƒ‹ƒh‚É“n‚µ‚Ü‚·B
-        u››‚ªƒI[ƒvƒ“‚µ‚Ü‚µ‚½v‚Æo—Í‚µ‚Ü‚·B‚»‚Ì‚ ‚ÆA]‹Æˆõ‚½‚¿‚Æ
-        ‚¨‹q—l‚½‚¿‚ð•\Œ»‚·‚éArrayListƒIƒuƒWƒFƒNƒg‚ðƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µ‚Ü‚·B
+    ï¿½Rï¿½Dï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½Íƒzï¿½eï¿½ï¿½ï¿½ï¿½ï¿½È‚Ì‚ÅAï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½É“nï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½[ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½vï¿½Æoï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ÆAï¿½]ï¿½Æˆï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        ï¿½ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ArrayListï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚SDƒzƒeƒ‹‚É“ü‚éenterƒƒ\ƒbƒh‚ðƒI[ƒo[ƒ[ƒh‚µ‚Ä‚Q‚Â’è‹`‚µ‚Ü‚·B
+    ï¿½Sï¿½Dï¿½zï¿½eï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½enterï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ä‚Qï¿½Â’ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-        ˆø”‚ª]‹Æˆõ‚Ìê‡‚ÍAo‹Î‚Å‚·Bu››‚ª¢¢‚Éo‹Î‚µ‚Ü‚µ‚½v‚Æ
-        o—Í‚µA]‹Æˆõ‚½‚¿ArrayListƒIƒuƒWƒFƒNƒg‚É’Ç‰Á‚µ‚Ü‚·B
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]ï¿½Æˆï¿½ï¿½Ìê‡ï¿½ÍAï¿½oï¿½Î‚Å‚ï¿½ï¿½Bï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éoï¿½Î‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½vï¿½ï¿½
+        ï¿½oï¿½Í‚ï¿½ï¿½Aï¿½]ï¿½Æˆï¿½ï¿½ï¿½ï¿½ï¿½ArrayListï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½É’Ç‰ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-        ˆø”‚ª‚¨‹q—l‚Æ•”‰®ƒ‰ƒ“ƒN‚Ìê‡‚ÍAh”‘Šó–]‚Å‚·B
-        •”‰®ƒ‰ƒ“ƒN—ñ‹“Œ^‚Í‰¿Ši‚ðŽæ“¾‚·‚égetPriceƒƒ\ƒbƒhi–ß‚è’lintŒ^j
-        ‚ðŽ‚Á‚Ä‚¢‚é‚Ì‚ÅA‚»‚Ì’l‚ð‚¨‹q—l‚ªŽ‚Á‚Ä‚¢‚épayƒƒ\ƒbƒh‚Ìˆø”‚É
-        “n‚µA‚¨‹à‚ðŽx•¥‚Á‚Ä‚à‚ç‚¢‚Ü‚·Bpayƒƒ\ƒbƒh‚Ì–ß‚è’l‚ðƒzƒeƒ‹‚Ì
-        —˜‰vƒtƒB[ƒ‹ƒh‚É‰ÁŽZ‚µ‚Ü‚·Bu››—l‚ª  ‚Ì¤¤‚É‚¨”‘‚è‚É‚È‚è‚Ü‚·v
-        ‚Æ•\Ž¦‚µAÅŒã‚É‚¨‹q—l‚½‚¿ArrayListƒIƒuƒWƒFƒNƒg‚É’Ç‰Á‚µ‚Ü‚·B
-        ®Apayƒƒ\ƒbƒh‚ÍŠŽ‹à‚ª‘«‚è‚È‚¢ê‡‚ÉShortFallException—áŠO‚ðƒXƒ[
-        ‚µ‚Ü‚·B—áŠOƒIƒuƒWƒFƒNƒg‚ÌŽ‚ÂƒƒbƒZ[ƒW‚ðo—Í‚µ‚Ä‚­‚¾‚³‚¢B
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½qï¿½lï¿½Æ•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Ìê‡ï¿½ÍAï¿½hï¿½ï¿½ï¿½ï¿½]ï¿½Å‚ï¿½ï¿½B
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ñ‹“Œ^ï¿½Í‰ï¿½ï¿½iï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½getPriceï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½iï¿½ß‚ï¿½lintï¿½^ï¿½j
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Ì‚ÅAï¿½ï¿½ï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½payï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Ìˆï¿½ï¿½ï¿½ï¿½ï¿½
+        ï¿½nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ç‚¢ï¿½Ü‚ï¿½ï¿½Bpayï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Ì–ß‚ï¿½lï¿½ï¿½ï¿½zï¿½eï¿½ï¿½ï¿½ï¿½
+        ï¿½ï¿½ï¿½vï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½É‰ï¿½ï¿½Zï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½uï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½Ü‚ï¿½ï¿½v
+        ï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ÅŒï¿½É‚ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½ï¿½ArrayListï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½É’Ç‰ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½ï¿½ï¿½Apayï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Íï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½ï¿½ShortFallExceptionï¿½ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[
+        ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½Oï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŽï¿½ï¿½Âƒï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚TDƒzƒeƒ‹‰^‰cmanageƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ü‚·BŒ»Ýƒzƒeƒ‹‚É‚¢‚é‚·‚×‚Ä‚Ì]‹Æˆõ‚Ì
-        “­‚­workƒƒ\ƒbƒh‚ðŽÀs‚µ‚Ü‚·B‚½‚¾‚µƒ‹[ƒv‚É‚ÍŠg’£for•¶‚ðŽg—p‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Tï¿½Dï¿½zï¿½eï¿½ï¿½ï¿½^ï¿½cmanageï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½Ýƒzï¿½eï¿½ï¿½ï¿½É‚ï¿½ï¿½é‚·ï¿½×‚Ä‚Ì]ï¿½Æˆï¿½ï¿½ï¿½
+        ï¿½ï¿½ï¿½ï¿½workï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½vï¿½É‚ÍŠgï¿½ï¿½forï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚UD‚¨‹q—l‚Ìî•ñ‚ðo—Í‚·‚éshowCustomerInfoƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ü‚·B
-        u‚¨‹q—lî•ñv‚Æo—Í‚µ‚½Œã‚ÉAŒ»Ýƒzƒeƒ‹‚É‚¢‚é‚·‚×‚Ä‚Ì‚¨‹q—l‚Ì
-        î•ñitoStringƒƒ\ƒbƒh‚Ì–ß‚è’lj‚ðo—Í‚µ‚Ü‚·B‚½‚¾‚µƒ‹[ƒv‚É‚Í
-        Šg’£for•¶‚ðŽg—p‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Uï¿½Dï¿½ï¿½ï¿½qï¿½lï¿½Ìï¿½ï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½showCustomerInfoï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½uï¿½ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½vï¿½Æoï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½ÉAï¿½ï¿½ï¿½Ýƒzï¿½eï¿½ï¿½ï¿½É‚ï¿½ï¿½é‚·ï¿½×‚Ä‚Ì‚ï¿½ï¿½qï¿½lï¿½ï¿½
+        ï¿½ï¿½ï¿½itoStringï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Ì–ß‚ï¿½lï¿½jï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½vï¿½É‚ï¿½
+        ï¿½gï¿½ï¿½forï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚VDƒzƒeƒ‹î•ñ‚ðo—Í‚·‚éshowHotelInfoƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ü‚·B
-        ƒzƒeƒ‹–¼‚âŒ»Ý‚Ì]‹Æˆõ”AŒ»Ý‚Ì‚¨‹q—l”AŒ»Ý‚Ì—˜‰v‚È‚Ç‚ðo—Í
-        ‚µ‚Ü‚·B‰º‹LAŽÀsŒ‹‰Ê‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Vï¿½Dï¿½zï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½showHotelInfoï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½zï¿½eï¿½ï¿½ï¿½ï¿½ï¿½âŒ»ï¿½Ý‚Ì]ï¿½Æˆï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ý‚Ì‚ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ý‚Ì—ï¿½ï¿½vï¿½È‚Ç‚ï¿½ï¿½oï¿½ï¿½
+        ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½Lï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ê‚ï¿½ï¿½Qï¿½lï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    [ƒlƒXƒgRoomRank—ñ‹“Œ^]
-    ‚PDƒzƒeƒ‹ƒNƒ‰ƒX‚Ìƒƒ“ƒo‚Æ‚µ‚Ä’è‹`‚µ‚Ü‚·B
+    [ï¿½lï¿½Xï¿½gRoomRankï¿½ñ‹“Œ^]
+    ï¿½Pï¿½Dï¿½zï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½ï¿½ï¿½oï¿½Æ‚ï¿½ï¿½Ä’ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QD‚R‚Â‚Ì—ñ‹“Žq‚ðŽ‚¿‚Ü‚·B‚Ü‚½A‚Q‚Â‚ÌƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh‚Æ‚µ‚Ä
-        •”‰®‚Ìƒ‰ƒ“ƒN–¼roomRankName(StringŒ^)‚Æ‰¿Šiprice(intŒ^)‚ðŽ‚¿‚Ü‚·B
-        ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð‚¤‚Ü‚­Žg‚Á‚ÄƒtƒB[ƒ‹ƒh‚É’l‚ðÝ’è‚µ‚Ü‚·B
+    ï¿½Qï¿½Dï¿½Rï¿½Â‚Ì—ñ‹“Žqï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½Ü‚ï¿½ï¿½Aï¿½Qï¿½Â‚ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½Æ‚ï¿½ï¿½ï¿½
+        ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½roomRankName(Stringï¿½^)ï¿½Æ‰ï¿½ï¿½iprice(intï¿½^)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½gï¿½ï¿½ï¿½Äƒtï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½É’lï¿½ï¿½Ý’è‚µï¿½Ü‚ï¿½ï¿½B
 
-        —ñ‹“ŽquSUITEv •”‰®‚Ìƒ‰ƒ“ƒN–¼u"ƒXƒC[ƒgƒ‹[ƒ€"v ‰¿Šiu100000v
-        —ñ‹“ŽquNORMALv •”‰®‚Ìƒ‰ƒ“ƒN–¼u"’Êíƒ‹[ƒ€"v ‰¿Šiu20000v
-        —ñ‹“ŽquECONOMYv •”‰®‚Ìƒ‰ƒ“ƒN–¼u"ŠiˆÀƒ‹[ƒ€"v ‰¿Šiu5000v
+        ï¿½ñ‹“Žqï¿½uSUITEï¿½v ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½u"ï¿½Xï¿½Cï¿½[ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½"ï¿½v ï¿½ï¿½ï¿½iï¿½u100000ï¿½v
+        ï¿½ñ‹“Žqï¿½uNORMALï¿½v ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½u"ï¿½Êíƒ‹ï¿½[ï¿½ï¿½"ï¿½v ï¿½ï¿½ï¿½iï¿½u20000ï¿½v
+        ï¿½ñ‹“Žqï¿½uECONOMYï¿½v ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½u"ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½"ï¿½v ï¿½ï¿½ï¿½iï¿½u5000ï¿½v
 
-    ‚RD‰¿Ši‚ðŽæ“¾‚·‚égetPriceƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ü‚·Biˆø”‚È‚µE–ß‚è’lintŒ^j
+    ï¿½Rï¿½Dï¿½ï¿½ï¿½iï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½getPriceï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½iï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Eï¿½ß‚ï¿½lintï¿½^ï¿½j
 
-    ‚SDtoStringƒƒ\ƒbƒh‚ðƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·BroomRankNameƒtƒB[ƒ‹ƒh‚Ì
-        ’l‚ð•Ô‚µ‚Ü‚·B
+    ï¿½Sï¿½DtoStringï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½hï¿½ï¿½ï¿½Ü‚ï¿½ï¿½BroomRankNameï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½
+        ï¿½lï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    [StaffƒNƒ‰ƒX]
-    ‚PDPersonƒNƒ‰ƒX‚ðŒp³‚µAWorkableƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚Ü‚·B
+    [Staffï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½DPersonï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½AWorkableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QDEŽí‚ð•\‚·jobTypeƒtƒB[ƒ‹ƒhiStringŒ^j‚ð’è‹`‚µ‚Ü‚·B
+    ï¿½Qï¿½Dï¿½Eï¿½ï¿½ï¿½\ï¿½ï¿½jobTypeï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½iStringï¿½^ï¿½jï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚RDƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Í‘æˆêˆø”‚ÉŽ–¼A‘æ“ñˆø”‚ÉEŽí‚ðŽó‚¯Žæ‚è‚Ü‚·B
-        ƒtƒB[ƒ‹ƒh‚É’l‚ðƒZƒbƒg‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Rï¿½Dï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½Í‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉEï¿½ï¿½ï¿½ï¿½ó‚¯Žï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½É’lï¿½ï¿½ï¿½Zï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚SD“­‚­workƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ü‚·Bu››‚ª  ‚ðs‚¢‚Ü‚µ‚½v‚Æ
-        o—Í‚µ‚Ü‚·B
+    ï¿½Sï¿½Dï¿½ï¿½ï¿½ï¿½workï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½vï¿½ï¿½
+        ï¿½oï¿½Í‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    [CustomerƒNƒ‰ƒX]
-    ‚PDPersonƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [Customerï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½DPersonï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QDŠŽ‹à‚ð•\‚·moneyƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒhiintŒ^j‚ð’è‹`‚µ‚Ü‚·B
+    ï¿½Qï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½moneyï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½iintï¿½^ï¿½jï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚RDƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Í‘æˆêˆø”‚ÉŽ–¼A‘æ“ñˆø”‚ÉŠŽ‹à‚ðŽó‚¯Žæ‚è‚Ü‚·B
-        ƒtƒB[ƒ‹ƒh‚É’l‚ðƒZƒbƒg‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Rï¿½Dï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½Í‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‚¯Žï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½É’lï¿½ï¿½ï¿½Zï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚SDŽx•¥payƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ü‚·Bˆø”‚ÍŽg—p‹àŠziintŒ^j‚È‚Ì‚ÅA
-        ‚»‚Ì•ªŠŽ‹à‚©‚ç‹àŠz‚ð·‚µˆø‚«A–ß‚è’l‚Æ‚µ‚Ä•Ô‚µ‚Ü‚·B
-        ŠŽ‹à‚ª‘«‚è‚È‚¢ê‡‚ÍAu››‚ÍŠŽ‹à•s‘«‚Å‚·v
-        ‚Æ‚¢‚¤ƒƒbƒZ[ƒW‚ðShortFallException—áŠOƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‚É
-        “n‚µ‚ÄA‚»‚Ì‚Ü‚ÜƒXƒ[‚µ‚Ü‚·B
+    ï¿½Sï¿½Dï¿½xï¿½ï¿½payï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ÍŽgï¿½pï¿½ï¿½ï¿½zï¿½iintï¿½^ï¿½jï¿½È‚Ì‚ÅA
+        ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ß‚ï¿½lï¿½Æ‚ï¿½ï¿½Ä•Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½ÍAï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Å‚ï¿½ï¿½v
+        ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½ï¿½ShortFallExceptionï¿½ï¿½Oï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒRï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½
+        ï¿½nï¿½ï¿½ï¿½ÄAï¿½ï¿½ï¿½Ì‚Ü‚ÜƒXï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚TD‚¨‹q—lî•ñ‚ð•Ô‚·toStringƒƒ\ƒbƒh‚ðƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·B
-        u››—l@ŠŽ‹àF™™‰~v‚Æ‚¢‚¤•¶Žš—ñ‚ð•Ô‚µ‚Ü‚·B
+    ï¿½Tï¿½Dï¿½ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½ï¿½Ô‚ï¿½toStringï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½hï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½lï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½vï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    yŽÀsŒ‹‰Êz
-    ƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“‚ªƒI[ƒvƒ“‚µ‚Ü‚µ‚½
-    â–{‚ªƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“‚Éo‹Î‚µ‚Ü‚µ‚½
-    ’·–ì‚ªƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“‚Éo‹Î‚µ‚Ü‚µ‚½
-    ˆäƒmŒ´‚ªƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“‚Éo‹Î‚µ‚Ü‚µ‚½
+    ï¿½yï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Êz
+    ï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½[ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+    ï¿½ï¿½{ï¿½ï¿½ï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½ï¿½Éoï¿½Î‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+    ï¿½ï¿½ï¿½ì‚ªï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½ï¿½Éoï¿½Î‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+    ï¿½ï¿½mï¿½ï¿½ï¿½ï¿½ï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½ï¿½Éoï¿½Î‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
 
-    ‰ª“c—l‚ªƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“‚ÌƒXƒC[ƒgƒ‹[ƒ€‚É‚¨”‘‚è‚É‚È‚è‚Ü‚·
-    ŽO‘î—l‚ªƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“‚Ì’Êíƒ‹[ƒ€‚É‚¨”‘‚è‚É‚È‚è‚Ü‚·
-    X“c‚ÍŠŽ‹à•s‘«‚Å‚·
+    ï¿½ï¿½ï¿½cï¿½lï¿½ï¿½ï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½ï¿½ÌƒXï¿½Cï¿½[ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½Ü‚ï¿½
+    ï¿½Oï¿½ï¿½lï¿½ï¿½ï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½ï¿½Ì’Êíƒ‹ï¿½[ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½Ü‚ï¿½
+    ï¿½Xï¿½cï¿½Íï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Å‚ï¿½
 
-    â–{‚ª´‘|‚ðs‚¢‚Ü‚µ‚½
-    ’·–ì‚ª’²—‚ðs‚¢‚Ü‚µ‚½
-    ˆäƒmŒ´‚ªÚ‹q‚ðs‚¢‚Ü‚µ‚½
+    ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+    ï¿½ï¿½ï¿½ì‚ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+    ï¿½ï¿½mï¿½ï¿½ï¿½ï¿½ï¿½Ú‹qï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
 
-    ‚¨‹q—lî•ñ
-    ‰ª“c—l@ŠŽ‹àF400000‰~
-    ŽO‘î—l@ŠŽ‹àF20000‰~
+    ï¿½ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½
+    ï¿½ï¿½ï¿½cï¿½lï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½F400000ï¿½~
+    ï¿½Oï¿½ï¿½lï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½F20000ï¿½~
 
-    ƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“‚ÌŒ»Ý‚Ìó‹µ
-    Œ»Ý“­‚¢‚Ä‚¢‚é]‹Æˆõ”F3–¼
-    Œ»Ý‚¨”‘‚Ü‚è‚Ì‚¨‹q—l”F2–¼
-    Œ»Ý‚Ì—˜‰vF120000‰~
+    ï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½ï¿½ÌŒï¿½ï¿½Ý‚Ìï¿½
+    ï¿½ï¿½ï¿½Ý“ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½]ï¿½Æˆï¿½ï¿½ï¿½ï¿½F3ï¿½ï¿½
+    ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½Ì‚ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½F2ï¿½ï¿½
+    ï¿½ï¿½ï¿½Ý‚Ì—ï¿½ï¿½vï¿½F120000ï¿½~
 
 */
-import java.util.*;
+
 public class TotalHiLevelPractice{
 
     public static void main(String[] args){
 
-        // ƒzƒeƒ‹‚ªƒI[ƒvƒ“
-        Hotel hotel = new Hotel("ƒzƒeƒ‹ƒhƒ‹ƒtƒBƒ“");
+        // ï¿½zï¿½eï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½[ï¿½vï¿½ï¿½
+        Hotel hotel = new Hotel("ï¿½zï¿½eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½tï¿½Bï¿½ï¿½");
 
-        // ƒzƒeƒ‹‚É‚Rl‚Ì]‹Æˆõ‚ªo‹Î
-        hotel.enter(new Staff("â–{", "´‘|"));
-        hotel.enter(new Staff("’·–ì", "’²—"));
-        hotel.enter(new Staff("ˆäƒmŒ´", "Ú‹q"));
-
-        System.out.println();
-
-        // ‚Rl‚Ì‚¨‹q—l‚ªƒ`ƒFƒbƒNƒCƒ“i‚Pl‚ªŠŽ‹à•s‘«‚Å”‘‚Ü‚ê‚¸j
-        hotel.enter(new Customer("‰ª“c", 500000), Hotel.RoomRank.SUITE);
-        hotel.enter(new Customer("ŽO‘î", 40000), Hotel.RoomRank.NORMAL);
-        hotel.enter(new Customer("X“c", 4000), Hotel.RoomRank.ECONOMY);
+        // ï¿½zï¿½eï¿½ï¿½ï¿½É‚Rï¿½lï¿½Ì]ï¿½Æˆï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
+        hotel.enter(new Staff("ï¿½ï¿½{", "ï¿½ï¿½ï¿½|"));
+        hotel.enter(new Staff("ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½"));
+        hotel.enter(new Staff("ï¿½ï¿½mï¿½ï¿½", "ï¿½Ú‹q"));
 
         System.out.println();
 
-        // ƒzƒeƒ‹‚ð‰^‰c
+        // ï¿½Rï¿½lï¿½Ì‚ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½Nï¿½Cï¿½ï¿½ï¿½iï¿½Pï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Å”ï¿½ï¿½Ü‚ê‚¸ï¿½j
+        hotel.enter(new Customer("ï¿½ï¿½ï¿½c", 500000), Hotel.RoomRank.SUITE);
+        hotel.enter(new Customer("ï¿½Oï¿½ï¿½", 40000), Hotel.RoomRank.NORMAL);
+        hotel.enter(new Customer("ï¿½Xï¿½c", 4000), Hotel.RoomRank.ECONOMY);
+
+        System.out.println();
+
+        // ï¿½zï¿½eï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½c
         hotel.manage();
 
         System.out.println();
 
-        // ‚¨‹q—lî•ñ‚ÌŠm”F
+        // ï¿½ï¿½ï¿½qï¿½lï¿½ï¿½ï¿½ÌŠmï¿½F
         hotel.showCustomerInfo();
 
         System.out.println();
 
-        // ƒzƒeƒ‹î•ñ‚ÌŠm”F
+        // ï¿½zï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ÌŠmï¿½F
         hotel.showHotelInfo();
 
     }
 
 }
 
-// ‚±‚±‚Éƒzƒeƒ‹ƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ï¿½ï¿½ï¿½ï¿½ï¿½Éƒzï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-// l’ŠÛƒNƒ‰ƒX
-abstract class Person{
 
-    // Ž–¼
-    protected String name;
-
-    // –¼‘OŽæ“¾ƒƒ\ƒbƒh 
-    public String getName(){
-        return name;
-    }
-
-}
-
-// ˜J“­‰Â”\ƒCƒ“ƒ^ƒtƒF[ƒX
+// ï¿½Jï¿½ï¿½ï¿½Â”\ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½X
 interface Workable{
 
-    // “­‚­’ŠÛƒƒ\ƒbƒh
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h
     void work();
 
 }
 
-// ‚±‚±‚É]‹ÆˆõƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ï¿½ï¿½ï¿½ï¿½ï¿½É]ï¿½Æˆï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-// ‚±‚±‚ÉŒÚ‹qƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ï¿½ï¿½ï¿½ï¿½ï¿½ÉŒÚ‹qï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-// ŠŽ‹à•s‘«—áŠOƒNƒ‰ƒX
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Oï¿½Nï¿½ï¿½ï¿½X
 class ShortFallException extends Exception{
 
     public ShortFallException(String message){

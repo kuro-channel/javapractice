@@ -1,62 +1,83 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    �R���X�g���N�^�̊�{���
+    コンストラクタの基本問題
 
-    �l�p�`��\��Square�N���X���쐬���Ă��������B
-    Square�N���X���g�p����ConstructorBasicPractice�N���X��
-    main���\�b�h�͂��łɊ������Ă��܂��B�i�ύX���Ȃ��ł��������j
+    四角形を表すSquareクラスを作成してください。
+    Squareクラスを使用するConstructorBasicPracticeクラスの
+    mainメソッドはすでに完成しています。（変更しないでください）
 
-    [Square�N���X]
-    �P�D��width�ƍ���height(�ǂ����double�^)�̂Q�̃C���X�^���X
-        �t�B�[���h�������܂��B
+    [Squareクラス]
+    １．幅widthと高さheight(どちらもdouble型)の２つのインスタンス
+        フィールドを持ちます。
 
-    �Q�D���ƍ����̏����l�������Ƃ��Ď󂯎��R���X�g���N�^�����݂��܂��B
-        �󂯎���������l�����̂܂܊e�t�B�[���h�ɃZ�b�g���Ă��������B
+    ２．幅と高さの初期値を引数として受け取るコンストラクタが存在します。
+        受け取った初期値をそのまま各フィールドにセットしてください。
 
-    �R�D���ƍ����Ɋւ�������o�͂���inform���\�b�h(�����Ȃ��E�߂�l�Ȃ�)��
-        ���݂��܂��B�o�͓��e�́A���s���ʂ��Q�l�ɂ��Ă��������B
+    ３．幅と高さに関する情報を出力するinformメソッド(引数なし・戻り値なし)が
+        存在します。出力内容は、実行結果を参考にしてください。
 
-    �S�D�ʐς��Z�o����getArea���\�b�h(�����Ȃ��E�߂�ldouble�^)�����݂��܂��B
+    ４．面積を算出するgetAreaメソッド(引数なし・戻り値double型)が存在します。
 
-    �T�D���̒l�������Ŏ󂯎��������������������addWidth���\�b�h
-        (����double�^�E�߂�l�Ȃ�)�����݂��܂��B
+    ５．幅の値を引数で受け取った増分だけ増加するaddWidthメソッド
+        (引数double型・戻り値なし)が存在します。
 
-    �y���s���ʁz
-    ���̎l�p�`�̕���4.5�A������2.8�ł��B
-    ���̎l�p�`�̖ʐς�12.6�ł��B
+    【実行結果】
+    この四角形の幅は4.5、高さは2.8です。
+    この四角形の面積は12.6です。
 
-    ���̎l�p�`�̕���7.5�A������2.8�ł��B
-    ���̎l�p�`�̖ʐς�21.0�ł��B
+    この四角形の幅は7.5、高さは2.8です。
+    この四角形の面積は21.0です。
 
 */
-public class ConstructorBasicPractice{
+public class ConstructorBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // Square�N���X�̃I�u�W�F�N�g���쐬
-        Square square = new Square(4.5, 2.8);
+		// Squareクラスのオブジェクトを作成
+		Square square = new Square(4.5, 2.8);
 
-        // �l�p�`�̏����o��
-        square.inform();
+		// 四角形の情報を出力
+		square.inform();
 
-        // �ʐς̕\��
-        System.out.println("���̎l�p�`�̖ʐς�" + square.getArea() + "�ł��B");
+		// 面積の表示
+		System.out.println("この四角形の面積は" + square.getArea() + "です。");
 
-        // ����3.0����������
-        square.addWidth(3.0);
+		// 幅を3.0増加させる
+		square.addWidth(3.0);
 
-        System.out.println();
+		System.out.println();
 
-        // �l�p�`�̏����o��
-        square.inform();
+		// 四角形の情報を出力
+		square.inform();
 
-        // �ʐς̕\��
-        System.out.println("���̎l�p�`�̖ʐς�" + square.getArea() + "�ł��B");
+		// 面積の表示
+		System.out.println("この四角形の面積は" + square.getArea() + "です。");
 
-    }
+	}
 
 }
 
-// ������Square�N���X���쐬���Ă�������
+// ここにSquareクラスを作成してください
+class Square {
 
+	private double width;
+	private double height;
+
+	// コンストラクタ
+	public Square(double width, double height) {
+		this.width = width;
+		this.height = height;
+	}
+
+	public void inform() {
+		System.out.println("この四角形の幅は" + width + "、高さは" + height + "です。");
+	}
+
+	public double getArea() {
+		return this.width * this.height;
+	}
+
+	public void addWidth(double add) {
+		this.width += add;
+	}
+}

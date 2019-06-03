@@ -1,56 +1,78 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ƒI[ƒo[ƒ[ƒh‚ÌŠî–{–â‘è
+    ã‚ªãƒ¼ãƒãƒ¼ãƒ­ãƒ¼ãƒ‰ã®åŸºæœ¬å•é¡Œ
 
-    ƒtƒ‹ƒR[ƒX‚ğ’²—‚·‚éƒVƒFƒt‚ğ•\‚·ChefƒNƒ‰ƒX‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢B
-    ChefƒNƒ‰ƒX‚ğg—p‚·‚éOverloadBasicPracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh
-    ‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
-    ‚Ü‚½AŠeíHŞ‚ğ•\‚·—‘EggƒNƒ‰ƒXA•ÄRiceƒNƒ‰ƒXA‹“ûMilkƒNƒ‰ƒXA
-    ƒ`[ƒYCheeseƒNƒ‰ƒX‚à‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ãƒ•ãƒ«ã‚³ãƒ¼ã‚¹ã‚’èª¿ç†ã™ã‚‹ã‚·ã‚§ãƒ•ã‚’è¡¨ã™Chefã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
+    Chefã‚¯ãƒ©ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹OverloadBasicPracticeã‚¯ãƒ©ã‚¹ã®mainãƒ¡ã‚½ãƒƒãƒ‰
+    ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
+    ã¾ãŸã€å„ç¨®é£Ÿæã‚’è¡¨ã™åµEggã‚¯ãƒ©ã‚¹ã€ç±³Riceã‚¯ãƒ©ã‚¹ã€ç‰›ä¹³Milkã‚¯ãƒ©ã‚¹ã€
+    ãƒãƒ¼ã‚ºCheeseã‚¯ãƒ©ã‚¹ã‚‚ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    ChefƒNƒ‰ƒX‚É‚ÍAƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh‚Í‚ ‚è‚Ü‚¹‚ñB
-    ’²—‚ğ•\Œ»‚·‚écookƒƒ\ƒbƒh‚Ì‚İ‚ª‘¶İ‚µ‚Ü‚·B
-    icookƒƒ\ƒbƒh‚Ì–ß‚è’l‚Í—¿—–¼‚ğ•\‚·StringŒ^‚Å‚·j
+    Chefã‚¯ãƒ©ã‚¹ã«ã¯ã€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
+    èª¿ç†ã‚’è¡¨ç¾ã™ã‚‹cookãƒ¡ã‚½ãƒƒãƒ‰ã®ã¿ãŒå­˜åœ¨ã—ã¾ã™ã€‚
+    ï¼ˆcookãƒ¡ã‚½ãƒƒãƒ‰ã®æˆ»ã‚Šå€¤ã¯æ–™ç†åã‚’è¡¨ã™Stringå‹ã§ã™ï¼‰
 
-    ˆø”‚Å“n‚³‚ê‚éHŞƒIƒuƒWƒFƒNƒg‚É‰‚¶‚Ä‰º‹LÀsŒ‹‰Ê‚ğ‚à‚Æ‚É
-    —¿—‚ğŠ®¬‚³‚¹‚Ä‚­‚¾‚³‚¢B
+    å¼•æ•°ã§æ¸¡ã•ã‚Œã‚‹é£Ÿæã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å¿œã˜ã¦ä¸‹è¨˜å®Ÿè¡Œçµæœã‚’ã‚‚ã¨ã«
+    æ–™ç†ã‚’å®Œæˆã•ã›ã¦ãã ã•ã„ã€‚
 
-    yÀsŒ‹‰Êz
-    ‚P•i–Ú‚ÍƒXƒNƒ‰ƒ“ƒuƒ‹ƒGƒbƒO‚Å‚·
-    ‚Q•i–Ú‚ÍƒIƒ€ƒ‰ƒCƒX‚Å‚·
-    ‚R•i–Ú‚ÍƒŠƒ]ƒbƒg‚Å‚·
-    ‚S•i–Ú‚ÍƒvƒfƒBƒ“ƒO‚Å‚·
+    ã€å®Ÿè¡Œçµæœã€‘
+    ï¼‘å“ç›®ã¯ã‚¹ã‚¯ãƒ©ãƒ³ãƒ–ãƒ«ã‚¨ãƒƒã‚°ã§ã™
+    ï¼’å“ç›®ã¯ã‚ªãƒ ãƒ©ã‚¤ã‚¹ã§ã™
+    ï¼“å“ç›®ã¯ãƒªã‚¾ãƒƒãƒˆã§ã™
+    ï¼”å“ç›®ã¯ãƒ—ãƒ‡ã‚£ãƒ³ã‚°ã§ã™
 
 */
-public class OverloadBasicPractice{
+public class OverloadBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // ƒVƒFƒtƒIƒuƒWƒFƒNƒg‚Ì¶¬
-        Chef chef = new Chef();
+		// ã‚·ã‚§ãƒ•ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆ
+		Chef chef = new Chef();
 
-        // HŞƒIƒuƒWƒFƒNƒg‚Ì¶¬
-        Egg egg = new Egg();
-        Rice rice = new Rice();
-        Milk milk = new Milk();
-        Cheese cheese = new Cheese();
+		// é£Ÿæã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç”Ÿæˆ
+		Egg egg = new Egg();
+		Rice rice = new Rice();
+		Milk milk = new Milk();
+		Cheese cheese = new Cheese();
 
-        // ƒVƒFƒt‚ªƒtƒ‹ƒR[ƒX‚ğ’²—‚µ‚Ü‚·
-        System.out.println("‚P•i–Ú‚Í" + chef.cook(egg, cheese) + "‚Å‚·");
-        System.out.println("‚Q•i–Ú‚Í" + chef.cook(rice, egg) + "‚Å‚·");
-        System.out.println("‚R•i–Ú‚Í" + chef.cook(rice, cheese) + "‚Å‚·");
-        System.out.println("‚S•i–Ú‚Í" + chef.cook(milk, egg) + "‚Å‚·");
+		// ã‚·ã‚§ãƒ•ãŒãƒ•ãƒ«ã‚³ãƒ¼ã‚¹ã‚’èª¿ç†ã—ã¾ã™
+		System.out.println("ï¼‘å“ç›®ã¯" + chef.cook(egg, cheese) + "ã§ã™");
+		System.out.println("ï¼’å“ç›®ã¯" + chef.cook(rice, egg) + "ã§ã™");
+		System.out.println("ï¼“å“ç›®ã¯" + chef.cook(rice, cheese) + "ã§ã™");
+		System.out.println("ï¼”å“ç›®ã¯" + chef.cook(milk, egg) + "ã§ã™");
 
-    }
+	}
 
 }
 
-// ŠeíHŞƒNƒ‰ƒX
-class Egg{}
-class Rice{}
-class Milk{}
-class Cheese{}
+// å„ç¨®é£Ÿæã‚¯ãƒ©ã‚¹
+class Egg {
+}
 
-// ‚±‚±‚ÉChefƒNƒ‰ƒX‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢
+class Rice {
+}
 
+class Milk {
+}
+
+class Cheese {
+}
+
+// ã“ã“ã«Chefã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
+class Chef {
+	public String cook(Egg egg, Cheese cheese) {
+		return "ã‚¹ã‚¯ãƒ©ãƒ³ãƒ–ãƒ«ã‚¨ãƒƒã‚°";
+	}
+
+	public String cook(Rice rice, Egg egg) {
+		return "ã‚ªãƒ ãƒ©ã‚¤ã‚¹";
+	}
+
+	public String cook(Rice rice, Cheese cheese) {
+		return "ãƒªã‚¾ãƒƒãƒˆ";
+	}
+
+	public String cook(Milk milk, Egg egg) {
+		return "ãƒ—ãƒ‡ã‚£ãƒ³ã‚°";
+	}
+}

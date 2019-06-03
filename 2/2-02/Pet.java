@@ -39,6 +39,6 @@ public class Pet {
 		this.gender = gender;
 	}
 	public String getIntroduction() {
-		return type + "の" + name + "は" + ((gender == true) ? "メス" : "オス") + "で" + age + "歳です。";
+		return type + "の" + name + "は" + ((gender) ? "メス" : "オス") + "で" + age + "歳です。";
 	}
 }

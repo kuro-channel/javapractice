@@ -1,77 +1,76 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    Œp³‚ÆƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ì–â‘è
+    ç¶™æ‰¿ã¨ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®å•é¡Œ
 
-    ŽGŽ‚ð•\‚·MagazineƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    é›‘èªŒã‚’è¡¨ã™Magazineã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
 
-    –{‚ð•\‚·BookƒNƒ‰ƒX‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·B
-    i•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    æœ¬ã‚’è¡¨ã™Bookã‚¯ãƒ©ã‚¹ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚
+    ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    ‚Ü‚½AMagazineƒNƒ‰ƒX‚ðŽg—p‚·‚éInheritanceBasicPracticeƒNƒ‰ƒX‚Ì
-    mainƒƒ\ƒbƒh‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    ã¾ãŸã€Magazineã‚¯ãƒ©ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹InheritanceBasicPracticeã‚¯ãƒ©ã‚¹ã®
+    mainãƒ¡ã‚½ãƒƒãƒ‰ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    [MagazineƒNƒ‰ƒX]
-    ‚PDBookƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [Magazineã‚¯ãƒ©ã‚¹]
+    ï¼‘ï¼ŽBookã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¾ã™ã€‚
 
-    ‚QDƒX[ƒp[ƒNƒ‰ƒX‚©‚çŽó‚¯Œp‚¢‚¾‚Q‚Â‚ÌƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh
-        iƒ^ƒCƒgƒ‹A‰¿Šij‚Ì‚Ù‚©‚ÉA•\Ž†‚ÉŒfÚ‚³‚ê‚Ä‚¢‚éƒ^ƒŒƒ“ƒg–¼‚ð
-        •ÛŽ‚·‚é‚½‚ß‚ÌcoverPersonNameƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh(StringŒ^)
-        ‚ð’è‹`‚µ‚Ü‚·B
+    ï¼’ï¼Žã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‹ã‚‰å—ã‘ç¶™ã„ã ï¼’ã¤ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
+        ï¼ˆã‚¿ã‚¤ãƒˆãƒ«ã€ä¾¡æ ¼ï¼‰ã®ã»ã‹ã«ã€è¡¨ç´™ã«æŽ²è¼‰ã•ã‚Œã¦ã„ã‚‹ã‚¿ãƒ¬ãƒ³ãƒˆåã‚’
+        ä¿æŒã™ã‚‹ãŸã‚ã®coverPersonNameã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰(Stringåž‹)
+        ã‚’å®šç¾©ã—ã¾ã™ã€‚
 
-    ‚RDˆø”‚Éƒ^ƒCƒgƒ‹A‰¿ŠiA•\Ž†ƒ^ƒŒƒ“ƒg–¼‚Ì‚R‚Â‚Ì’l‚ðŽó‚¯Žæ‚é
-        ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B‚»‚Ì‚¤‚¿ƒ^ƒCƒgƒ‹A‰¿Ši‚Ì‚Q‚Â‚Ì
-        ’l‚ÍAƒX[ƒp[ƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð—˜—p‚µ‚ÄŽó‚¯“n‚µ‚Ü‚·B
+    ï¼“ï¼Žå¼•æ•°ã«ã‚¿ã‚¤ãƒˆãƒ«ã€ä¾¡æ ¼ã€è¡¨ç´™ã‚¿ãƒ¬ãƒ³ãƒˆåã®ï¼“ã¤ã®å€¤ã‚’å—ã‘å–ã‚‹
+        ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’å®šç¾©ã—ã¾ã™ã€‚ãã®ã†ã¡ã‚¿ã‚¤ãƒˆãƒ«ã€ä¾¡æ ¼ã®ï¼’ã¤ã®
+        å€¤ã¯ã€ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’åˆ©ç”¨ã—ã¦å—ã‘æ¸¡ã—ã¾ã™ã€‚
 
-    ‚SDŽGŽ‚Ì“à—e‚ðÐ‰î‚·‚éshowƒCƒ“ƒXƒ^ƒ“ƒXƒƒ\ƒbƒh‚ð’è‹`‚µ‚Ü‚·B
-        o—Í“à—e‚ÍA‰º‹LŽÀsŒ‹‰Ê‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼”ï¼Žé›‘èªŒã®å†…å®¹ã‚’ç´¹ä»‹ã™ã‚‹showã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®šç¾©ã—ã¾ã™ã€‚
+        å‡ºåŠ›å†…å®¹ã¯ã€ä¸‹è¨˜å®Ÿè¡Œçµæžœã‚’å‚è€ƒã«ã—ã¦ãã ã•ã„ã€‚
 
-    yŽÀsŒ‹‰Êz
-    “Œ‹žRunnerâŽ^”­”„’†II
-    ’è‰¿650‰~
-    ¡‰ñ‚Ì•\Ž†Fã–ìÊ‚³‚ñ
+    ã€å®Ÿè¡Œçµæžœã€‘
+    æ±äº¬Runnerçµ¶è³›ç™ºå£²ä¸­ï¼ï¼
+    å®šä¾¡650å††
+    ä»Šå›žã®è¡¨ç´™ï¼šä¸Šé‡Žå½©ã•ã‚“
 
 */
 public class InheritanceConstructorPractice{
 
     public static void main(String[] args){
 
-        // MagazineƒNƒ‰ƒX‚ÌƒIƒuƒWƒFƒNƒg‚ð¶¬
-        Magazine magazine = new Magazine("“Œ‹žRunner", 650, "ã–ìÊ");
+        // Magazineã‚¯ãƒ©ã‚¹ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆ
+        Magazine magazine = new Magazine("æ±äº¬Runner", 650, "ä¸Šé‡Žå½©");
 
-        // ŽGŽ‚Ì“à—eÐ‰îƒƒ\ƒbƒh‚ÌŒÄ‚Ño‚µ
+        // é›‘èªŒã®å†…å®¹ç´¹ä»‹ãƒ¡ã‚½ãƒƒãƒ‰ã®å‘¼ã³å‡ºã—
         magazine.show();
 
     }
 
 }
 
-// BookƒNƒ‰ƒX
+// Bookã‚¯ãƒ©ã‚¹
 class Book{
 
-    // ƒ^ƒCƒgƒ‹
+    // ã‚¿ã‚¤ãƒˆãƒ«
     private String title;
 
-    // ‰¿Ši
+    // ä¾¡æ ¼
     private int price;
 
-    // ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    // ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     public Book(String title, int price){
         this.title = title;
         this.price = price;
     }
 
-    // ƒ^ƒCƒgƒ‹Žæ“¾ƒƒ\ƒbƒh
+    // ã‚¿ã‚¤ãƒˆãƒ«å–å¾—ãƒ¡ã‚½ãƒƒãƒ‰
     public String getTitle(){
         return title;
     }
 
-    // ‰¿ŠiŽæ“¾ƒƒ\ƒbƒh
+    // ä¾¡æ ¼å–å¾—ãƒ¡ã‚½ãƒƒãƒ‰
     public int getPrice(){
         return price;
     }
 
 }
 
-// ‚±‚±‚ÉMagazineƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ã“ã“ã«Magazineã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
 
