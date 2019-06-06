@@ -1,69 +1,87 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ���ۂɊւ����{���
+    抽象に関する基本問題
 
-    ������\��Animal���ۃN���X�͂��łɊ������Ă��܂��B
-    �i�ύX���Ȃ��ł��������j
+    動物を表すAnimal抽象クラスはすでに完成しています。
+    （変更しないでください）
 
-    ���̒��ɁA�����������Ƃ�\�����Ă���̂�sing���\�b�h������܂��B
-    �������A�̂�sing���\�b�h�͒��ۃ��\�b�h�ł���A���g�͎������Ă��܂���B
-    ���̂Ȃ�A�����ɂ���Ė������Ⴄ��������ł��Ȃ��̂ł��B
+    その中に、動物が鳴くことを表現している歌うsingメソッドがあります。
+    しかし、歌うsingメソッドは抽象メソッドであり、中身は実装していません。
+    何故なら、動物によって鳴き声が違うから実装できないのです。
 
-    ��̓I�ȓ����Ƃ��āA���̂R�̃N���X���쐬���Ă��������B
+    具体的な動物として、次の３つのクラスを作成してください。
 
-    �P�D���N���X Dog
-    �Q�D�L�N���X Cat
-    �R�D���N���X Bird
+    １．犬クラス Dog
+    ２．猫クラス Cat
+    ３．鳥クラス Bird
 
-    ���L�̎��s���ʂ��Q�l�ɂ��āA�̂�sing���\�b�h���������Ă��������B
+    下記の実行結果を参考にして、歌うsingメソッドを実装してください。
 
-    �܂��AAbstractBasicPractice�N���X��main���\�b�h�͖������ł��B
-    �ȉ��̎菇�ɏ]����main���\�b�h���������Ă��������B
+    また、AbstractBasicPracticeクラスのmainメソッドは未完成です。
+    以下の手順に従ってmainメソッドを実装してください。
 
-    �P�D�R�C�̓���������\��Animal�z��^�ϐ�animals�̐錾��
-        �z��I�u�W�F�N�g�̐������s���܂��B
+    １．３匹の動物たちを表すAnimal配列型変数animalsの宣言と
+        配列オブジェクトの生成を行います。
 
-    �Q�D���������z��ϐ��̊e�v�f�ɁA���ԂɌ��E�L�E���I�u�W�F�N�g��
-        �����E������܂��B
+    ２．動物たち配列変数の各要素に、順番に犬・猫・鳥オブジェクトを
+        生成・代入します。
 
-    �R�Dfor���[�v���g���ē��������z��ϐ��𑖍����A�e�����̉̂�
-        sing���\�b�h���Ăяo���܂��B
+    ３．forループを使って動物たち配列変数を走査し、各動物の歌う
+        singメソッドを呼び出します。
 
-    �y���s���ʁz
-    �����
-    �ɂ�[�ɂ�[
-    �҂�҂�
+    【実行結果】
+    わんわん
+    にゃーにゃー
+    ぴよぴよ
 
 */
 public class AbstractBasicPractice{
 
     public static void main(String[] args){
 
-        // �R�C�̓���������\��Animal�z��^�ϐ�animals
-        // �̐錾�Ɣz��I�u�W�F�N�g�̐���
+        // ３匹の動物たちを表すAnimal配列型変数animals
+        // の宣言と配列オブジェクトの生成
+    	Animal[] animals = new Animal[3];
 
+        // 動物たち配列変数の各要素に、順番に犬・猫・鳥
+        // オブジェクトを生成・代入
+    	animals[0] = new Dog();
+    	animals[1] = new Cat();
+    	animals[2] = new Bird();
 
-        // ���������z��ϐ��̊e�v�f�ɁA���ԂɌ��E�L�E��
-        // �I�u�W�F�N�g�𐶐��E���
-
-
-        // for���[�v���g���ē��������z��ϐ��𑖍����A
-        // �e�����̉̂�sing���\�b�h�̌Ăяo��
-
+        // forループを使って動物たち配列変数を走査し、
+        // 各動物の歌うsingメソッドの呼び出し
+    	for(Animal animal: animals) {
+    		animal.sing();
+    	}
 
     }
 
 }
 
-// �������ۃN���X
+// 動物抽象クラス
 abstract class Animal{
     public abstract void sing();
 }
 
-// ������Dog�N���X���쐬���Ă�������
-
-// ������Cat�N���X���쐬���Ă�������
-
-// ������Bird�N���X���쐬���Ă�������
-
+// ここにDogクラスを作成してください
+class Dog extends Animal {
+	@Override
+	public void sing() {
+		System.out.println("わんわん");
+	}
+}
+// ここにCatクラスを作成してください
+class Cat extends Animal {
+	@Override
+	public void sing() {
+		System.out.println("にゃーにゃー");
+	}
+}
+// ここにBirdクラスを作成してください
+class Bird extends Animal {
+	@Override
+	public void sing() {
+		System.out.println("ぴよぴよ");
+	}
+}

@@ -1,114 +1,114 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ƒCƒ“ƒ^ƒtƒF[ƒX‚ÌŠî–{–â‘è
+    ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ÌŠï¿½{ï¿½ï¿½ï¿½
 
-    ŽŸ‚Ì‚R‚Â‚ÌƒCƒ“ƒ^ƒtƒF[ƒX‚ª‚ ‚è‚Ü‚·B
-    (•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢)
+    ï¿½ï¿½ï¿½Ì‚Rï¿½Â‚ÌƒCï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+    (ï¿½ÏXï¿½ï¿½ï¿½È‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
-    E”òs‰Â”\‚ð•\Œ»‚·‚éFlyableƒCƒ“ƒ^ƒtƒF[ƒX
-      (”ò‚Ôfly’ŠÛƒƒ\ƒbƒh‚ª’è‹`‚³‚ê‚Ä‚¢‚Ü‚·)
+    ï¿½Eï¿½ï¿½sï¿½Â”\ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Flyableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½X
+      (ï¿½ï¿½ï¿½flyï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½)
 
-    E…‰j‰Â”\‚ð•\Œ»‚·‚éSwimableƒCƒ“ƒ^ƒtƒF[ƒX
-      (‰j‚®swim’ŠÛƒƒ\ƒbƒh‚ª’è‹`‚³‚ê‚Ä‚¢‚Ü‚·)
+    ï¿½Eï¿½ï¿½ï¿½jï¿½Â”\ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Swimableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½X
+      (ï¿½jï¿½ï¿½swimï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½)
 
-    EHŽ–‰Â”\‚ð•\Œ»‚·‚éEatableƒCƒ“ƒ^ƒtƒF[ƒX
-      (H‚×‚éeat’ŠÛƒƒ\ƒbƒh‚ª’è‹`‚³‚ê‚Ä‚¢‚Ü‚·)
+    ï¿½Eï¿½Hï¿½ï¿½ï¿½Â”\ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Eatableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½X
+      (ï¿½Hï¿½×‚ï¿½eatï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½)
 
-    ‚Ü‚½AHŽ–‰Â”\ƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚½’ŠÛƒNƒ‰ƒX
-    Bird‚ª’è‹`‚³‚ê‚Ä‚¢‚Ü‚·B(•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢)
+    ï¿½Ü‚ï¿½ï¿½Aï¿½Hï¿½ï¿½ï¿½Â”\ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½X
+    Birdï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½B(ï¿½ÏXï¿½ï¿½ï¿½È‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
-    ‚±‚±‚Å‚ÍAeatƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ä‚¢‚Ü‚¹‚ñB‰½ŒÌ‚È‚çA
-    ’¹‚ÌŽí—Þ‚É‚æ‚Á‚ÄH‚×‚é‚à‚Ì‚ªˆÙ‚È‚é‚©‚ç‚Å‚·B
+    ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ÍAeatï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½Ì‚È‚ï¿½A
+    ï¿½ï¿½ï¿½ÌŽï¿½Þ‚É‚ï¿½ï¿½ï¿½ÄHï¿½×‚ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Ù‚È‚é‚©ï¿½ï¿½Å‚ï¿½ï¿½B
 
-    ŽŸ‚ÌŽwŽ¦‚É]‚Á‚Ä‹ï‘Ì“I‚È’¹‚ð•\‚·‚RŽí—Þ‚ÌƒNƒ‰ƒX‚ð
-    ì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½ï¿½ï¿½ÌŽwï¿½ï¿½ï¿½É]ï¿½ï¿½ï¿½Ä‹ï¿½Ì“Iï¿½È’ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½Rï¿½ï¿½Þ‚ÌƒNï¿½ï¿½ï¿½Xï¿½ï¿½
+    ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    [‚Â‚Î‚ßSwallowƒNƒ‰ƒX]
-    ‚PDBird’ŠÛƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [ï¿½Â‚Î‚ï¿½Swallowï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½DBirdï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QDFlyableƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚Ü‚·B
+    ï¿½Qï¿½DFlyableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚RD”ò‚Ôƒƒ\ƒbƒh‚ÆH‚×‚éƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ü‚·B
-        o—Í“à—e‚Í‰º‹LŽÀsŒ‹‰Ê‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Rï¿½Dï¿½ï¿½Ôƒï¿½ï¿½\ï¿½bï¿½hï¿½ÆHï¿½×‚éƒï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½oï¿½Í“ï¿½ï¿½eï¿½Í‰ï¿½ï¿½Lï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ê‚ï¿½ï¿½Qï¿½lï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    [ƒyƒ“ƒMƒ“PenguinƒNƒ‰ƒX]
-    ‚PDBird’ŠÛƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [ï¿½yï¿½ï¿½ï¿½Mï¿½ï¿½Penguinï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½DBirdï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QDSwimableƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚Ü‚·B
+    ï¿½Qï¿½DSwimableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚RD‰j‚®ƒƒ\ƒbƒh‚ÆH‚×‚éƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ü‚·B
-        o—Í“à—e‚Í‰º‹LŽÀsŒ‹‰Ê‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Rï¿½Dï¿½jï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ÆHï¿½×‚éƒï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½oï¿½Í“ï¿½ï¿½eï¿½Í‰ï¿½ï¿½Lï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ê‚ï¿½ï¿½Qï¿½lï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    [ƒJƒƒZƒ~AtthisƒNƒ‰ƒX]
-    ‚PDBird’ŠÛƒNƒ‰ƒX‚ðŒp³‚µ‚Ü‚·B
+    [ï¿½Jï¿½ï¿½ï¿½Zï¿½~Atthisï¿½Nï¿½ï¿½ï¿½X]
+    ï¿½Pï¿½DBirdï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QDFlyable‚ÆSwimableƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚Ü‚·B
+    ï¿½Qï¿½DFlyableï¿½ï¿½Swimableï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚RD”ò‚Ôƒƒ\ƒbƒh‚Æ‰j‚®ƒƒ\ƒbƒh‚ÆH‚×‚éƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ü‚·B
-        o—Í“à—e‚Í‰º‹LŽÀsŒ‹‰Ê‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Rï¿½Dï¿½ï¿½Ôƒï¿½ï¿½\ï¿½bï¿½hï¿½Æ‰jï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ÆHï¿½×‚éƒï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+        ï¿½oï¿½Í“ï¿½ï¿½eï¿½Í‰ï¿½ï¿½Lï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ê‚ï¿½ï¿½Qï¿½lï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚Ü‚½AInterfaceBasicPracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh‚Íˆê•”–¢Š®¬‚Å‚·B
-    ŽŸ‚Ì‚æ‚¤‚Éˆ—‚ðŽÀ‘•‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¿½Ü‚ï¿½ï¿½AInterfaceBasicPracticeï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½mainï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Íˆê•”ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½B
+    ï¿½ï¿½ï¿½Ì‚æ‚¤ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
-    ‚PD’¹”z—ñƒIƒuƒWƒFƒNƒg‚ðŠg’£for•¶‚Åƒ‹[ƒv‚µ‚Ü‚·B
+    ï¿½Pï¿½Dï¿½ï¿½ï¿½zï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½gï¿½ï¿½forï¿½ï¿½ï¿½Åƒï¿½ï¿½[ï¿½vï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚QDH‚×‚éƒƒ\ƒbƒh‚ðŽÀs‚µ‚Ü‚·B
+    ï¿½Qï¿½Dï¿½Hï¿½×‚éƒï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚RD‚à‚µ”òs‰Â”\‚Ì’¹‚È‚ç‚Î”ò‚Ôƒƒ\ƒbƒh‚ðŽÀs‚µ‚Ü‚·B
+    ï¿½Rï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½Â”\ï¿½Ì’ï¿½ï¿½È‚ï¿½Î”ï¿½Ôƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ‚SD‚à‚µ…‰j‰Â”\‚Ì’¹‚È‚ç‚Î‰j‚®ƒƒ\ƒbƒh‚ðŽÀs‚µ‚Ü‚·B
+    ï¿½Sï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jï¿½Â”\ï¿½Ì’ï¿½ï¿½È‚ï¿½Î‰jï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    yŽÀsŒ‹‰Êz
-    ‚Â‚Î‚ß‚ª’Ž‚ðH‚×‚Ü‚µ‚½B
-    ‚Â‚Î‚ß‚ªƒXƒCƒXƒC”ò‚ñ‚Å‚Ü‚·B
+    ï¿½yï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Êz
+    ï¿½Â‚Î‚ß‚ï¿½ï¿½ï¿½ï¿½ï¿½Hï¿½×‚Ü‚ï¿½ï¿½ï¿½ï¿½B
+    ï¿½Â‚Î‚ß‚ï¿½ï¿½Xï¿½Cï¿½Xï¿½Cï¿½ï¿½ï¿½Å‚Ü‚ï¿½ï¿½B
 
-    ƒyƒ“ƒMƒ“‚ª‹›‚ðH‚×‚Ü‚µ‚½B
-    ƒyƒ“ƒMƒ“‚ªƒXƒCƒXƒC‰j‚¢‚Å‚¢‚Ü‚·B
+    ï¿½yï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Hï¿½×‚Ü‚ï¿½ï¿½ï¿½ï¿½B
+    ï¿½yï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Cï¿½Xï¿½Cï¿½jï¿½ï¿½ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-    ƒJƒƒZƒ~‚ªŽq‹›‚ðH‚×‚Ü‚µ‚½B
-    ƒJƒƒZƒ~‚ªƒXƒCƒXƒC”ò‚ñ‚Å‚Ü‚·B
-    ƒJƒƒZƒ~‚ªƒXƒCƒXƒC‰j‚¢‚Å‚¢‚Ü‚·B
+    ï¿½Jï¿½ï¿½ï¿½Zï¿½~ï¿½ï¿½ï¿½qï¿½ï¿½ï¿½ï¿½Hï¿½×‚Ü‚ï¿½ï¿½ï¿½ï¿½B
+    ï¿½Jï¿½ï¿½ï¿½Zï¿½~ï¿½ï¿½ï¿½Xï¿½Cï¿½Xï¿½Cï¿½ï¿½ï¿½Å‚Ü‚ï¿½ï¿½B
+    ï¿½Jï¿½ï¿½ï¿½Zï¿½~ï¿½ï¿½ï¿½Xï¿½Cï¿½Xï¿½Cï¿½jï¿½ï¿½ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
 */
 public class InterfaceBasicPractice{
 
     public static void main(String[] args){
 
-        // ’¹”z—ñƒIƒuƒWƒFƒNƒg‚Ì¶¬
+        // ï¿½ï¿½ï¿½zï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìï¿½ï¿½ï¿½
         Bird[] birds = {new Swallow(), new Penguin(), new Atthis()};
 
-        // ’¹‚½‚¿‚ÌÐ‰î
-        // ‚±‚±‚©‚çƒR[ƒfƒBƒ“ƒO‚µ‚Ä‚­‚¾‚³‚¢
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌÐ‰ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½fï¿½Bï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     }
 
 }
 
-// ”òs‰Â”\ƒCƒ“ƒ^ƒtƒF[ƒX
+// ï¿½ï¿½sï¿½Â”\ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½X
 interface Flyable{
-    // ”ò‚Ô’ŠÛƒƒ\ƒbƒh
+    // ï¿½ï¿½Ô’ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h
     void fly();
 }
 
-// …‰j‰Â”\ƒCƒ“ƒ^ƒtƒF[ƒX
+// ï¿½ï¿½ï¿½jï¿½Â”\ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½X
 interface Swimable{
-    // ‰j‚®’ŠÛƒƒ\ƒbƒh
+    // ï¿½jï¿½ï¿½ï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h
     void swim();
 }
 
-// HŽ–‰Â”\ƒCƒ“ƒ^ƒtƒF[ƒX
+// ï¿½Hï¿½ï¿½ï¿½Â”\ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½X
 interface Eatable{
-    // H‚×‚é’ŠÛƒƒ\ƒbƒh
+    // ï¿½Hï¿½×‚é’Šï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h
     void eat();
 }
 
-// ’¹’ŠÛƒNƒ‰ƒX
-abstract class Bird implements Eatable{}
+// ï¿½ï¿½ï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½X
+//abstract class Bird implements Eatable{}
 
-// ‚±‚±‚É‚Â‚Î‚ßƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ï¿½ï¿½ï¿½ï¿½ï¿½É‚Â‚Î‚ßƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-// ‚±‚±‚Éƒyƒ“ƒMƒ“ƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ï¿½ï¿½ï¿½ï¿½ï¿½Éƒyï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-// ‚±‚±‚ÉƒJƒƒZƒ~ƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ï¿½ï¿½ï¿½ï¿½ï¿½ÉƒJï¿½ï¿½ï¿½Zï¿½~ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 

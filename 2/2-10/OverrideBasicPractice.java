@@ -78,4 +78,23 @@ class Clock{
 }
 
 // ここにAlarmClockクラスを作成してください
+class AlarmClock extends Clock {
+	// 時
+	private int alarmHour;
+    // 分
+	private int alarmMinute;
 
+	// コンストラクタ
+	public AlarmClock(int hour, int minute, int second, int alarmHour, int alarmMinute) {
+		super(hour,minute,second);
+		this.alarmHour = alarmHour;
+		this.alarmMinute = alarmMinute;
+	}
+
+	@Override
+	public void showData() {
+		super.showData();
+		System.out.println("アラーム設定時刻：" + alarmHour + "時" + alarmMinute + "分");
+	}
+
+}
