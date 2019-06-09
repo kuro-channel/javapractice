@@ -1,117 +1,163 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    Œp³‚ÆƒCƒ“ƒ^ƒtƒF[ƒX‚Ì–â‘è
+    ç¶™æ‰¿ã¨ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã®å•é¡Œ
 
-    ƒ~ƒ…[ƒWƒVƒƒƒ“‚ð•\Œ»‚·‚éMusician’ŠÛƒNƒ‰ƒX‚Í
-    Š®¬‚µ‚Ä‚¢‚Ü‚·B(•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢)
+    ãƒŸãƒ¥ãƒ¼ã‚¸ã‚·ãƒ£ãƒ³ã‚’è¡¨ç¾ã™ã‚‹MusicianæŠ½è±¡ã‚¯ãƒ©ã‚¹ã¯
+    å®Œæˆã—ã¦ã„ã¾ã™ã€‚(å¤‰æ›´ã—ãªã„ã§ãã ã•ã„)
 
-    ‚Ü‚½A‰Ì¥‰Â”\‚ð•\Œ»‚·‚éSingableƒCƒ“ƒ^ƒtƒF[ƒX‚ÆA
-    ‰‰‘t‰Â”\‚ð•\Œ»‚·‚éPlayableƒCƒ“ƒ^ƒtƒF[ƒX‚àŠ®¬‚µ‚Ä
-    ‚¢‚Ü‚·B(•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢)
+    ã¾ãŸã€æ­Œå”±å¯èƒ½ã‚’è¡¨ç¾ã™ã‚‹Singableã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã¨ã€
+    æ¼”å¥å¯èƒ½ã‚’è¡¨ç¾ã™ã‚‹Playableã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚‚å®Œæˆã—ã¦
+    ã„ã¾ã™ã€‚(å¤‰æ›´ã—ãªã„ã§ãã ã•ã„)
 
-    ‚ ‚éƒoƒ“ƒh‚ð\¬‚·‚é‚½‚ß‚Éƒ{[ƒJƒŠƒXƒgVocalistƒNƒ‰ƒXA
-    ƒMƒ^ƒŠƒXƒgGuitaristƒNƒ‰ƒXAƒR[ƒ‰ƒX•ƒhƒ‰ƒ}[ChorusDrummer
-    ƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ã‚ã‚‹ãƒãƒ³ãƒ‰ã‚’æ§‹æˆã™ã‚‹ãŸã‚ã«ãƒœãƒ¼ã‚«ãƒªã‚¹ãƒˆVocalistã‚¯ãƒ©ã‚¹ã€
+    ã‚®ã‚¿ãƒªã‚¹ãƒˆGuitaristã‚¯ãƒ©ã‚¹ã€ã‚³ãƒ¼ãƒ©ã‚¹ï¼†ãƒ‰ãƒ©ãƒžãƒ¼ChorusDrummer
+    ã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
 
-    [VocalistƒNƒ‰ƒX]
-    ‚PDMusician’ŠÛƒNƒ‰ƒX‚ðŒp³‚µASingableƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚Ü‚·B
+    [Vocalistã‚¯ãƒ©ã‚¹]
+    ï¼‘ï¼ŽMusicianæŠ½è±¡ã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã€Singableã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Ÿè£…ã—ã¾ã™ã€‚
 
-    ‚QD–¼‘O(StringŒ^)‚ðŽó‚¯Žæ‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B“KØ‚É’l‚ð
-        •ÛŽ‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼’ï¼Žåå‰(Stringåž‹)ã‚’å—ã‘å–ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’å®šç¾©ã—ã¾ã™ã€‚é©åˆ‡ã«å€¤ã‚’
+        ä¿æŒã—ã¦ãã ã•ã„ã€‚
 
-    ‚RD‰Ì‚¤singƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ä‚­‚¾‚³‚¢Bu››‚Í”M¥‚µ‚Ü‚µ‚½Iv‚Æ
-        o—Í‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼“ï¼Žæ­Œã†singãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè£…ã—ã¦ãã ã•ã„ã€‚ã€Œâ—‹â—‹ã¯ç†±å”±ã—ã¾ã—ãŸï¼ã€ã¨
+        å‡ºåŠ›ã—ã¦ãã ã•ã„ã€‚
 
-    [GuitaristƒNƒ‰ƒX]
-    ‚PDMusician’ŠÛƒNƒ‰ƒX‚ðŒp³‚µAPlayableƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚Ü‚·B
+    [Guitaristã‚¯ãƒ©ã‚¹]
+    ï¼‘ï¼ŽMusicianæŠ½è±¡ã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã€Playableã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Ÿè£…ã—ã¾ã™ã€‚
 
-    ‚QDƒMƒ^[‚ÌŽí—Þ‚ð•\‚·guitarTypeƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh(StringŒ^)‚ðŽ‚¿‚Ü‚·B
+    ï¼’ï¼Žã‚®ã‚¿ãƒ¼ã®ç¨®é¡žã‚’è¡¨ã™guitarTypeã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰(Stringåž‹)ã‚’æŒã¡ã¾ã™ã€‚
 
-    ‚RD‘æˆêˆø”‚É–¼‘O(StringŒ^)A‘æ“ñˆø”‚ÉƒMƒ^[‚ÌŽí—Þ(StringŒ^)‚ðŽó‚¯Žæ‚é
-        ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B“KØ‚É’l‚ð•ÛŽ‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼“ï¼Žç¬¬ä¸€å¼•æ•°ã«åå‰(Stringåž‹)ã€ç¬¬äºŒå¼•æ•°ã«ã‚®ã‚¿ãƒ¼ã®ç¨®é¡ž(Stringåž‹)ã‚’å—ã‘å–ã‚‹
+        ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’å®šç¾©ã—ã¾ã™ã€‚é©åˆ‡ã«å€¤ã‚’ä¿æŒã—ã¦ãã ã•ã„ã€‚
 
-    ‚SD‰‰‘tplayƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ä‚­‚¾‚³‚¢Bu››‚Í¢¢‚ð‰‰‘t‚µ‚Ü‚µ‚½Iv
-        ‚Æo—Í‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼”ï¼Žæ¼”å¥playãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè£…ã—ã¦ãã ã•ã„ã€‚ã€Œâ—‹â—‹ã¯â–³â–³ã‚’æ¼”å¥ã—ã¾ã—ãŸï¼ã€
+        ã¨å‡ºåŠ›ã—ã¦ãã ã•ã„ã€‚
 
-    [ChorusDrummerƒNƒ‰ƒX]
-    ‚PDMusician’ŠÛƒNƒ‰ƒX‚ðŒp³‚µASingableƒCƒ“ƒ^ƒtƒF[ƒX‚Æ
-        PlayableƒCƒ“ƒ^ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚Ü‚·B
+    [ChorusDrummerã‚¯ãƒ©ã‚¹]
+    ï¼‘ï¼ŽMusicianæŠ½è±¡ã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã€Singableã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã¨
+        Playableã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Ÿè£…ã—ã¾ã™ã€‚
 
-    ‚QD–¼‘O(StringŒ^)‚ðŽó‚¯Žæ‚éƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ð’è‹`‚µ‚Ü‚·B“KØ‚É’l‚ð
-        •ÛŽ‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼’ï¼Žåå‰(Stringåž‹)ã‚’å—ã‘å–ã‚‹ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’å®šç¾©ã—ã¾ã™ã€‚é©åˆ‡ã«å€¤ã‚’
+        ä¿æŒã—ã¦ãã ã•ã„ã€‚
 
-    ‚RD‰Ì‚¤singƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ä‚­‚¾‚³‚¢Bu››‚ÍƒR[ƒ‰ƒX‚Åƒnƒ‚‚è‚Ü‚µ‚½Iv
-        ‚Æo—Í‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼“ï¼Žæ­Œã†singãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè£…ã—ã¦ãã ã•ã„ã€‚ã€Œâ—‹â—‹ã¯ã‚³ãƒ¼ãƒ©ã‚¹ã§ãƒãƒ¢ã‚Šã¾ã—ãŸï¼ã€
+        ã¨å‡ºåŠ›ã—ã¦ãã ã•ã„ã€‚
 
-    ‚SD‰‰‘tplayƒƒ\ƒbƒh‚ðŽÀ‘•‚µ‚Ä‚­‚¾‚³‚¢Bu››‚Íƒhƒ‰ƒ€‚ð‰‰‘t‚µ‚Ü‚µ‚½Iv
-        ‚Æo—Í‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼”ï¼Žæ¼”å¥playãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè£…ã—ã¦ãã ã•ã„ã€‚ã€Œâ—‹â—‹ã¯ãƒ‰ãƒ©ãƒ ã‚’æ¼”å¥ã—ã¾ã—ãŸï¼ã€
+        ã¨å‡ºåŠ›ã—ã¦ãã ã•ã„ã€‚
 
-    ‚Ü‚½AInheritanceInterfacePracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh‚Íˆê•”–¢Š®¬‚Å‚·B
-    uƒ~ƒ…[ƒWƒbƒNƒXƒ^[ƒgIvˆÈ‰º‚ðŽŸ‚Ì‚æ‚¤‚ÉŽÀ‘•‚µ‚Ä‚­‚¾‚³‚¢B
+    ã¾ãŸã€InheritanceInterfacePracticeã‚¯ãƒ©ã‚¹ã®mainãƒ¡ã‚½ãƒƒãƒ‰ã¯ä¸€éƒ¨æœªå®Œæˆã§ã™ã€‚
+    ã€ŒãƒŸãƒ¥ãƒ¼ã‚¸ãƒƒã‚¯ã‚¹ã‚¿ãƒ¼ãƒˆï¼ã€ä»¥ä¸‹ã‚’æ¬¡ã®ã‚ˆã†ã«å®Ÿè£…ã—ã¦ãã ã•ã„ã€‚
 
-    ‚PDforƒ‹[ƒv‚Å‘–¸‚µ‚Ü‚·B
-    ‚QD‰Ì‚¤‚±‚Æ‚ª‰Â”\‚Å‚ ‚ê‚Î‰Ì‚¢‚Ü‚·B
-    ‚RD‰‰‘t‚ª‰Â”\‚Å‚ ‚ê‚Î‰‰‘t‚µ‚Ü‚·B
+    ï¼‘ï¼Žforãƒ«ãƒ¼ãƒ—ã§èµ°æŸ»ã—ã¾ã™ã€‚
+    ï¼’ï¼Žæ­Œã†ã“ã¨ãŒå¯èƒ½ã§ã‚ã‚Œã°æ­Œã„ã¾ã™ã€‚
+    ï¼“ï¼Žæ¼”å¥ãŒå¯èƒ½ã§ã‚ã‚Œã°æ¼”å¥ã—ã¾ã™ã€‚
 
-    yŽÀsŒ‹‰Êz
-    ÷ˆä‚Í”M¥‚µ‚Ü‚µ‚½I
-    “cŒ´‚ÍƒŠ[ƒhƒMƒ^[‚ð‰‰‘t‚µ‚Ü‚µ‚½I
-    ’†ì‚Íƒx[ƒX‚ð‰‰‘t‚µ‚Ü‚µ‚½I
-    —é–Ø‚ÍƒR[ƒ‰ƒX‚Åƒnƒ‚‚è‚Ü‚µ‚½I
-    —é–Ø‚Íƒhƒ‰ƒ€‚ð‰‰‘t‚µ‚Ü‚µ‚½I
+    ã€å®Ÿè¡Œçµæžœã€‘
+    æ¡œäº•ã¯ç†±å”±ã—ã¾ã—ãŸï¼
+    ç”°åŽŸã¯ãƒªãƒ¼ãƒ‰ã‚®ã‚¿ãƒ¼ã‚’æ¼”å¥ã—ã¾ã—ãŸï¼
+    ä¸­å·ã¯ãƒ™ãƒ¼ã‚¹ã‚’æ¼”å¥ã—ã¾ã—ãŸï¼
+    éˆ´æœ¨ã¯ã‚³ãƒ¼ãƒ©ã‚¹ã§ãƒãƒ¢ã‚Šã¾ã—ãŸï¼
+    éˆ´æœ¨ã¯ãƒ‰ãƒ©ãƒ ã‚’æ¼”å¥ã—ã¾ã—ãŸï¼
 
 */
 public class InheritanceInterfacePractice{
 
     public static void main(String[] args){
 
-        // ƒ~ƒ…[ƒWƒVƒƒƒ“”z—ñ‚Ìì¬
+        // ãƒŸãƒ¥ãƒ¼ã‚¸ã‚·ãƒ£ãƒ³é…åˆ—ã®ä½œæˆ
         Musician[] band = {
-                            new Vocalist("÷ˆä"),
-                            new Guitarist("“cŒ´","ƒŠ[ƒhƒMƒ^["),
-                            new Guitarist("’†ì","ƒx[ƒX"),
-                            new ChorusDrummer("—é–Ø")
+                            new Vocalist("æ¡œäº•"),
+                            new Guitarist("ç”°åŽŸ","ãƒªãƒ¼ãƒ‰ã‚®ã‚¿ãƒ¼"),
+                            new Guitarist("ä¸­å·","ãƒ™ãƒ¼ã‚¹"),
+                            new ChorusDrummer("éˆ´æœ¨")
                            };
 
-        // ƒ~ƒ…[ƒWƒbƒNƒXƒ^[ƒgI
-
-
+        // ãƒŸãƒ¥ãƒ¼ã‚¸ãƒƒã‚¯ã‚¹ã‚¿ãƒ¼ãƒˆï¼
+        for(Musician musician: band) {
+        	// æ­Œã†ã“ã¨ãŒå¯èƒ½
+        	if(musician instanceof Singable) {
+        		((Singable)musician).sing();
+        	}
+        	// æ¼”å¥ã™ã‚‹ã“ã¨ãŒå¯èƒ½
+        	if(musician instanceof Playable) {
+        		((Playable)musician).play();
+        	}
+        }
     }
-
 }
 
-// ƒ~ƒ…[ƒWƒVƒƒƒ“’ŠÛƒNƒ‰ƒX
+// ãƒŸãƒ¥ãƒ¼ã‚¸ã‚·ãƒ£ãƒ³æŠ½è±¡ã‚¯ãƒ©ã‚¹
 abstract class Musician{
 
-    // –¼‘OƒtƒB[ƒ‹ƒh
+    // åå‰ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
     private String name;
 
-    // ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    // ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     public Musician(String name){
         this.name = name;
     }
 
-    // –¼‘OŽæ“¾ƒƒ\ƒbƒh
+    // åå‰å–å¾—ãƒ¡ã‚½ãƒƒãƒ‰
     public String getName(){
         return name;
     }
 
 }
 
-// ‰Ì¥‰Â”\ƒCƒ“ƒ^ƒtƒF[ƒX
+// æ­Œå”±å¯èƒ½ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 interface Singable{
     void sing();
 }
 
-// ‰‰‘t‰Â”\ƒCƒ“ƒ^ƒtƒF[ƒX
+// æ¼”å¥å¯èƒ½ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹
 interface Playable{
     void play();
 }
 
-// ‚±‚±‚Éƒ{[ƒJƒŠƒXƒgƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ã“ã“ã«ãƒœãƒ¼ã‚«ãƒªã‚¹ãƒˆã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
+class Vocalist extends Musician implements Singable{
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	public Vocalist(String name) {
+		super(name);
+	}
+	@Override
+	public void sing() {
+		System.out.println(super.getName() + "ã¯ç†±å”±ã—ã¾ã—ãŸï¼");
+	}
+}
+// ã“ã“ã«ã‚®ã‚¿ãƒªã‚¹ãƒˆã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
+class Guitarist extends Musician implements Playable{
+	// ã‚®ã‚¿ãƒ¼ã®ç¨®é¡ž
+	private String guitarType;
 
-// ‚±‚±‚ÉƒMƒ^ƒŠƒXƒgƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	public Guitarist(String name, String guitarType) {
+		super(name);
+		this.guitarType = guitarType;
+	}
 
-// ‚±‚±‚ÉƒR[ƒ‰ƒX•ƒhƒ‰ƒ}[ƒNƒ‰ƒX‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢
+	@Override
+	public void play() {
+		System.out.println(super.getName() + "ã¯" + this.guitarType + "ã‚’æ¼”å¥ã—ã¾ã—ãŸï¼");
+	}
+}
 
+
+// ã“ã“ã«ã‚³ãƒ¼ãƒ©ã‚¹ï¼†ãƒ‰ãƒ©ãƒžãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
+class ChorusDrummer extends Musician implements Singable, Playable{
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	public ChorusDrummer(String name) {
+		super(name);
+	}
+
+	@Override
+	public void sing() {
+		System.out.println(super.getName() + "ã¯ã‚³ãƒ¼ãƒ©ã‚¹ã§ãƒãƒ¢ã‚Šã¾ã—ãŸï¼");
+	}
+
+	@Override
+	public void play() {
+		System.out.println(super.getName() + "ã¯ãƒ‰ãƒ©ãƒ ã‚’æ¼”å¥ã—ã¾ã—ãŸï¼");
+	}
+}

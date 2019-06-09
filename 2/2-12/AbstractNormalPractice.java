@@ -1,92 +1,90 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
+    抽象に関する標準問題
 
-    ���ۂɊւ���W�����
+    AbstractNormalPracticeクラスのmainメソッドは
+    完成しています。（変更しないでください）
 
-    AbstractNormalPractice�N���X��main���\�b�h��
-    �������Ă��܂��B�i�ύX���Ȃ��ł��������j
+    サッカー選手を表現するSoccerPlayer抽象クラスおよび
+    センターフォワードを表現するCenterForwardクラスと
+    ゴールキーパーを表現するGoalKeeperクラスを作成してください。
 
-    �T�b�J�[�I���\������SoccerPlayer���ۃN���X�����
-    �Z���^�[�t�H���[�h��\������CenterForward�N���X��
-    �S�[���L�[�p�[��\������GoalKeeper�N���X���쐬���Ă��������B
+    [SoccerPlayer抽象クラス]
+    １．選手名を表すnameインスタンスフィールド（String型）と
+        背番号を表すuniformNumberインスタンスフィールド（int型）
+        を定義します。アクセス指定はprivateに設定します。
 
-    [SoccerPlayer���ۃN���X]
-    �P�D�I�薼��\��name�C���X�^���X�t�B�[���h�iString�^�j��
-        �w�ԍ���\��uniformNumber�C���X�^���X�t�B�[���h�iint�^�j
-        ���`���܂��B�A�N�Z�X�w���private�ɐݒ肵�܂��B
+    ２．引数に選手名と背番号を受け取るコンストラクタを定義します。
+        引数の値をそのままインスタンスフィールドに受け渡します。
 
-    �Q�D�����ɑI�薼�Ɣw�ԍ����󂯎��R���X�g���N�^���`���܂��B
-        �����̒l�����̂܂܃C���X�^���X�t�B�[���h�Ɏ󂯓n���܂��B
+    ３．名前を外部から取得できるようにgetNameメソッド（引数なし、戻り値String型）
+        を定義します。
 
-    �R�D���O���O������擾�ł���悤��getName���\�b�h�i�����Ȃ��A�߂�lString�^�j
-        ���`���܂��B
+    ４．ボールを蹴るkickBallメソッドを定義します。「○○はボールを蹴りました」
+        と出力します。
 
-    �S�D�{�[�����R��kickBall���\�b�h���`���܂��B�u�����̓{�[�����R��܂����v
-        �Əo�͂��܂��B
+    ５．ボールを受け止めるcatchBallメソッドを定義します。「○○はボールを
+        足で受け止めました」と出力します。
 
-    �T�D�{�[�����󂯎~�߂�catchBall���\�b�h���`���܂��B�u�����̓{�[����
-        ���Ŏ󂯎~�߂܂����v�Əo�͂��܂��B
+    ６．ポジション名取得抽象メソッドgetPositionNameを宣言します。
+        引数はなしで、戻り値はString型です。
 
-    �U�D�|�W�V�������擾���ۃ��\�b�hgetPositionName��錾���܂��B
-        �����͂Ȃ��ŁA�߂�l��String�^�ł��B
+    ７．toStringメソッドをオーバーライドします。
+       「ポジション名 名前 背番号○○」の順に文字列を組み立てます。
+       （下記の実行結果を参考にしてください）
 
-    �V�DtoString���\�b�h���I�[�o�[���C�h���܂��B
-       �u�|�W�V������ ���O �w�ԍ������v�̏��ɕ������g�ݗ��Ă܂��B
-       �i���L�̎��s���ʂ��Q�l�ɂ��Ă��������j
+    [CenterForwardクラス]
+    １．SoccerPlayerクラスを継承します。
 
-    [CenterForward�N���X]
-    �P�DSoccerPlayer�N���X���p�����܂��B
+    ２．ポジション名を表現するString型の定数POSITION_NAMEを定義します。
+        値は「センターフォワード」とします。
 
-    �Q�D�|�W�V��������\������String�^�̒萔POSITION_NAME���`���܂��B
-        �l�́u�Z���^�[�t�H���[�h�v�Ƃ��܂��B
+    ３．引数に選手名と背番号を受け取るコンストラクタを定義します。
+        SoccerPlayerクラスのコンストラクタをうまく使ってインスタンス
+        フィールドに値を受け渡します。
 
-    �R�D�����ɑI�薼�Ɣw�ԍ����󂯎��R���X�g���N�^���`���܂��B
-        SoccerPlayer�N���X�̃R���X�g���N�^�����܂��g���ăC���X�^���X
-        �t�B�[���h�ɒl���󂯓n���܂��B
+    ４．ポジション名取得メソッドgetPositionNameを実装します。戻り値に
+        ポジション名定数の値を返します。
 
-    �S�D�|�W�V�������擾���\�b�hgetPositionName���������܂��B�߂�l��
-        �|�W�V�������萔�̒l��Ԃ��܂��B
+    [GoalKeeperクラス]
+    １．CenterForwardクラスの手順１～４と同じです。ポジション名定数の
+        値には「ゴールキーパー」を設定してください。
 
-    [GoalKeeper�N���X]
-    �P�DCenterForward�N���X�̎菇�P�`�S�Ɠ����ł��B�|�W�V�������萔��
-        �l�ɂ́u�S�[���L�[�p�[�v��ݒ肵�Ă��������B
+    ２．ボールを受け止めるcatchBallメソッドをオーバーライドします。
+       「○○はボールを手で受け止めました」と出力します。
 
-    �Q�D�{�[�����󂯎~�߂�catchBall���\�b�h���I�[�o�[���C�h���܂��B
-       �u�����̓{�[������Ŏ󂯎~�߂܂����v�Əo�͂��܂��B
+    【実行結果】
+    センターフォワード 田村 背番号11
+    田村はボールを蹴りました
+    田村はボールを足で受け止めました
 
-    �y���s���ʁz
-    �Z���^�[�t�H���[�h �c�� �w�ԍ�11
-    �c���̓{�[�����R��܂���
-    �c���̓{�[���𑫂Ŏ󂯎~�߂܂���
-
-    �S�[���L�[�p�[ �쓇 �w�ԍ�12
-    �쓇�̓{�[�����R��܂���
-    �쓇�̓{�[������Ŏ󂯎~�߂܂���
+    ゴールキーパー 川島 背番号12
+    川島はボールを蹴りました
+    川島はボールを手で受け止めました
 
 */
 public class AbstractNormalPractice{
 
     public static void main(String[] args){
 
-        // �Z���^�[�t�H���[�h�I�u�W�F�N�g�̐���
-        SoccerPlayer fwd = new CenterForward("�c��", 11);
+        // センターフォワードオブジェクトの生成
+        SoccerPlayer fwd = new CenterForward("田村", 11);
 
-        // ���ȏЉ�
+        // 自己紹介
         System.out.println(fwd);
 
-        // �{�[��������
+        // ボールを処理
         fwd.kickBall();
         fwd.catchBall();
 
         System.out.println();
 
-        // �S�[���L�[�p�[�I�u�W�F�N�g�̐���
-        SoccerPlayer keeper = new GoalKeeper("�쓇", 12);
+        // ゴールキーパーオブジェクトの生成
+        SoccerPlayer keeper = new GoalKeeper("川島", 12);
 
-        // ���ȏЉ�
+        // 自己紹介
         System.out.println(keeper);
 
-        // �{�[��������
+        // ボールを処理
         keeper.kickBall();
         keeper.catchBall();
 
@@ -94,9 +92,59 @@ public class AbstractNormalPractice{
 
 }
 
-// �����ɃT�b�J�[�I�蒊�ۃN���X���쐬���Ă�������
+// ここにサッカー選手抽象クラスを作成してください
+abstract class SoccerPlayer {
+	private String name;
+	private int uniformNumber;
 
-// �����ɃZ���^�[�t�H���[�h�N���X���쐬���Ă�������
+	public SoccerPlayer(String name, int uniformNumber) {
+		this.name = name;
+		this.uniformNumber = uniformNumber;
+	}
 
-// �����ɃS�[���L�[�p�[�N���X���쐬���Ă�������
+	public String getName() {
+		return name;
+	}
 
+	public void kickBall() {
+		System.out.println(name + "はボールを蹴りました");
+	}
+
+	public void catchBall() {
+		System.out.println(name + "はボールを足で受け止めました");
+	}
+
+	public abstract String getPositionName();
+
+	@Override
+	public String toString() {
+		return getPositionName() + " " + getName() + " " + "背番号" + uniformNumber;
+	}
+
+
+}
+// ここにセンターフォワードクラスを作成してください
+class CenterForward extends SoccerPlayer {
+	public static final String POSITION_NAME = "センターフォワード";
+
+	public CenterForward(String name, int uniformNumber) {
+		super(name, uniformNumber);
+	}
+
+	public String getPositionName() {
+		return POSITION_NAME;
+	}
+}
+
+// ここにゴールキーパークラスを作成してください
+class GoalKeeper extends SoccerPlayer {
+	public static final String POSITION_NAME = "ゴールキーパー";
+
+	public GoalKeeper(String name, int uniformNumber) {
+		super(name, uniformNumber);
+	}
+
+	public String getPositionName() {
+		return POSITION_NAME;
+	}
+}

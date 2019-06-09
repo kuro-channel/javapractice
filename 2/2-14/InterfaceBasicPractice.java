@@ -1,114 +1,118 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    �C���^�t�F�[�X�̊�{���
+    次の３つのインタフェースがあります。(変更しないでください) 
+    ・飛行可能を表現するFlyableインタフェース(飛ぶfly抽象メソッドが定義されています)
+	・水泳可能を表現するSwimableインタフェース(泳ぐswim抽象メソッドが定義されています) 
+	・食事可能を表現するEatableインタフェース(食べるeat抽象メソッドが定義されています)
 
-    ���̂R�̃C���^�t�F�[�X������܂��B
-    (�ύX���Ȃ��ł�������)
+	また、食事可能インタフェースを実装した抽象クラスBirdが定義されています。(変更しないでください)
+	ここでは、eatメソッドを実装していません。何故なら、鳥の種類によって食べるものが異なるからです。
+	次の指示に従って具体的な鳥を表す３種類のクラスを作成してください。
 
-    �E��s�\��\������Flyable�C���^�t�F�[�X
-      (���fly���ۃ��\�b�h����`����Ă��܂�)
+	[つばめSwallowクラス]
+	１．Bird抽象クラスを継承します。
+	２．Flyableインタフェースを実装します。
+	３．飛ぶメソッドと食べるメソッドを実装します。出力内容は下記実行結果を参考にしてください。
 
-    �E���j�\��\������Swimable�C���^�t�F�[�X
-      (�j��swim���ۃ��\�b�h����`����Ă��܂�)
+	[ペンギンPenguinクラス]
+	１．Bird抽象クラスを継承します。
+	２．Swimableインタフェースを実装します。
+	３．泳ぐメソッドと食べるメソッドを実装します。出力内容は下記実行結果を参考にしてください。
 
-    �E�H���\��\������Eatable�C���^�t�F�[�X
-      (�H�ׂ�eat���ۃ��\�b�h����`����Ă��܂�)
+	[カワセミAtthisクラス]
+	１．Bird抽象クラスを継承します。
+	２．FlyableとSwimableインタフェースを実装します。
+	３．飛ぶメソッドと泳ぐメソッドと食べるメソッドを実装します。出力内容は下記実行結果を参考にしてください。
+	また、InterfaceBasicPracticeクラスのmainメソッドは一部未完成です。
 
-    �܂��A�H���\�C���^�t�F�[�X�������������ۃN���X
-    Bird����`����Ă��܂��B(�ύX���Ȃ��ł�������)
+	次のように処理を実装してください。
 
-    �����ł́Aeat���\�b�h���������Ă��܂���B���̂Ȃ�A
-    ���̎�ނɂ���ĐH�ׂ���̂��قȂ邩��ł��B
+	１．鳥配列オブジェクトを拡張for文でループします。
+	２．食べるメソッドを実行します。
+	３．もし飛行可能の鳥ならば飛ぶメソッドを実行します。
+	４．もし水泳可能の鳥ならば泳ぐメソッドを実行します。
 
-    ���̎w���ɏ]���ċ�̓I�Ȓ���\���R��ނ̃N���X��
-    �쐬���Ă��������B
-
-    [�΂�Swallow�N���X]
-    �P�DBird���ۃN���X���p�����܂��B
-
-    �Q�DFlyable�C���^�t�F�[�X���������܂��B
-
-    �R�D��ԃ��\�b�h�ƐH�ׂ郁�\�b�h���������܂��B
-        �o�͓��e�͉��L���s���ʂ��Q�l�ɂ��Ă��������B
-
-    [�y���M��Penguin�N���X]
-    �P�DBird���ۃN���X���p�����܂��B
-
-    �Q�DSwimable�C���^�t�F�[�X���������܂��B
-
-    �R�D�j�����\�b�h�ƐH�ׂ郁�\�b�h���������܂��B
-        �o�͓��e�͉��L���s���ʂ��Q�l�ɂ��Ă��������B
-
-    [�J���Z�~Atthis�N���X]
-    �P�DBird���ۃN���X���p�����܂��B
-
-    �Q�DFlyable��Swimable�C���^�t�F�[�X���������܂��B
-
-    �R�D��ԃ��\�b�h�Ɖj�����\�b�h�ƐH�ׂ郁�\�b�h���������܂��B
-        �o�͓��e�͉��L���s���ʂ��Q�l�ɂ��Ă��������B
-
-    �܂��AInterfaceBasicPractice�N���X��main���\�b�h�͈ꕔ�������ł��B
-    ���̂悤�ɏ������������Ă��������B
-
-    �P�D���z��I�u�W�F�N�g���g��for���Ń��[�v���܂��B
-
-    �Q�D�H�ׂ郁�\�b�h�����s���܂��B
-
-    �R�D������s�\�̒��Ȃ�Δ�ԃ��\�b�h�����s���܂��B
-
-    �S�D�������j�\�̒��Ȃ�Ήj�����\�b�h�����s���܂��B
-
-    �y���s���ʁz
-    �΂߂�����H�ׂ܂����B
-    �΂߂��X�C�X�C���ł܂��B
-
-    �y���M��������H�ׂ܂����B
-    �y���M�����X�C�X�C�j���ł��܂��B
-
-    �J���Z�~���q����H�ׂ܂����B
-    �J���Z�~���X�C�X�C���ł܂��B
-    �J���Z�~���X�C�X�C�j���ł��܂��B
-
+	【実行結果】
+	つばめが虫を食べました。
+	つばめがスイスイ飛んでます。
+	ペンギンが魚を食べました。
+	ペンギンがスイスイ泳いでいます。
+	カワセミが子魚を食べました。
+	カワセミがスイスイ飛んでます。
+	カワセミがスイスイ泳いでいます。
 */
 public class InterfaceBasicPractice{
 
     public static void main(String[] args){
 
-        // ���z��I�u�W�F�N�g�̐���
-        Bird[] birds = {new Swallow(), new Penguin(), new Atthis()};
+        Birds[] birds = {new Swallow(), new Penguin(), new Atthis()};
 
-        // �������̏Љ�
-        // ��������R�[�f�B���O���Ă�������
+        for(Birds bird: birds) {
+        	// 食べる
+        	bird.eat();
 
+        	// 飛行可能な鳥の場合
+        	if(bird instanceof Flyable) {
+        		((Flyable) bird).fly();
+        	}
+        	// 水泳可能な鳥の場合
+        	if(bird instanceof Swimable) {
+        		((Swimable) bird).swim();
+        	}
+        }
     }
-
 }
 
-// ��s�\�C���^�t�F�[�X
 interface Flyable{
-    // ��Ԓ��ۃ��\�b�h
     void fly();
 }
 
-// ���j�\�C���^�t�F�[�X
 interface Swimable{
-    // �j�����ۃ��\�b�h
     void swim();
 }
 
-// �H���\�C���^�t�F�[�X
 interface Eatable{
-    // �H�ׂ钊�ۃ��\�b�h
     void eat();
 }
 
-// �����ۃN���X
-//abstract class Bird implements Eatable{}
+abstract class Birds implements Eatable{}
 
-// �����ɂ΂߃N���X���쐬���Ă�������
+// つばめクラス
+class Swallow extends Birds implements Flyable{
+	@Override
+	public void eat() {
+		System.out.println("つばめが虫を食べました。");
+	}
+	@Override
+	public void fly() {
+		System.out.println("つばめがスイスイ飛んでます。");
+	}
+}
 
-// �����Ƀy���M���N���X���쐬���Ă�������
+//ペンギンクラス
+class Penguin extends Birds implements Swimable{
+	@Override
+	public void eat() {
+		System.out.println("ペンギンが魚を食べました。");
+	}
+	@Override
+	public void swim() {
+		System.out.println("ペンギンがスイスイ泳いでいます。");
+	}
+}
 
-// �����ɃJ���Z�~�N���X���쐬���Ă�������
-
+//カワセミクラス
+class Atthis extends Birds implements Flyable, Swimable{
+	@Override
+	public void eat() {
+		System.out.println("カワセミが子魚を食べました。");
+	}
+	@Override
+	public void fly() {
+		System.out.println("カワセミがスイスイ飛んでます。");
+	}
+	@Override
+	public void swim() {
+		System.out.println("カワセミがスイスイ泳いでいます。");
+	}
+}
