@@ -1,66 +1,66 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ArrayList�Ɋւ���W�����
+    ArrayListに関する標準問題
 
-    �f�W�J����\������DigitalCamera�N���X�ƁA�摜��\������
-    Picture�N���X���쐬���Ă��������B
+    デジカメを表現するDigitalCameraクラスと、画像を表現する
+    Pictureクラスを作成してください。
 
-    �܂��A�f�W�J���N���X���g�p����ArrayListNormalPractice�N���X��
-    main���\�b�h�͊������Ă��܂��B�i�ύX���Ȃ��ł��������j
+    また、デジカメクラスを使用するArrayListNormalPracticeクラスの
+    mainメソッドは完成しています。（変更しないでください）
 
-    [Picture�N���X]
-    �P�D��ʑ̂�\������C���X�^���X�t�B�[���htarget(String�^)���`���܂��B
+    [Pictureクラス]
+    １．被写体を表現するインスタンスフィールドtarget(String型)を定義します。
 
-    �Q�D��ʑ�(String�^)�������Ɏ󂯎��R���X�g���N�^���`���܂��B
-        �����Ŏ󂯎�����l���A�C���X�^���X�t�B�[���h�Ɋi�[���Ă��������B
+    ２．被写体(String型)を引数に受け取るコンストラクタを定義します。
+        引数で受け取った値を、インスタンスフィールドに格納してください。
 
-    �R�D�I�u�W�F�N�g�̐������𕶎���Ƃ��Ė߂����߂�toString���\�b�h��
-        �I�[�o�[���C�h���Ă��������B�߂�l�Ƃ��ĕԂ��l�́u�����̉摜�v��
-        ����������ł��B
+    ３．オブジェクトの説明文を文字列として戻すためのtoStringメソッドを
+        オーバーライドしてください。戻り値として返す値は「○○の画像」と
+        いう文字列です。
 
-    [DigitalCamera�N���X]
-    �P�D�B�e�����摜���Ǘ�����ArrayList<Picture>�^�̃������C���X�^���X
-        �t�B�[���hmemory���`���܂��B
+    [DigitalCameraクラス]
+    １．撮影した画像を管理するArrayList<Picture>型のメモリインスタンス
+        フィールドmemoryを定義します。
 
-    �Q�D�����Ȃ��R���X�g���N�^���`���܂��B���̒��ŁA�������C���X�^���X
-        �t�B�[���h�̃I�u�W�F�N�g�𐶐����܂��B
+    ２．引数なしコンストラクタを定義します。その中で、メモリインスタンス
+        フィールドのオブジェクトを生成します。
 
-    �R�D�摜�B�e���\�b�htakePicture���`���܂��B�����͔�ʑ́iString�^�j�ŁA
-        �߂�l�͂���܂���B�u�������B�e���܂����v�Əo�͂�����Ƀ������I�u�W�F�N�g
-        �ɉ摜�I�u�W�F�N�g��o�^���܂��B
+    ３．画像撮影メソッドtakePictureを定義します。引数は被写体（String型）で、
+        戻り値はありません。「○○を撮影しました」と出力した後にメモリオブジェクト
+        に画像オブジェクトを登録します。
 
-    �S�D�摜�ꗗ�\�����\�b�hshowPictures���`���܂��B�����E�߂�l�͂Ȃ��ł��B
-        �܂��u����  �摜�ꗗ  �����v�Əo�͂��A�g��for����p���ĉ摜�̏���
-        ���ɏo�͂��܂��B
+    ４．画像一覧表示メソッドshowPicturesを定義します。引数・戻り値はなしです。
+        まず「★☆  画像一覧  ☆★」と出力し、拡張for文を用いて画像の情報を
+        順に出力します。
 
-    �T�D�ۑ��摜���擾���\�b�hgetPictureCount���`���܂��B�����͂Ȃ��ŁA�߂�l
-        �͕ۑ������iint�^�j�ł��B�������I�u�W�F�N�g�Ɋi�[����Ă���摜�I�u�W�F�N�g
-        �̌���߂�l�Ƃ��ĕԂ��܂��B
+    ５．保存画像数取得メソッドgetPictureCountを定義します。引数はなしで、戻り値
+        は保存枚数（int型）です。メモリオブジェクトに格納されている画像オブジェクト
+        の個数を戻り値として返します。
 
-    �U�D�摜�S�������\�b�hclearMemory���`���܂��B�����E�߂�l�͂Ȃ��ł��B
-       �u���ׂẲ摜���������܂����v�Əo�͂��A�������I�u�W�F�N�g�Ɋi�[�����
-        ���邷�ׂẲ摜�I�u�W�F�N�g���N���A���܂��B
+    ６．画像全消去メソッドclearMemoryを定義します。引数・戻り値はなしです。
+       「すべての画像を消去しました」と出力し、メモリオブジェクトに格納されて
+        いるすべての画像オブジェクトをクリアします。
 
-    �y���s���ʁz
-    �q�L���B�e���܂����B
-    �����`���B�e���܂����B
-    �J�v�`�[�m���B�e���܂����B
-    �Ԃ������B�e���܂����B
-    �c�[�V���b�g���B�e���܂����B
+    【実行結果】
+    子猫を撮影しました。
+    ランチを撮影しました。
+    カプチーノを撮影しました。
+    赤ちゃんを撮影しました。
+    ツーショットを撮影しました。
 
-    ���݂̎B�e�����F5
+    現在の撮影枚数：5
 
-    ����  �摜�ꗗ  ����
-    �q�L�̉摜
-    �����`�̉摜
-    �J�v�`�[�m�̉摜
-    �Ԃ����̉摜
-    �c�[�V���b�g�̉摜
+    ★☆  画像一覧  ☆★
+    子猫の画像
+    ランチの画像
+    カプチーノの画像
+    赤ちゃんの画像
+    ツーショットの画像
 
-    ���ׂẲ摜���������܂���
+    すべての画像を消去しました
 
-    ���݂̎B�e�����F0
+    現在の撮影枚数：0
 
 */
 
@@ -68,41 +68,41 @@ public class ArrayListNormalPractice{
 
     public static void main(String[] args){
 
-        // �f�W�J���I�u�W�F�N�g�̐錾�Ɛ���
+        // デジカメオブジェクトの宣言と生成
         DigitalCamera myCamera = new DigitalCamera();
 
-        // �f�W�J���ɂĎB�e
-        myCamera.takePicture("�q�L");
-        myCamera.takePicture("�����`");
-        myCamera.takePicture("�J�v�`�[�m");
-        myCamera.takePicture("�Ԃ����");
-        myCamera.takePicture("�c�[�V���b�g");
+        // デジカメにて撮影
+        myCamera.takePicture("子猫");
+        myCamera.takePicture("ランチ");
+        myCamera.takePicture("カプチーノ");
+        myCamera.takePicture("赤ちゃん");
+        myCamera.takePicture("ツーショット");
 
         System.out.println();
 
-        // �B�e�摜���̊m�F
-        System.out.println("���݂̎B�e�����F" + myCamera.getPictureCount());
+        // 撮影画像数の確認
+        System.out.println("現在の撮影枚数：" + myCamera.getPictureCount());
 
         System.out.println();
 
-        // �摜�̉{��
+        // 画像の閲覧
         myCamera.showPictures();
 
         System.out.println();
 
-        // �摜�t�@�C���̃N���A
+        // 画像ファイルのクリア
         myCamera.clearMemory();
 
         System.out.println();
 
-        // �B�e�摜���̍Ċm�F
-        System.out.println("���݂̎B�e�����F" + myCamera.getPictureCount());
+        // 撮影画像数の再確認
+        System.out.println("現在の撮影枚数：" + myCamera.getPictureCount());
 
     }
 
 }
 
-// �����Ƀf�W�J���N���X���쐬���Ă�������
+// ここにデジカメクラスを作成してください
 
-// �����ɉ摜�N���X���쐬���Ă�������
+// ここに画像クラスを作成してください
 

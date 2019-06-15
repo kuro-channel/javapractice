@@ -128,8 +128,22 @@ abstract class Employee{
 
 // ここに上司クラスを作成してください
 class Boss extends Employee {
+	// 部下
+	Subordinate sub;
 
+	// コンストラクタ
+	public Boss(String name, Subordinate sub) {
+		super.name = name;
+		this.sub = sub;
+	}
+
+	// 働く
+	public void work(String type) {
+
+	}
 }
 
 // ここに部下クラスを作成してください
+class Subordinate extends Employee{
 
+}

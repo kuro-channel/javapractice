@@ -1,51 +1,51 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    HashMap�Ɋւ����{���
+    HashMapに関する基本問題
 
-    �l���̑����s���{���x�X�g10�𓖂Ă�N�C�Y���쐬���܂��傤�B
-    (2017�N10�����݂̃f�[�^�ł�)
+    人口の多い都道府県ベスト10を当てるクイズを作成しましょう。
+    (2017年10月現在のデータです)
 
-    HashMap<String,Integer>�^�̃}�b�v�ɂ́A�L�[�ɓs���{�����A�l��
-    ���ʂ��i�[���܂��B���̃����L���O����o�^���Ă��������B
+    HashMap<String,Integer>型のマップには、キーに都道府県名、値に
+    順位を格納します。次のランキング情報を登録してください。
 
-        �P�ʁF�����s
-        �Q�ʁF�_�ސ쌧
-        �R�ʁF���{
-        �S�ʁF���m��
-        �T�ʁF��ʌ�
-        �U�ʁF��t��
-        �V�ʁF���Ɍ�
-        �W�ʁF�k�C��
-        �X�ʁF������
-      �P�O�ʁF�É���
+        １位：東京都
+        ２位：神奈川県
+        ３位：大阪府
+        ４位：愛知県
+        ５位：埼玉県
+        ６位：千葉県
+        ７位：兵庫県
+        ８位：北海道
+        ９位：福岡県
+      １０位：静岡県
 
-    ������
-    System.console().readLine()�̋L�q�́A�L�[�{�[�h���當�����
-    ���͂��󂯕t���A�����String�^�̒l�Ƃ��ĕԂ��v���O�����ł��B
-    ����͂��̂܂ܗ��p���Ă��������B
+    ※注意
+    System.console().readLine()の記述は、キーボードから文字列の
+    入力を受け付け、それをString型の値として返すプログラムです。
+    これはそのまま利用してください。
 
-    �s���{�����̓��͎�t���s���A���̓s���{���������L���O�ɓ����Ă���
-    �ꍇ�́u������v�u�����́��ʂł��v�ƕ\�����āA���̓s���{���������L���O
-    Map�I�u�W�F�N�g����폜���Ă��������B���̓s���{���������L���O�ɓ�����
-    ���Ȃ������ꍇ�́u�c�O�c�v�u�����̓����L���O�ɓ����Ă��܂���c�v
-    �u�Q�[���I�[�o�[�v�ƕ\�����ăQ�[�����I�����܂��B
+    都道府県名の入力受付を行い、その都道府県がランキングに入っていた
+    場合は「正解♪」「○○は△位です」と表示して、その都道府県をランキング
+    Mapオブジェクトから削除してください。その都道府県がランキングに入って
+    いなかった場合は「残念…」「○○はランキングに入っていません…」
+    「ゲームオーバー」と表示してゲームを終了します。
 
-    �x�X�g10�̂��ׂĂ̓s���{���𓚂���ꂽ�ꍇ�́A�u���߂łƂ��������܂���v
-    �u�x�X�g10�����ׂē����܂�����v�ƕ\�����ăQ�[�����I�����܂��B
+    ベスト10のすべての都道府県を答えられた場合は、「おめでとうございます♪」
+    「ベスト10をすべて答えました♪」と表示してゲームを終了します。
 
-    �y���s���ʁz
-    �l���̑����s���{���x�X�g10�𓖂ĂĂ��������I
-    �����s
-    ������
-    �����s��1�ʂł�
-    �k�C��
-    ������
-    �k�C����8�ʂł�
-    ���ꌧ
-    �c�O�c
-    ���ꌧ�̓����L���O�ɓ����Ă��܂���c
-    �Q�[���I�[�o�[
+    【実行結果】
+    人口の多い都道府県ベスト10を当ててください！
+    東京都
+    正解♪
+    東京都は1位です
+    北海道
+    正解♪
+    北海道は8位です
+    沖縄県
+    残念…
+    沖縄県はランキングに入っていません…
+    ゲームオーバー
 
 */
 
@@ -53,12 +53,12 @@ public class HashMapBasicPractice{
 
     public static void main(String[] args){
 
-        System.out.println("�l���̑����s���{���x�X�g10�𓖂ĂĂ��������I");
+        System.out.println("人口の多い都道府県ベスト10を当ててください！");
 
-        // ���͒l�ϐ��̐錾
+        // 入力値変数の宣言
         String input;
 
-        // ���͂̎�t
+        // 入力の受付
         input = System.console().readLine();
 
     }

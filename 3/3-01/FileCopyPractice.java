@@ -1,42 +1,42 @@
 // Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    ƒtƒ@ƒCƒ‹“üo—Í‚ÉŠÖ‚·‚é–â‘è
+    ãƒ•ã‚¡ã‚¤ãƒ«å…¥å‡ºåŠ›ã«é–¢ã™ã‚‹å•é¡Œ
 
-    FileCopyPracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh‚Í–¢Š®¬‚Å‚·B
+    FileCopyPracticeã‚¯ãƒ©ã‚¹ã®mainãƒ¡ã‚½ãƒƒãƒ‰ã¯æœªå®Œæˆã§ã™ã€‚
 
-    ‚ ‚éƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Ì“à—e‚ðA•Ê‚ÌƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ÉƒRƒs[‚·‚é
-    ƒvƒƒOƒ‰ƒ€‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ã‚ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®å†…å®¹ã‚’ã€åˆ¥ã®ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
+    ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
 
-    ‚»‚Ì•û–@‚ÍAƒRƒs[Œ³ƒtƒ@ƒCƒ‹‚©‚çFileReaderƒNƒ‰ƒX‚ÆBufferedReader
-    ƒNƒ‰ƒX‚ð‚¤‚Ü‚­Žg‚Á‚Äƒf[ƒ^‚ð“Ç‚ÝŽæ‚èA‚»‚Ìƒf[ƒ^‚ðƒRƒs[æƒtƒ@ƒCƒ‹
-    ‚ÉFileWriterƒNƒ‰ƒX‚ÆBufferedWriterƒNƒ‰ƒX‚ÆPrintWriterƒNƒ‰ƒX‚ð‚¤‚Ü‚­
-    Žg‚Á‚Ä‘‚«ž‚Ý‚Ü‚·B 
+    ãã®æ–¹æ³•ã¯ã€ã‚³ãƒ”ãƒ¼å…ƒãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰FileReaderã‚¯ãƒ©ã‚¹ã¨BufferedReader
+    ã‚¯ãƒ©ã‚¹ã‚’ã†ã¾ãä½¿ã£ã¦ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿å–ã‚Šã€ãã®ãƒ‡ãƒ¼ã‚¿ã‚’ã‚³ãƒ”ãƒ¼å…ˆãƒ•ã‚¡ã‚¤ãƒ«
+    ã«FileWriterã‚¯ãƒ©ã‚¹ã¨BufferedWriterã‚¯ãƒ©ã‚¹ã¨PrintWriterã‚¯ãƒ©ã‚¹ã‚’ã†ã¾ã
+    ä½¿ã£ã¦æ›¸ãè¾¼ã¿ã¾ã™ã€‚
 
-    ƒRƒs[Œ³ƒtƒ@ƒCƒ‹–¼‚¨‚æ‚ÑƒRƒs[æƒtƒ@ƒCƒ‹–¼‚ÌŽw’è‚É‚ÍƒRƒ}ƒ“ƒhƒ‰ƒCƒ“
-    ˆø”‚ðŽg—p‚µ‚Ä‚­‚¾‚³‚¢B
+    ã‚³ãƒ”ãƒ¼å…ƒãƒ•ã‚¡ã‚¤ãƒ«åãŠã‚ˆã³ã‚³ãƒ”ãƒ¼å…ˆãƒ•ã‚¡ã‚¤ãƒ«åã®æŒ‡å®šã«ã¯ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³
+    å¼•æ•°ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚
 
-    >java FileCopyPractice ƒRƒs[Œ³ƒtƒ@ƒCƒ‹–¼ ƒRƒs[æƒtƒ@ƒCƒ‹–¼
+    >java FileCopyPractice ã‚³ãƒ”ãƒ¼å…ƒãƒ•ã‚¡ã‚¤ãƒ«å ã‚³ãƒ”ãƒ¼å…ˆãƒ•ã‚¡ã‚¤ãƒ«å
 
-    ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚ª•s³i‚Q‚Â‚Ì•¶Žš—ñ‚ª“n‚Á‚Ä‚±‚È‚¢j‚Ìê‡‚Í
-    u‚Q‚Â‚Ìƒtƒ@ƒCƒ‹–¼‚ð³‚µ‚­Žw’è‚µ‚Ä‚­‚¾‚³‚¢v‚Æ•\Ž¦‚µ‚Ä
-    ƒvƒƒOƒ‰ƒ€‚ðI—¹‚µ‚Ü‚·B
+    ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ãŒä¸æ­£ï¼ˆï¼’ã¤ã®æ–‡å­—åˆ—ãŒæ¸¡ã£ã¦ã“ãªã„ï¼‰ã®å ´åˆã¯
+    ã€Œï¼’ã¤ã®ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æ­£ã—ãæŒ‡å®šã—ã¦ãã ã•ã„ã€ã¨è¡¨ç¤ºã—ã¦
+    ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’çµ‚äº†ã—ã¾ã™ã€‚
 
-    ƒRƒs[Œ³ƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚ç‚È‚¢ê‡‚ÍFileNotFoundException‚ªƒXƒ[
-    ‚³‚ê‚Ü‚·B‚»‚ÌÛ‚Íuƒtƒ@ƒCƒ‹–¼‚ÌŽw’è‚ª•s³‚Å‚·v‚Æ•\Ž¦‚µ‚Ä
-    ƒvƒƒOƒ‰ƒ€‚ðI—¹‚µ‚Ü‚·B
+    ã‚³ãƒ”ãƒ¼å…ƒãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯FileNotFoundExceptionãŒã‚¹ãƒ­ãƒ¼
+    ã•ã‚Œã¾ã™ã€‚ãã®éš›ã¯ã€Œãƒ•ã‚¡ã‚¤ãƒ«åã®æŒ‡å®šãŒä¸æ­£ã§ã™ã€ã¨è¡¨ç¤ºã—ã¦
+    ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’çµ‚äº†ã—ã¾ã™ã€‚
 
-    ‚»‚êˆÈŠO‚É‚àIOException‚ªƒXƒ[‚³‚ê‚Ü‚·‚Ì‚ÅA‚»‚Ì‚Æ‚«‚Í
-    u“üo—ÍƒGƒ‰[‚Å‚·v‚Æ•\Ž¦‚µ‚ÄƒvƒƒOƒ‰ƒ€‚ðI—¹‚µ‚Ü‚·B
+    ãã‚Œä»¥å¤–ã«ã‚‚IOExceptionãŒã‚¹ãƒ­ãƒ¼ã•ã‚Œã¾ã™ã®ã§ã€ãã®ã¨ãã¯
+    ã€Œå…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ã§ã™ã€ã¨è¡¨ç¤ºã—ã¦ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’çµ‚äº†ã—ã¾ã™ã€‚
 
-    ƒI[ƒvƒ“‚µ‚½ƒtƒ@ƒCƒ‹‚Í“KØ‚ÉƒNƒ[ƒY‚µ‚Ä‚­‚¾‚³‚¢B
+    ã‚ªãƒ¼ãƒ—ãƒ³ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã¯é©åˆ‡ã«ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¦ãã ã•ã„ã€‚
 
-*/ 
+*/
 public class FileCopyPractice{
 
     public static void main(String[] args) {
 
-        // ‚±‚±‚Éƒtƒ@ƒCƒ‹ƒRƒs[ˆ—‚ð‹Lq‚µ‚Ä‚­‚¾‚³‚¢
+        // ã“ã“ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚³ãƒ”ãƒ¼å‡¦ç†ã‚’è¨˜è¿°ã—ã¦ãã ã•ã„
 
     }
 
