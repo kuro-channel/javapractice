@@ -1,4 +1,5 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
+import java.util.ArrayList;
+
 /*
 
     ArrayListに関する標準問題
@@ -69,7 +70,7 @@ public class ArrayListNormalPractice{
     public static void main(String[] args){
 
         // デジカメオブジェクトの宣言と生成
-        DigitalCamera myCamera = new DigitalCamera();
+    	DigitalCamera myCamera = new DigitalCamera();
 
         // デジカメにて撮影
         myCamera.takePicture("子猫");
@@ -103,6 +104,56 @@ public class ArrayListNormalPractice{
 }
 
 // ここにデジカメクラスを作成してください
+class DigitalCamera {
+	// メモリ
+	private ArrayList<Picture> memory;
+
+	// コンストラクタ
+	public DigitalCamera() {
+		memory = new ArrayList<>();
+	}
+
+	// 画像撮影
+	public void takePicture(String target) {
+		System.out.println(target + "を撮影しました");
+		// 画像を登録
+		Picture picture = new Picture(target);
+		memory.add(picture);
+	}
+
+	// 画像一覧表示
+	public void showPictures() {
+		System.out.println("★☆  画像一覧  ☆★");
+		for(Picture picture: memory) {
+			System.out.println(picture);
+		}
+	}
+
+	// 保存画像数取得
+	public int getPictureCount() {
+		return memory.size();
+	}
+
+	// 画像ファイルのクリア
+	public void clearMemory() {
+		System.out.println("すべての画像を消去しました");
+		memory.clear();
+	}
+
+}
 
 // ここに画像クラスを作成してください
+class Picture {
+	// 被写体
+	private String target;
 
+	// コンストラクタ
+	public Picture(String target) {
+		this.target = target;
+	}
+
+	@Override
+	public String toString() {
+		return this.target + "の画像";
+	}
+}

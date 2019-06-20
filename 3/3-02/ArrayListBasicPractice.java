@@ -1,6 +1,4 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
-
     ArrayListに関する基本問題
 
     数字英単語を格納するArrayList<String>型の変数numberがあり、
@@ -31,34 +29,52 @@
     eitは英単語として存在しません
 
 */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+
 public class ArrayListBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) throws IOException {
 
-        // 数字英単語格納用変数の宣言とArrayListオブジェクトの生成
-        ArrayList<String> number = new ArrayList<String>();
+		// 数字英単語格納用変数の宣言とArrayListオブジェクトの生成
+		ArrayList<String> numbers = new ArrayList<String>();
 
-        // 数字英単語の格納
-        number.add("zero");
-        number.add("one");
-        number.add("two");
-        number.add("three");
-        number.add("four");
-        number.add("five");
-        number.add("six");
-        number.add("seven");
-        number.add("eight");
-        number.add("nine");
-        number.add("ten");
+		// 数字英単語の格納
+		numbers.add("zero");
+		numbers.add("one");
+		numbers.add("two");
+		numbers.add("three");
+		numbers.add("four");
+		numbers.add("five");
+		numbers.add("six");
+		numbers.add("seven");
+		numbers.add("eight");
+		numbers.add("nine");
+		numbers.add("ten");
 
-        // 英単語の入力
-        System.out.println("0から10までの英単語を入力してください");
-        String input = System.console().readLine();
+		// 英単語の入力
+		System.out.println("0から10までの英単語を入力してください");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine();
 
-        // ここからコーディングしてください
+        // 見つかったことを判定するフラグ
+		Boolean flg = false;
 
+		// ここからコーディングしてください
+		for (int i = 0; i < numbers.size(); i++) {
+			// 文字列の等値チェック
+			if (input.equals(numbers.get(i))) {
+				System.out.println(input + "は数値の" + i + "です");
+				flg = true;
+				break; // そのまま return;でもOK
+			}
+		}
 
-    }
-
+		// 入力文字列不正の場合
+		if (!flg) {
+			System.out.println(input + "は英単語として存在しません");
+		}
+	}
 }
