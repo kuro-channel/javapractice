@@ -1,104 +1,104 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    �����Ɋւ����{���
+    順序に関する基本問題
 
-    ���w����\������SchoolChild�N���X�́A�s���S�ł��B
-    �܂��A���w���N���X���g�p����CompareBasicPractice�N���X��
-    main���\�b�h���s���S�ł��B
+    小学生を表現するSchoolChildクラスは、不完全です。
+    また、小学生クラスを使用するCompareBasicPracticeクラスの
+    mainメソッドも不完全です。
 
-    CompareBasicPractice�N���X�͈ȉ��̕����ŃR���p�C���G���[�ɂȂ�܂��B
+    CompareBasicPracticeクラスは以下の部分でコンパイルエラーになります。
 
         Collections.sort(classroom);
 
-    Collections���[�e�B���e�B�N���X��sort���\�b�h�́A�����œn���ꂽList�^��
-    �v�f���\�[�g���܂��B�������A�s���S�Ȃ��߃\�[�g�ł��܂���B
+    Collectionsユーティリティクラスのsortメソッドは、引数で渡されたList型の
+    要素をソートします。しかし、不完全なためソートできません。
 
-    ���̎w���ɏ]���āA�Q��ނ̃\�[�g���\�ɂ��Ă��������B
+    次の指示に従って、２種類のソートを可能にしてください。
 
-    [SchoolChild�N���X]
-    �u�����̊�v��ݒ肷�邽�߂ɁASchoolChild�N���X��Comparable<SchoolChild>
-    �C���^�t�F�[�X���������Ă��������B���̃C���^�t�F�[�X�́AcompareTo�Ƃ�������
-    ���\�b�h������̂ŁA�K�؂Ɏ������Ă��������B
+    [SchoolChildクラス]
+    「順序の基準」を設定するために、SchoolChildクラスにComparable<SchoolChild>
+    インタフェースを実装してください。このインタフェースは、compareToという抽象
+    メソッドがあるので、適切に実装してください。
 
-    �������A����̃��[���́u�o�Ȕԍ��̏��������v�ɂ��܂��B
-
-
-    [CompareBasicPractice�N���X]
-    Collections���[�e�B���e�B�N���X��sort���\�b�h�ɂ́A�������Ɂu���ʂȏ����̊�v
-    ��ݒ肷�邽�߂�Comparator<SchoolChild>�C���^�t�F�[�X�����������I�u�W�F�N�g���w��
-    ���邱�Ƃ��ł��܂��B���̃C���^�t�F�[�X�����̂܂܃C���X�^���X�����邱�Ƃ͂ł��܂��񂪁A
-    �����i�����j�N���X�𗘗p���邱�Ƃŉ\�ƂȂ�܂��B
-
-    ���̃C���^�t�F�[�X������compare���ۃ��\�b�h���A�����N���X�Ŏ������Ă��������B
-
-    �������A����̃��[���́u�g���̍������v�ɂ��܂��B
+    ただし、整列のルールは「出席番号の小さい順」にします。
 
 
-    �y���s���ʁz
-    ����O
-    �o�Ȕԍ��F4 ���O�F���� �g���F145.0
-    �o�Ȕԍ��F2 ���O�F���� �g���F130.0
-    �o�Ȕԍ��F5 ���O�F���� �g���F162.5
-    �o�Ȕԍ��F1 ���O�F�ɓ� �g���F155.3
-    �o�Ȕԍ��F3 ���O�F�]�� �g���F151.1
+    [CompareBasicPracticeクラス]
+    Collectionsユーティリティクラスのsortメソッドには、第二引数に「特別な順序の基準」
+    を設定するためのComparator<SchoolChild>インタフェースを実装したオブジェクトを指定
+    することができます。このインタフェースをそのままインスタンス化することはできませんが、
+    無名（匿名）クラスを利用することで可能となります。
 
-    �o�Ȕԍ���
-    �o�Ȕԍ��F1 ���O�F�ɓ� �g���F155.3
-    �o�Ȕԍ��F2 ���O�F���� �g���F130.0
-    �o�Ȕԍ��F3 ���O�F�]�� �g���F151.1
-    �o�Ȕԍ��F4 ���O�F���� �g���F145.0
-    �o�Ȕԍ��F5 ���O�F���� �g���F162.5
+    このインタフェースが持つcompare抽象メソッドを、無名クラスで実装してください。
 
-    �g���̍�����
-    �o�Ȕԍ��F5 ���O�F���� �g���F162.5
-    �o�Ȕԍ��F1 ���O�F�ɓ� �g���F155.3
-    �o�Ȕԍ��F3 ���O�F�]�� �g���F151.1
-    �o�Ȕԍ��F4 ���O�F���� �g���F145.0
-    �o�Ȕԍ��F2 ���O�F���� �g���F130.0
+    ただし、整列のルールは「身長の高い順」にします。
+
+
+    【実行結果】
+    整列前
+    出席番号：4 名前：武藤 身長：145.0
+    出席番号：2 名前：佐藤 身長：130.0
+    出席番号：5 名前：加藤 身長：162.5
+    出席番号：1 名前：伊藤 身長：155.3
+    出席番号：3 名前：江藤 身長：151.1
+
+    出席番号順
+    出席番号：1 名前：伊藤 身長：155.3
+    出席番号：2 名前：佐藤 身長：130.0
+    出席番号：3 名前：江藤 身長：151.1
+    出席番号：4 名前：武藤 身長：145.0
+    出席番号：5 名前：加藤 身長：162.5
+
+    身長の高い順
+    出席番号：5 名前：加藤 身長：162.5
+    出席番号：1 名前：伊藤 身長：155.3
+    出席番号：3 名前：江藤 身長：151.1
+    出席番号：4 名前：武藤 身長：145.0
+    出席番号：2 名前：佐藤 身長：130.0
 
 */
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
-// CompareBasicPractice�͖������ł�
+// CompareBasicPracticeは未完成です
 public class CompareBasicPractice{
 
     public static void main(String[] args){
 
-        // ���w�����������鋳����\������ArrayList�^�ϐ�
+        // 小学生たちがいる教室を表現するArrayList型変数
         ArrayList<SchoolChild> classroom = new ArrayList<SchoolChild>();
 
-        // �T�l�̐��k�������ɂ��܂�
-        classroom.add(new SchoolChild(4, "����", 145.0));
-        classroom.add(new SchoolChild(2, "����", 130.0));
-        classroom.add(new SchoolChild(5, "����", 162.5));
-        classroom.add(new SchoolChild(1, "�ɓ�", 155.3));
-        classroom.add(new SchoolChild(3, "�]��", 151.1));
+        // ５人の生徒が教室にいます
+        classroom.add(new SchoolChild(4, "武藤", 145.0));
+        classroom.add(new SchoolChild(2, "佐藤", 130.0));
+        classroom.add(new SchoolChild(5, "加藤", 162.5));
+        classroom.add(new SchoolChild(1, "伊藤", 155.3));
+        classroom.add(new SchoolChild(3, "江藤", 151.1));
 
-        // ���k�����̏���\���i����O�j
-        System.out.println("����O");
+        // 生徒たちの情報を表示（整列前）
+        System.out.println("整列前");
         for(SchoolChild sc : classroom){
             System.out.println(sc);
         }
 
         System.out.println();
 
-        // �搶����̎w���u�o�Ȕԍ����ɐ��񂵂Ȃ����v
+        // 先生からの指示「出席番号順に整列しなさい」
         Collections.sort(classroom);
 
-        // ���k�����̏���\���i�o�Ȕԍ����j
-        System.out.println("�o�Ȕԍ���");
+        // 生徒たちの情報を表示（出席番号順）
+        System.out.println("出席番号順");
         for(SchoolChild sc : classroom){
             System.out.println(sc);
         }
 
         System.out.println();
 
-        // �搶����̎w���u�g���̍������ɐ��񂵂Ȃ����v
+        // 先生からの指示「身長の高い順に整列しなさい」
         Collections.sort(classroom);
 
-        // ���k�����̏���\���i�g���̍������j
-        System.out.println("�g���̍�����");
+        // 生徒たちの情報を表示（身長の高い順）
+        System.out.println("身長の高い順");
         for(SchoolChild sc : classroom){
             System.out.println(sc);
         }
@@ -107,40 +107,40 @@ public class CompareBasicPractice{
 
 }
 
-// ���w���N���X�͖������ł�
+// 小学生クラスは未完成です
 class SchoolChild{
 
-    private int no;         // �o�Ȕԍ�
-    private String name;    // ���O
-    private double height;  // �g��
+    private int no;         // 出席番号
+    private String name;    // 名前
+    private double height;  // 身長
 
-    // �R���X�g���N�^
+    // コンストラクタ
     public SchoolChild(final int no, final String name, final double height){
         this.no = no;
         this.name = name;
         this.height = height;
     }
 
-    // �o�Ȕԍ��̎擾
+    // 出席番号の取得
     public int getNo(){
         return no;
     }
 
-    // ���O�̎擾
+    // 名前の取得
     public String getName(){
         return name;
     }
 
-    // �g���̎擾
+    // 身長の取得
     public double getHeight(){
         return height;
     }
 
     @Override
     public String toString(){
-        return "�o�Ȕԍ��F" + no + 
-                " ���O�F" + name + 
-                " �g���F" + height;
+        return "出席番号：" + no +
+                " 名前：" + name +
+                " 身長：" + height;
     }
 
 }

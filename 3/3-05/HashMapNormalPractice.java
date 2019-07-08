@@ -1,4 +1,5 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
+import java.util.HashMap;
+
 /*
 
     HashMapに関する標準問題
@@ -128,10 +129,58 @@ public class HashMapNormalPractice{
 }
 
 // ここに宝物クラスを作成してください
+class Treasure {
+	// 宝物のタイプ
+	private String type;
+
+	// コンストラタ
+	public Treasure(String type) {
+		this.type = type;
+	}
+	@Override
+	public String toString() {
+		return type;
+
+	}
+}
 
 // ここに秘密の言葉不正例外クラスを作成してください
+class IllegalSecretException extends Exception{
+}
 
 // ここに秘密の言葉重複例外クラスを作成してください
+class DuplicateSecretException extends Exception{
 
+}
 // ここに金庫クラスを作成してください
+class StrongBox {
+	// 宝物保持HashMap
+	HashMap<String, Treasure> treasures;
 
+	// コンストラタ
+	public StrongBox() {
+		treasures = new HashMap<>();
+	}
+
+	// 秘密の言葉と宝物を金庫に格納する
+	public  void store(String secret, Treasure treasure) throws DuplicateSecretException {
+		// 秘密の言葉が使われていないか確認する
+		if(treasures.containsKey(secret)) {
+			throw new DuplicateSecretException();
+		} else {
+			treasures.put(secret, treasure);
+			System.out.println(treasures.get(secret) + "を金庫に格納しました！");
+		}
+	}
+
+	// 秘密の言葉に対する宝物オブジェクトを取得する
+	public Treasure getTreasure(String secret) throws IllegalSecretException {
+		// 秘密の鍵に対応するオブジェクトがないか確認する
+		if(treasures.containsKey(secret)) {
+			return treasures.get(secret);
+		}else {
+			throw new IllegalSecretException();
+		}
+	}
+
+}

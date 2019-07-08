@@ -1,91 +1,136 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
+    スレッドセーフに関する問題
 
-    �X���b�h�Z�[�t�Ɋւ�����
+    ５人の大富豪が１つの募金箱に同時に募金していく様子をシミュレート
+    しています。
 
-    �T�l�̑�x�����P�̕�����ɓ����ɕ�����Ă����l�q���V�~�����[�g
-    ���Ă��܂��B
+    大富豪を表現するMultiMillionaireクラスと、募金箱を表現する
+    CollectionBoxクラスを作成してください。
 
-    ��x����\������MultiMillionaire�N���X�ƁA�������\������
-    CollectionBox�N���X���쐬���Ă��������B
+    また、これらのクラスを使用するThreadSafePracticeクラスの
+    mainメソッドは完成しています。（変更しないでください）
 
-    �܂��A�����̃N���X���g�p����ThreadSafePractice�N���X��
-    main���\�b�h�͊������Ă��܂��B�i�ύX���Ȃ��ł��������j
+    [MultiMillionaireクラス]
+    １．Threadクラスを継承します。
 
-    [MultiMillionaire�N���X]
-    �P�DThread�N���X���p�����܂��B
+    ２．募金箱インスタンスフィールドを定義します。
 
-    �Q�D������C���X�^���X�t�B�[���h���`���܂��B
+    ３．募金箱オブジェクトを引数に受け取るコンストラクタを定義します。
+        引数で受け取ったオブジェクトを、インスタンスフィールドに格納してください。
 
-    �R�D������I�u�W�F�N�g�������Ɏ󂯎��R���X�g���N�^���`���܂��B
-        �����Ŏ󂯎�����I�u�W�F�N�g���A�C���X�^���X�t�B�[���h�Ɋi�[���Ă��������B
+    ４．runメソッドをオーバーライドします。for文を用いて100万回ループさせます。
+        for文の中では、募金箱に対して1円を募金します。
+        （1円募金×100万回ループなので、100万円寄付することになります）
 
-    �S�Drun���\�b�h���I�[�o�[���C�h���܂��Bfor����p����100���񃋁[�v�����܂��B
-        for���̒��ł́A������ɑ΂���1�~�������܂��B
-        �i1�~����~100���񃋁[�v�Ȃ̂ŁA100���~��t���邱�ƂɂȂ�܂��j
+    [CollectionBoxクラス]
+    １．募金総額を表すインスタンスフィールドtotalAmount(int型)を定義します。
 
-    [CollectionBox�N���X]
-    �P�D������z��\���C���X�^���X�t�B�[���htotalAmount(int�^)���`���܂��B
+    ２．募金箱オブジェクトは、絶対に１つだけしか存在しないようにしてください。
 
-    �Q�D������I�u�W�F�N�g�́A��΂ɂP�����������݂��Ȃ��悤�ɂ��Ă��������B
+        ・別クラスからインスタンス化できないようにコンストラクタを工夫してください。
+        ・クラスメソッドgetInstanceを用いて、募金箱オブジェクトを取得してください。
+        ・CollectionBox型のクラスフィールドを定義して、うまく利用してください。
 
-        �E�ʃN���X����C���X�^���X���ł��Ȃ��悤�ɃR���X�g���N�^���H�v���Ă��������B
-        �E�N���X���\�b�hgetInstance��p���āA������I�u�W�F�N�g���擾���Ă��������B
-        �ECollectionBox�^�̃N���X�t�B�[���h���`���āA���܂����p���Ă��������B
+    ３．お金を寄付するためのcontributeメソッドを定義してください。
+        引数は寄付する金額（int型）で、戻り値はなしにします。
 
-    �R�D��������t���邽�߂�contribute���\�b�h���`���Ă��������B
-        �����͊�t������z�iint�^�j�ŁA�߂�l�͂Ȃ��ɂ��܂��B
+        このメソッドをスレッドセーフにするように注意してください。
 
-        ���̃��\�b�h���X���b�h�Z�[�t�ɂ���悤�ɒ��ӂ��Ă��������B
+    ４．募金総額を取得するためのgetTotalAmountメソッドを定義してください。
+        引数はなしで、戻り値に募金総額フィールドの値を返してください。
 
-    �S�D������z���擾���邽�߂�getTotalAmount���\�b�h���`���Ă��������B
-        �����͂Ȃ��ŁA�߂�l�ɕ�����z�t�B�[���h�̒l��Ԃ��Ă��������B
+        ただし、最後に表示する募金総額には絶対にずれが生じないようにしてください。
 
-        �������A�Ō�ɕ\�����������z�ɂ͐�΂ɂ��ꂪ�����Ȃ��悤�ɂ��Ă��������B
+    【正しい実行結果】
+    募金総額は5000000円です。
 
-    �y���������s���ʁz
-    ������z��5000000�~�ł��B
-
-    �y�������Ȃ����s���ʁi�s��j�z
-    ������z��3294875�~�ł��B
+    【正しくない実行結果（不定）】
+    募金総額は3294875円です。
 
 */
 public class ThreadSafePractice{
 
     public static void main(String[] args){
 
-        // ������I�u�W�F�N�g�̎擾
+        // 募金箱オブジェクトの取得
         CollectionBox cb = CollectionBox.getInstance();
 
-        // �U���̕���������Ȃ��悤�ɂ���i�R���p�C���G���[�j
+        // 偽物の募金箱を作れないようにする（コンパイルエラー）
         // CollectionBox imitation = new CollectionBox();
 
-        // �T�l�̑�x���I�u�W�F�N�g�𐶐�
+        // ５人の大富豪オブジェクトを生成
         MultiMillionaire mm1 = new MultiMillionaire(cb);
         MultiMillionaire mm2 = new MultiMillionaire(cb);
         MultiMillionaire mm3 = new MultiMillionaire(cb);
         MultiMillionaire mm4 = new MultiMillionaire(cb);
         MultiMillionaire mm5 = new MultiMillionaire(cb);
 
-        // ����̊J�n
+        // 募金の開始
         mm1.start(); mm2.start(); mm3.start(); mm4.start(); mm5.start();
 
-        // �S���̕�����I���܂ő҂�
+        // 全員の募金が終わるまで待つ
         try{
-            mm1.join(); mm2.join(); mm3.join(); mm4.join(); mm5.join(); 
+            mm1.join(); mm2.join(); mm3.join(); mm4.join(); mm5.join();
         }
         catch(InterruptedException e){
             e.printStackTrace();
         }
 
-        // ������z�̔��\
-        System.out.println("������z��" + cb.getTotalAmount() + "�~�ł��B");
+        // 募金総額の発表
+        System.out.println("募金総額は" + cb.getTotalAmount() + "円です。");
 
     }
 
 }
 
-// �����ɑ�x���N���X���쐬���Ă�������
+// ここに大富豪クラスを作成してください
+class MultiMillionaire extends Thread{
+	// 募金箱インスタンスフィールド
+	private CollectionBox box;
 
-// �����ɕ�����N���X���쐬���Ă�������
+	// コンストラクタ
+	public MultiMillionaire(final CollectionBox box) {
+		this.box = box;
+	}
 
+	@Override
+	public void run() {
+		// 1円募金×100万回ループ:100万年募金
+		for(int i = 0; i < 1000000; i++) {
+			box.contribute(1);
+		}
+	}
+
+
+}
+// ここに募金箱クラスを作成してください
+class CollectionBox {
+
+	// 募金箱クラスオブジェクト
+	private static CollectionBox cd;
+
+	// 募金総額
+	private int totalAmount;
+
+	// コンストラクタ（外部からのインスタンス化を禁止する）
+	private CollectionBox() {}
+
+	// 募金箱オブジェクトを取得
+	public static CollectionBox getInstance() {
+		// インスタンスがまだ無ければ生成
+		if(cd == null) {
+			cd = new CollectionBox();
+		}
+		return cd;
+	}
+
+	// 寄付
+	public synchronized void contribute(int money) {
+		totalAmount += money;
+	}
+
+	// 募金総額を取得
+	public int getTotalAmount() {
+		return totalAmount;
+	}
+}

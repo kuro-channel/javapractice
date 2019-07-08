@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /*
 
     例外と継承に関する問題
@@ -116,7 +118,7 @@ public class ExceptionInheritancePractice{
 class TroubleException extends Exception{}
 
 // 社員抽象クラス
-abstract class Employee{
+abstract class Employees{
 
     // 社員名
     protected String name;
@@ -127,7 +129,7 @@ abstract class Employee{
 }
 
 // ここに上司クラスを作成してください
-class Boss extends Employee {
+class Boss extends Employees {
 	// 部下
 	Subordinate sub;
 
@@ -138,12 +140,53 @@ class Boss extends Employee {
 	}
 
 	// 働く
-	public void work(String type) {
+	public void work(String workName) {
+		// 部下インスタンスを生成
+		Subordinate subordinate = new Subordinate(sub.name);
+
+		try {
+			System.out.println("さて、今回の" + workName + "は部下の" + sub.name + "に任せよう！");
+			System.out.println();
+			subordinate.work(workName);
+			// 成功時
+			System.out.println(sub.name + "君、よくやった!");
+			System.out.println("さすが私の右腕だ!");
+
+		} catch (TroubleException e) {
+			System.out.println("申し訳ございません…");
+			System.out.println(sub.name + "が大変失礼致しました…");
+			System.out.println("上司のわたくし" + super.name + "の監督不行き届きでございます…");
+		}
 
 	}
 }
 
 // ここに部下クラスを作成してください
-class Subordinate extends Employee{
+class Subordinate extends Employees{
+
+	// コンストラクタ
+	public Subordinate(String name) {
+		super.name = name;
+	}
+
+	// 名前を取得する
+	public String getName() {
+		return super.name;
+	}
+
+	// 働く
+	public void work(String workName) throws TroubleException {
+		System.out.println("今回の" + workName + "は" + super.name + "が担当します。");
+		System.out.println(workName + "中…");
+
+		Random random = new Random();
+		if(random.nextBoolean()) {
+			System.out.println("ふざけるな、ばか野郎！");
+			throw new TroubleException();
+		}else {
+			System.out.println("今回の" + workName + "は" + super.name + "が無事任務を果たしました");
+		}
+		System.out.println();
+	}
 
 }

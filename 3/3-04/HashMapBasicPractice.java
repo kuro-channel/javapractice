@@ -1,6 +1,9 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
-/*
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
 
+/*
     HashMapに関する基本問題
 
     人口の多い都道府県ベスト10を当てるクイズを作成しましょう。
@@ -47,20 +50,57 @@
     沖縄県はランキングに入っていません…
     ゲームオーバー
 
-*/
+ */
 
-public class HashMapBasicPractice{
+public class HashMapBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) throws IOException {
 
-        System.out.println("人口の多い都道府県ベスト10を当ててください！");
+		System.out.println("人口の多い都道府県ベスト10を当ててください！");
 
-        // 入力値変数の宣言
-        String input;
+		// マップの設定
+		HashMap<String, Integer> rankMap = new HashMap<>();
+		rankMap.put("東京都", 1);
+		rankMap.put("神奈川県", 2);
+		rankMap.put("大阪府", 3);
+		rankMap.put("愛知県", 4);
+		rankMap.put("埼玉県", 5);
+		rankMap.put("千葉県", 6);
+		rankMap.put("兵庫県", 7);
+		rankMap.put("北海道", 8);
+		rankMap.put("福岡県", 9);
+		rankMap.put("静岡県", 10);
 
-        // 入力の受付
-        input = System.console().readLine();
+		// 入力値変数の宣言
+		String input;
 
-    }
+		// 入力の受付
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		while (rankMap.size() != 0) {
+			input = br.readLine();
+
+			// ランキングマップオブジェクトから順位を取得
+			Integer rank = rankMap.get(input);
+
+			// ランキングに含まれていた場合
+			if (rank != null) {
+				System.out.println("正解♪");
+				System.out.println(input + "は" + rank.intValue() + "位です");
+				rankMap.remove(input);
+			} else {
+				// ランキングに含まれてなかった場合
+				System.out.println("残念…");
+				System.out.println("はランキングに入っていません…");
+				System.out.println("ゲームオーバー");
+				break;
+			}
+		}
+
+		// 全問正解した場合
+		if (rankMap.size() == 0) {
+			System.out.println("おめでとうございます♪");
+			System.out.println("ベスト10をすべて答えました♪");
+		}
+	}
 }

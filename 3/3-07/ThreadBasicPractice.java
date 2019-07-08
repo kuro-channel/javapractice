@@ -1,109 +1,166 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
+import java.util.Random;
+
 /*
 
-    ƒXƒŒƒbƒh‚ÉŠÖ‚·‚éŠî–{–â‘è
+    ã‚¹ãƒ¬ãƒƒãƒ‰ã«é–¢ã™ã‚‹åŸºæœ¬å•é¡Œ
 
-    ƒXƒŒƒbƒh‚É‚æ‚é‘–s‚ğ•\Œ»‚·‚éRacingCarƒNƒ‰ƒX‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢B
+    ã‚¹ãƒ¬ãƒƒãƒ‰ã«ã‚ˆã‚‹èµ°è¡Œã‚’è¡¨ç¾ã™ã‚‹RacingCarã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„ã€‚
 
-    RacingCarƒNƒ‰ƒX‚ğg—p‚·‚éThreadBasicPracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh
-    ‚ÍŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    RacingCarã‚¯ãƒ©ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹ThreadBasicPracticeã‚¯ãƒ©ã‚¹ã®mainãƒ¡ã‚½ãƒƒãƒ‰
+    ã¯å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    [RacingCarƒNƒ‰ƒX]
-    ‚PDThreadƒNƒ‰ƒX‚ğŒp³‚µ‚Ü‚·B
+    [RacingCarã‚¯ãƒ©ã‚¹]
+    ï¼‘ï¼Threadã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ã¾ã™ã€‚
 
-    ‚QDƒS[ƒ‹’n“_‚Ü‚Å‚Ì‹——£‚ğ•\‚·intŒ^‚Ì’è”GOAL‚ğ’è‹`‚µ‚Ü‚·B
-        ’è”GOAL‚Ì’l‚Í100‚ğ‘ã“ü‚µ‚Ä‰Šú‰»‚µ‚Ä‚­‚¾‚³‚¢B
+    ï¼’ï¼ã‚´ãƒ¼ãƒ«åœ°ç‚¹ã¾ã§ã®è·é›¢ã‚’è¡¨ã™intå‹ã®å®šæ•°GOALã‚’å®šç¾©ã—ã¾ã™ã€‚
+        å®šæ•°GOALã®å€¤ã¯100ã‚’ä»£å…¥ã—ã¦åˆæœŸåŒ–ã—ã¦ãã ã•ã„ã€‚
 
-    ‚RDRacingCarƒNƒ‰ƒX‚ÍŸ‚Ì‚R‚Â‚ÌƒCƒ“ƒXƒ^ƒ“ƒXƒtƒB[ƒ‹ƒh‚ğ‚¿‚Ü‚·B
+    ï¼“ï¼RacingCarã‚¯ãƒ©ã‚¹ã¯æ¬¡ã®ï¼“ã¤ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’æŒã¡ã¾ã™ã€‚
 
-        Ô‚Ì–¼‘O‚ğ•\‚·name(StringŒ^)
-        ‚»‚ÌÔ‚ÌÅ‚‘–s‹——£‚ğ•\‚·maxDistance(intŒ^)
-        ‚»‚ÌÔ‚ÌƒGƒ“ƒXƒg‚·‚éŠ„‡‚ğ•\‚·engineStop(intŒ^)
+        è»Šã®åå‰ã‚’è¡¨ã™name(Stringå‹)
+        ãã®è»Šã®æœ€é«˜èµ°è¡Œè·é›¢ã‚’è¡¨ã™maxDistance(intå‹)
+        ãã®è»Šã®ã‚¨ãƒ³ã‚¹ãƒˆã™ã‚‹å‰²åˆã‚’è¡¨ã™engineStop(intå‹)
 
-    ‚SDŸ‚Ìˆø”‚ğ‚ÂƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ğ‚P‚Âì¬‚µ‚Ä‚­‚¾‚³‚¢B
-        ‘æ‚Pˆø” Ô‚Ì–¼‘O‚ğ•\‚·StringŒ^‚Ìˆø”
-        ‘æ‚Qˆø” Å‚‘–s‹——£‚ğ•\‚·intŒ^‚Ìˆø”
-        ‘æ‚Rˆø” ƒGƒ“ƒXƒg‚·‚éŠ„‡‚ğ•\‚·intŒ^‚Ìˆø”
+    ï¼”ï¼æ¬¡ã®å¼•æ•°ã‚’æŒã¤ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’ï¼‘ã¤ä½œæˆã—ã¦ãã ã•ã„ã€‚
+        ç¬¬ï¼‘å¼•æ•° è»Šã®åå‰ã‚’è¡¨ã™Stringå‹ã®å¼•æ•°
+        ç¬¬ï¼’å¼•æ•° æœ€é«˜èµ°è¡Œè·é›¢ã‚’è¡¨ã™intå‹ã®å¼•æ•°
+        ç¬¬ï¼“å¼•æ•° ã‚¨ãƒ³ã‚¹ãƒˆã™ã‚‹å‰²åˆã‚’è¡¨ã™intå‹ã®å¼•æ•°
 
-    ‚TDrunƒƒ\ƒbƒh‚ğƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·B‚Q‚Â‚Ìƒ[ƒJƒ‹•Ï”‚ğéŒ¾‚µ‚Ü‚·B
+    ï¼•ï¼runãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ã€‚ï¼’ã¤ã®ãƒ­ãƒ¼ã‚«ãƒ«å¤‰æ•°ã‚’å®£è¨€ã—ã¾ã™ã€‚
 
-        ‘‘–s‹——£‚ğ•\‚·intŒ^ totalMileage
-        ˆê‰ñ‚Ì‘–s‹——£‚ğ•\‚·intŒ^ mileage
+        ç·èµ°è¡Œè·é›¢ã‚’è¡¨ã™intå‹ totalMileage
+        ä¸€å›ã®èµ°è¡Œè·é›¢ã‚’è¡¨ã™intå‹ mileage
 
-    ‚UDƒ‰ƒ“ƒ_ƒ€‚Ì•µˆÍ‹C‚ğo‚·‚½‚ß‚ÉAjava.utilƒpƒbƒP[ƒW‚ÌRandomƒNƒ‰ƒX‚ğ
-        g—p‚µ‚Ü‚·B
+    ï¼–ï¼ãƒ©ãƒ³ãƒ€ãƒ ã®é›°å›²æ°—ã‚’å‡ºã™ãŸã‚ã«ã€java.utilãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®Randomã‚¯ãƒ©ã‚¹ã‚’
+        ä½¿ç”¨ã—ã¾ã™ã€‚
 
-        [RandomƒNƒ‰ƒX‚Ìg‚¢•û]
+        [Randomã‚¯ãƒ©ã‚¹ã®ä½¿ã„æ–¹]
         Random r = new Random();
         System.out.println(r.nextInt(6) + 1);
-        ‚±‚ê‚Å1`6‚ğ•\¦‚·‚é‚³‚¢‚±‚ë‚Ìo—ˆã‚ª‚è‚Å‚·B
+        ã“ã‚Œã§1ï½6ã‚’è¡¨ç¤ºã™ã‚‹ã•ã„ã“ã‚ã®å‡ºæ¥ä¸ŠãŒã‚Šã§ã™ã€‚
 
-    ‚VDrunƒƒ\ƒbƒh‚Å‚ÍAƒS[ƒ‹‚·‚é‚Ü‚Å‘–s‚µ‚Ü‚·B
-        ‚Ü‚¸AƒGƒ“ƒXƒg‚·‚é‚©‚Ç‚¤‚©‚ğRandomƒNƒ‰ƒX‚ğg‚Á‚Ä•\Œ»‚µ‚Ü‚·B
-        engineStop‚Ì’l‚ª10‚È‚çA10‰ñ‚É1‰ñ‚ÌŠ„‡‚ÅƒGƒ“ƒXƒg‚µ‚Ü‚·B
-        ƒGƒ“ƒXƒg‚µ‚½ê‡‚Íu››‚ªƒGƒ“ƒXƒg‚µ‚Ü‚µ‚½Iv‚Æ•\¦‚µA
-        3•bŠÔ’â~‚µ‚Ü‚·B
-        ƒGƒ“ƒXƒg‚µ‚È‚©‚Á‚½ê‡‚Í‘–s‚µ‚Ü‚·B
-        ‘–s‹——£‚ÍA1‚©‚çÅ‚‘–s‹——£maxDistance‚ÌŠÔ‚Ìƒ‰ƒ“ƒ_ƒ€‚È’l‚Å‚·B
-        ‚»‚µ‚Äu››‚ª¢¢km‘–s‚µ‚Ü‚µ‚½Iv‚Æ•\¦‚µ‚Ü‚·B
-        ‘‘–s‹——£‚ªGOAL’è”‚ğ’´‚¦‚Ä‚¢‚ê‚Îƒ‹[ƒv‚ğ”²‚¯‚Ä
-        u››‚ªƒS[ƒ‹‚µ‚Ü‚µ‚½IIIIIv‚Æ•\¦‚µ‚ÄI—¹‚µ‚Ü‚·B
-        ‚Ü‚¾‘‘–s‹——£‚ªGOAL’è”‚É’B‚µ‚Ä‚¢‚È‚¯‚ê‚Î1•b’â~‚µ‚Ä‘–s‚ğ
-        ‘±‚¯‚Ü‚·B
+    ï¼—ï¼runãƒ¡ã‚½ãƒƒãƒ‰ã§ã¯ã€ã‚´ãƒ¼ãƒ«ã™ã‚‹ã¾ã§èµ°è¡Œã—ã¾ã™ã€‚
+        ã¾ãšã€ã‚¨ãƒ³ã‚¹ãƒˆã™ã‚‹ã‹ã©ã†ã‹ã‚’Randomã‚¯ãƒ©ã‚¹ã‚’ä½¿ã£ã¦è¡¨ç¾ã—ã¾ã™ã€‚
+        engineStopã®å€¤ãŒ10ãªã‚‰ã€10å›ã«1å›ã®å‰²åˆã§ã‚¨ãƒ³ã‚¹ãƒˆã—ã¾ã™ã€‚
+        ã‚¨ãƒ³ã‚¹ãƒˆã—ãŸå ´åˆã¯ã€Œâ—‹â—‹ãŒã‚¨ãƒ³ã‚¹ãƒˆã—ã¾ã—ãŸï¼ã€ã¨è¡¨ç¤ºã—ã€
+        3ç§’é–“åœæ­¢ã—ã¾ã™ã€‚
+        ã‚¨ãƒ³ã‚¹ãƒˆã—ãªã‹ã£ãŸå ´åˆã¯èµ°è¡Œã—ã¾ã™ã€‚
+        èµ°è¡Œè·é›¢ã¯ã€1ã‹ã‚‰æœ€é«˜èµ°è¡Œè·é›¢maxDistanceã®é–“ã®ãƒ©ãƒ³ãƒ€ãƒ ãªå€¤ã§ã™ã€‚
+        ãã—ã¦ã€Œâ—‹â—‹ãŒâ–³â–³kmèµ°è¡Œã—ã¾ã—ãŸï¼ã€ã¨è¡¨ç¤ºã—ã¾ã™ã€‚
+        ç·èµ°è¡Œè·é›¢ãŒGOALå®šæ•°ã‚’è¶…ãˆã¦ã„ã‚Œã°ãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘ã¦
+        ã€Œâ—‹â—‹ãŒã‚´ãƒ¼ãƒ«ã—ã¾ã—ãŸï¼ï¼ï¼ï¼ï¼ã€ã¨è¡¨ç¤ºã—ã¦çµ‚äº†ã—ã¾ã™ã€‚
+        ã¾ã ç·èµ°è¡Œè·é›¢ãŒGOALå®šæ•°ã«é”ã—ã¦ã„ãªã‘ã‚Œã°1ç§’åœæ­¢ã—ã¦èµ°è¡Œã‚’
+        ç¶šã‘ã¾ã™ã€‚
 
-    yÀsŒ‹‰Ê‚Ìˆê—áz
-    Careful†‚ª3km‘–s‚µ‚Ü‚µ‚½I
-    Normal†‚ªƒGƒ“ƒXƒg‚µ‚Ü‚µ‚½I
-    Normal†‚ª3km‘–s‚µ‚Ü‚µ‚½I
-    c
-    Careful†‚ª2km‘–s‚µ‚Ü‚µ‚½I
-    Gambler†‚ª15km‘–s‚µ‚Ü‚µ‚½I
-    Gambler†‚ªƒS[ƒ‹‚µ‚Ü‚µ‚½IIIII
-    Careful†‚ª4km‘–s‚µ‚Ü‚µ‚½I
-    Normal†‚ª8km‘–s‚µ‚Ü‚µ‚½I
-    Careful†‚ª1km‘–s‚µ‚Ü‚µ‚½I
-    Careful†‚ª4km‘–s‚µ‚Ü‚µ‚½I
-    Careful†‚ªƒS[ƒ‹‚µ‚Ü‚µ‚½IIIII
-    Normal†‚ª8km‘–s‚µ‚Ü‚µ‚½I
-    Normal†‚ªƒS[ƒ‹‚µ‚Ü‚µ‚½IIIII
-    ƒŒ[ƒX‚ªI—¹‚µ‚Ü‚µ‚½
+    ã€å®Ÿè¡Œçµæœã®ä¸€ä¾‹ã€‘
+    Carefulå·ãŒ3kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Normalå·ãŒã‚¨ãƒ³ã‚¹ãƒˆã—ã¾ã—ãŸï¼
+    Normalå·ãŒ3kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    â€¦
+    Carefulå·ãŒ2kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Gamblerå·ãŒ15kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Gamblerå·ãŒã‚´ãƒ¼ãƒ«ã—ã¾ã—ãŸï¼ï¼ï¼ï¼ï¼
+    Carefulå·ãŒ4kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Normalå·ãŒ8kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Carefulå·ãŒ1kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Carefulå·ãŒ4kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Carefulå·ãŒã‚´ãƒ¼ãƒ«ã—ã¾ã—ãŸï¼ï¼ï¼ï¼ï¼
+    Normalå·ãŒ8kmèµ°è¡Œã—ã¾ã—ãŸï¼
+    Normalå·ãŒã‚´ãƒ¼ãƒ«ã—ã¾ã—ãŸï¼ï¼ï¼ï¼ï¼
+    ãƒ¬ãƒ¼ã‚¹ãŒçµ‚äº†ã—ã¾ã—ãŸ
 
-*/
-public class ThreadBasicPractice{
+ */
+public class ThreadBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // •½‹Ï“I‚È«”\‚Ìnormal†
-        RacingCar normal = new RacingCar("Normal†", 10, 10);
+		// å¹³å‡çš„ãªæ€§èƒ½ã®normalå·
+		RacingCar normal = new RacingCar("Normalå·", 10, 10);
 
-        // ƒXƒs[ƒh‚Í‚ ‚é‚ªƒGƒ“ƒXƒg‚ª‘½‚¢gambler†
-        RacingCar gambler = new RacingCar("Gambler†", 20, 3);
+		// ã‚¹ãƒ”ãƒ¼ãƒ‰ã¯ã‚ã‚‹ãŒã‚¨ãƒ³ã‚¹ãƒˆãŒå¤šã„gamblerå·
+		RacingCar gambler = new RacingCar("Gamblerå·", 20, 3);
 
-        // ˆÀ‘S–Ê‚ğd‹‚µ‚½careful†
-        RacingCar careful = new RacingCar("Careful†", 5, 1000);
+		// å®‰å…¨é¢ã‚’é‡è¦–ã—ãŸcarefulå·
+		RacingCar careful = new RacingCar("Carefulå·", 5, 1000);
 
-        // ŠeÔˆêÄ‚ÉƒXƒ^[ƒgII
-        normal.start();
-        gambler.start();
-        careful.start();
+		// å„è»Šä¸€æ–‰ã«ã‚¹ã‚¿ãƒ¼ãƒˆï¼ï¼
+		normal.start();
+		gambler.start();
+		careful.start();
 
-        // ‘SÔ‚ªƒS[ƒ‹‚·‚é‚Ì‚ğ‘Ò‚Â
-        try{
+		// å…¨è»ŠãŒã‚´ãƒ¼ãƒ«ã™ã‚‹ã®ã‚’å¾…ã¤
+		try {
 
-            normal.join();
-            gambler.join();
-            careful.join();
+			normal.join();
+			gambler.join();
+			careful.join();
 
-        }
-        catch(InterruptedException e){
-            e.printStackTrace();
-        }
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
-        System.out.println("ƒŒ[ƒX‚ªI—¹‚µ‚Ü‚µ‚½");
+		System.out.println("ãƒ¬ãƒ¼ã‚¹ãŒçµ‚äº†ã—ã¾ã—ãŸ");
 
-    }
+	}
 
 }
 
-// ‚±‚±‚ÉRacingCarƒNƒ‰ƒX‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢
+// ã“ã“ã«RacingCarã‚¯ãƒ©ã‚¹ã‚’ä½œæˆã—ã¦ãã ã•ã„
+class RacingCar extends Thread {
+	// ã‚´ãƒ¼ãƒ«åœ°ç‚¹ã¾ã§ã®è·é›¢
+	public static final int GOAL = 100;
 
+	// è»Šã®åå‰
+	private String name;
+
+	// è»Šã®æœ€é«˜èµ°è¡Œè·é›¢
+	private int maxDistance;
+
+	// ã‚¨ãƒ³ã‚¹ãƒˆã™ã‚‹å‰²åˆ
+	private int engineStop;
+
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	public RacingCar(String name, int maxDistance, int engineStop) {
+		this.name = name;
+		this.maxDistance = maxDistance;
+		this.engineStop = engineStop;
+	}
+
+	@Override
+	public void run() {
+		// ç·èµ°è¡Œè·é›¢
+		int totalMileage = 0;
+
+		// ä¸€å›ã®èµ°è¡Œè·é›¢
+		int mileage = 0;
+
+		// ã‚µã‚¤ã‚³ãƒ­
+		Random r = new Random();
+		//System.out.println(r.nextInt(6) + 1);
+
+		while (true) {
+			try {
+				// ã‚¨ãƒ³ã‚¹ãƒˆã™ã‚‹ã‹ã©ã†ã‹
+				if (r.nextInt(engineStop) == 0) {
+					System.out.println(name + "ãŒã‚¨ãƒ³ã‚¹ãƒˆã—ã¾ã—ãŸ!");
+					Thread.sleep(3000);
+				} else {
+					// èµ°è¡Œè·é›¢ã‚’å–å¾—
+					mileage = r.nextInt(maxDistance) + 1;
+					System.out.println(name + "ãŒ" + mileage + "kmèµ°è¡Œã—ã¾ã—ãŸ!");
+					totalMileage += mileage;
+
+					// ç·èµ°è¡Œè·é›¢ãŒGOALå®šæ•°ã«é”ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
+					if (totalMileage >= GOAL) {
+						break;
+					}
+					Thread.sleep(1000);
+				}
+			} catch (InterruptedException e) {
+				// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
+				e.printStackTrace();
+			}
+		}
+		System.out.println(name + "ãŒã‚´ãƒ¼ãƒ«ã—ã¾ã—ãŸ!");
+	}
+}

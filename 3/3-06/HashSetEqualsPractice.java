@@ -1,69 +1,68 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    HashSet‚Æ“™’l‚ÉŠÖ‚·‚é–â‘è
+    HashSetã¨ç­‰å€¤ã«é–¢ã™ã‚‹å•é¡Œ
 
-    ‚ ‚éƒOƒ‹[ƒv‚É‘®‚·‚éƒƒ“ƒo[‚ğ•\Œ»‚·‚éMemberƒNƒ‰ƒX‚ª‚ ‚è‚Ü‚·B
-    ƒtƒB[ƒ‹ƒh‚Æ‚µ‚ÄAintŒ^‚Ìid‚ÆStringŒ^‚Ìname‚ğ‚¿AŠî–{“I‚È
-    ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ğ‚¿AtoStringƒƒ\ƒbƒh‚ğƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ä‚¢‚é
-    ‚Æ‚Ä‚àŠî–{“I‚ÈƒNƒ‰ƒX‚Å‚·B
-    ‚Ù‚Æ‚ñ‚ÇŠ®¬‚µ‚Ä‚¢‚Ü‚·‚ªA‚ ‚é——R‚Å•sŠ®‘S‚Å‚·B
+    ã‚ã‚‹ã‚°ãƒ«ãƒ¼ãƒ—ã«å±ã™ã‚‹ãƒ¡ãƒ³ãƒãƒ¼ã‚’è¡¨ç¾ã™ã‚‹Memberã‚¯ãƒ©ã‚¹ãŒã‚ã‚Šã¾ã™ã€‚
+    ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã¨ã—ã¦ã€intå‹ã®idã¨Stringå‹ã®nameã‚’æŒã¡ã€åŸºæœ¬çš„ãª
+    ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‚’æŒã¡ã€toStringãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¦ã„ã‚‹
+    ã¨ã¦ã‚‚åŸºæœ¬çš„ãªã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+    ã»ã¨ã‚“ã©å®Œæˆã—ã¦ã„ã¾ã™ãŒã€ã‚ã‚‹ç†ç”±ã§ä¸å®Œå…¨ã§ã™ã€‚
 
-    MemberƒNƒ‰ƒX‚ğg—p‚·‚éHashSetEqualsPracticeƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh
-    ‚Í‚·‚Å‚ÉŠ®¬‚µ‚Ä‚¢‚Ü‚·Bi•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢j
+    Memberã‚¯ãƒ©ã‚¹ã‚’ä½¿ç”¨ã™ã‚‹HashSetEqualsPracticeã‚¯ãƒ©ã‚¹ã®mainãƒ¡ã‚½ãƒƒãƒ‰
+    ã¯ã™ã§ã«å®Œæˆã—ã¦ã„ã¾ã™ã€‚ï¼ˆå¤‰æ›´ã—ãªã„ã§ãã ã•ã„ï¼‰
 
-    ‚±‚ÌƒvƒƒOƒ‰ƒ€‚ğ•ÏX‚¹‚¸‚ÉA‚»‚Ì‚Ü‚ÜƒRƒ“ƒpƒCƒ‹EÀs‚·‚é‚Æ
-    Ÿ‚Ì‚æ‚¤‚Éo—Í‚³‚ê‚Ü‚·B
+    ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’å¤‰æ›´ã›ãšã«ã€ãã®ã¾ã¾ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ãƒ»å®Ÿè¡Œã™ã‚‹ã¨
+    æ¬¡ã®ã‚ˆã†ã«å‡ºåŠ›ã•ã‚Œã¾ã™ã€‚
 
-    y³‚µ‚­‚È‚¢ÀsŒ‹‰Êi‡•s“¯jz
-    ID:3 NAME:‘º“c
-    ID:1 NAME:ƒjƒZR“c
-    ID:5 NAME:ì“c
-    ID:1 NAME:R“c
-    ID:2 NAME:‚“c
-    ID:4 NAME:‹g“c
+    ã€æ­£ã—ããªã„å®Ÿè¡Œçµæœï¼ˆé †ä¸åŒï¼‰ã€‘
+    ID:3 NAME:æ‘ç”°
+    ID:1 NAME:ãƒ‹ã‚»å±±ç”°
+    ID:5 NAME:å·ç”°
+    ID:1 NAME:å±±ç”°
+    ID:2 NAME:é«˜ç”°
+    ID:4 NAME:å‰ç”°
 
-    ƒƒ“ƒo[‚ğŠÇ—‚·‚é‚½‚ß‚ÌƒOƒ‹[ƒv‚ğ•\Œ»‚·‚éHashSetŒ^‚Ìgroup•Ï”‚ğ
-    ì¬‚µ‚Ä‚¢‚Ü‚·B
-    ‚±‚ÌƒOƒ‹[ƒv‚ÍAƒƒ“ƒo[‚ğŠÇ—‚·‚é‚½‚ß‚ÉID‚Ì’l‚ğg—p‚µA“¯‚¶ID‚Ì’l‚ğ
-    ‚Âƒƒ“ƒo[‚Í‰Á“ü‚Å‚«‚È‚¢‚æ‚¤‚É‚µ‚æ‚¤‚Æv‚Á‚Ä‚¢‚Ü‚·B
+    ãƒ¡ãƒ³ãƒãƒ¼ã‚’ç®¡ç†ã™ã‚‹ãŸã‚ã®ã‚°ãƒ«ãƒ¼ãƒ—ã‚’è¡¨ç¾ã™ã‚‹HashSetå‹ã®groupå¤‰æ•°ã‚’
+    ä½œæˆã—ã¦ã„ã¾ã™ã€‚
+    ã“ã®ã‚°ãƒ«ãƒ¼ãƒ—ã¯ã€ãƒ¡ãƒ³ãƒãƒ¼ã‚’ç®¡ç†ã™ã‚‹ãŸã‚ã«IDã®å€¤ã‚’ä½¿ç”¨ã—ã€åŒã˜IDã®å€¤ã‚’
+    æŒã¤ãƒ¡ãƒ³ãƒãƒ¼ã¯åŠ å…¥ã§ããªã„ã‚ˆã†ã«ã—ã‚ˆã†ã¨æ€ã£ã¦ã„ã¾ã™ã€‚
 
-    ‚µ‚©‚µAæ‚Ù‚Ç‚ÌÀsŒ‹‰Ê‚Å‚ÍAƒOƒ‹[ƒv‚ÉID‚ª1‚ÌƒjƒZR“c‚ª‰Á“ü‚Å‚«‚Ä‚¢‚Ü‚·B
+    ã—ã‹ã—ã€å…ˆã»ã©ã®å®Ÿè¡Œçµæœã§ã¯ã€ã‚°ãƒ«ãƒ¼ãƒ—ã«IDãŒ1ã®ãƒ‹ã‚»å±±ç”°ãŒåŠ å…¥ã§ãã¦ã„ã¾ã™ã€‚
 
-    SetƒRƒŒƒNƒVƒ‡ƒ“‚ÍA–{—ˆ“™’l‚ÌƒIƒuƒWƒFƒNƒg‚ğ“o˜^‚Å‚«‚È‚¢‚æ‚¤‚ÉİŒv‚³‚ê‚Ä‚¢‚Ü‚·B
+    Setã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã¯ã€æœ¬æ¥ç­‰å€¤ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç™»éŒ²ã§ããªã„ã‚ˆã†ã«è¨­è¨ˆã•ã‚Œã¦ã„ã¾ã™ã€‚
 
-    u“¯‚¶ID‚Ì’l‚ğ‚ÂMemberƒIƒuƒWƒFƒNƒg‚Í“™’lv‚Æ‚È‚é‚æ‚¤‚ÉAMemberƒNƒ‰ƒX‚ğC³
-    ‚µ‚Ä‚­‚¾‚³‚¢B
+    ã€ŒåŒã˜IDã®å€¤ã‚’æŒã¤Memberã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯ç­‰å€¤ã€ã¨ãªã‚‹ã‚ˆã†ã«ã€Memberã‚¯ãƒ©ã‚¹ã‚’ä¿®æ­£
+    ã—ã¦ãã ã•ã„ã€‚
 
-    ƒqƒ“ƒg‚ÍAObjectƒNƒ‰ƒX‚Ì‚Âƒƒ\ƒbƒh‚ğ‚Q‚ÂƒI[ƒo[ƒ‰ƒCƒh‚·‚é‚±‚Æ‚Å‚·B
+    ãƒ’ãƒ³ãƒˆã¯ã€Objectã‚¯ãƒ©ã‚¹ã®æŒã¤ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ï¼’ã¤ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã™ã‚‹ã“ã¨ã§ã™ã€‚
 
-    y³‚µ‚¢ÀsŒ‹‰Êi‡•s“¯jz
-    ID:1 NAME:R“c
-    ID:2 NAME:‚“c
-    ID:3 NAME:‘º“c
-    ID:4 NAME:‹g“c
-    ID:5 NAME:ì“c
+    ã€æ­£ã—ã„å®Ÿè¡Œçµæœï¼ˆé †ä¸åŒï¼‰ã€‘
+    ID:1 NAME:å±±ç”°
+    ID:2 NAME:é«˜ç”°
+    ID:3 NAME:æ‘ç”°
+    ID:4 NAME:å‰ç”°
+    ID:5 NAME:å·ç”°
 
 */
-import java.util.*;
+import java.util.HashSet;
 public class HashSetEqualsPractice{
 
     public static void main(String[] args){
 
-        // ƒOƒ‹[ƒv‚ğŒ‹¬
+        // ã‚°ãƒ«ãƒ¼ãƒ—ã‚’çµæˆ
         HashSet<Member> group = new HashSet<Member>();
 
-        // ƒƒ“ƒo[‚ğ’Ç‰Á
-        group.add(new Member(1, "R“c"));
-        group.add(new Member(2, "‚“c"));
-        group.add(new Member(3, "‘º“c"));
-        group.add(new Member(4, "‹g“c"));
-        group.add(new Member(5, "ì“c"));
+        // ãƒ¡ãƒ³ãƒãƒ¼ã‚’è¿½åŠ 
+        group.add(new Member(1, "å±±ç”°"));
+        group.add(new Member(2, "é«˜ç”°"));
+        group.add(new Member(3, "æ‘ç”°"));
+        group.add(new Member(4, "å‰ç”°"));
+        group.add(new Member(5, "å·ç”°"));
 
-        // ‹U•¨‚ªƒƒ“ƒo[‚Æ‚µ‚Ä’Ç‰ÁI
-        group.add(new Member(1, "ƒjƒZR“c"));
+        // å½ç‰©ãŒãƒ¡ãƒ³ãƒãƒ¼ã¨ã—ã¦è¿½åŠ ï¼
+        group.add(new Member(1, "ãƒ‹ã‚»å±±ç”°"));
 
-        // ƒƒ“ƒo[Ğ‰î
+        // ãƒ¡ãƒ³ãƒãƒ¼ç´¹ä»‹
         for(Member member : group){
             System.out.println(member);
         }
@@ -72,13 +71,13 @@ public class HashSetEqualsPractice{
 
 }
 
-// ƒƒ“ƒo[ƒNƒ‰ƒX‚Í•sŠ®‘S‚Å‚·
+// ãƒ¡ãƒ³ãƒãƒ¼ã‚¯ãƒ©ã‚¹ã¯ä¸å®Œå…¨ã§ã™
 class Member{
 
     private int id;         // ID
-    private String name;    // –¼‘O
+    private String name;    // åå‰
 
-    // ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    // ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     public Member(final int id, final String name){
         this.id = id;
         this.name = name;
@@ -87,6 +86,26 @@ class Member{
     @Override
     public String toString(){
         return "ID:" + id + " NAME:" + name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+    	// åŒä¸€ãªã‚‰true
+    	if(this == obj) {
+    		return true;
+    	}
+
+    	// Memberå‹ã«ã‚­ãƒ£ã‚¹ãƒˆã§ããªã„ãªã‚‰false
+    	if(!(obj instanceof Member)) {
+    		return false;
+    	}
+    	//ã€€IDãŒåŒã˜ãªã‚‰ç­‰å€¤ã¨ã¿ãªã™
+    	return this.id==((Member)obj).id;
+    }
+
+    @Override
+    public int hashCode() {
+    	return id;
     }
 
 }

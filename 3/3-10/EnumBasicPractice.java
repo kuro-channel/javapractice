@@ -1,55 +1,80 @@
-// Copyright (c) 2018 Kenji Iida  All rights reserved.
 /*
 
-    �񋓌^�Ɋւ����{���
+    列挙型に関する基本問題
 
-    �l�G��\������Season�񋓌^���쐬���Ă��������B
+    四季を表現するSeason列挙型を作成してください。
 
-    [Season�񋓌^]
+    [Season列挙型]
 
-    �P�DSeason�񋓌^�͂S�̗񋓎q�iSPRING, SUMMER, FALL, WINTER�j�������܂��B
+    １．Season列挙型は４つの列挙子（SPRING, SUMMER, FALL, WINTER）を持ちます。
 
-    �Q�DSeason�񋓌^��private�ȃC���X�^���X�t�B�[���hname(String�^)�������A
-        �S�̗񋓎q�ɑ΂��āu�t�v�u�āv�u�H�v�u�~�v�Ƃ����������ێ����܂��B
-        (�R���X�g���N�^�����܂����p���Ă�������)
+    ２．Season列挙型はprivateなインスタンスフィールドname(String型)を持ち、
+        ４つの列挙子に対して「春」「夏」「秋」「冬」という文字列を保持します。
+        (コンストラクタをうまく利用してください)
 
-    �R�DtoString���\�b�h���I�[�o�[���C�h���āA�C���X�^���X�t�B�[���hname��
-        ����Ԃ��Ă��������B
+    ３．toStringメソッドをオーバーライドして、インスタンスフィールドnameの
+        情報を返してください。
 
-    �܂��AEnumBasicPractice�N���X��main���\�b�h�͈ꕔ�������ł��B
-    �ȉ��̂悤�Ɏ������Ă��������B
+    また、EnumBasicPracticeクラスのmainメソッドは一部未完成です。
+    以下のように実装してください。
 
-      main���\�b�h���Ŏl�G�񋓎q���i�[�����z��ϐ���錾���Ă��܂��B
-      �g��for�����g���Ă��ׂĂ̋G�߂�񋓎q�����܂��g���ĕ\�����Ă��������B
-      �������ASUMMER�̏ꍇ�́u�Ă͏����I�I�v�AWINTER�̏ꍇ�́u�~�͊����I�I�v
-      �Ƃ�������\������悤�ɍH�v���Ă��������B
+      mainメソッド内で四季列挙子を格納した配列変数を宣言しています。
+      拡張for文を使ってすべての季節を列挙子をうまく使って表示してください。
+      ただし、SUMMERの場合は「夏は暑い！！」、WINTERの場合は「冬は寒い！！」
+      という情報を表示するように工夫してください。
 
-   �y���s���ʁz
-    �t
-    �Ă͏����I�I
-    �H
-    �~�͊����I�I
+   【実行結果】
+    春
+    夏は暑い！！
+    秋
+    冬は寒い！！
 
-*/
-public class EnumBasicPractice{
+ */
+public class EnumBasicPractice {
 
-    public static void main(String[] args){
+	public static void main(String[] args) {
 
-        // �l�G�񋓎q���i�[�����z��ϐ��̐錾
-        Season[] seasons = {
-                                Season.SPRING, 
-                                Season.SUMMER,
-                                Season.FALL,
-                                Season.WINTER
-                            };
+		// 四季列挙子を格納した配列変数の宣言
+		Season[] seasons = {
+				Season.SPRING,
+				Season.SUMMER,
+				Season.FALL,
+				Season.WINTER
+		};
 
-        // �l�G�����[�v�ŉ�
+		// 四季をループで回す
+		for (Season season : seasons) {
+			switch (season) {
+			case SUMMER:
+				System.out.println(season + "は暑い!!");
+				break;
+			case WINTER:
+				System.out.println(season + "は寒い!!");
+				break;
+			default:
+				System.out.println(season);
+				break;
+			}
+		}
 
-
-    }
+	}
 
 }
 
-// �����ɋG�ߗ񋓌^���쐬���Ă�������
+// ここに季節列挙型を作成してください
+enum Season {
+	SPRING("春"), SUMMER("夏"), FALL("秋"), WINTER("冬");
 
+	// 季節名
+	private String name;
 
+	// コンストラクタ
+	private Season(final String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return name;
+	}
+}
